@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习,Regular-Expression," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="综述* 原字符  * 实例 * 练习题 备注 每日一更 +代表更新 -代表还在占坑中（没有内容暂待更新）更新内容：  新的元字符更新">
+<meta name="keywords" content="学习,Regular-Expression">
+<meta property="og:type" content="article">
+<meta property="og:title" content="study of Regular Expressions">
+<meta property="og:url" content="http://xzci.github.io/2017/12/17/study-of-Regular-Expressions/index.html">
+<meta property="og:site_name" content="XZC&#39;s Blog">
+<meta property="og:description" content="综述* 原字符  * 实例 * 练习题 备注 每日一更 +代表更新 -代表还在占坑中（没有内容暂待更新）更新内容：  新的元字符更新">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-17T16:46:56.026Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="study of Regular Expressions">
+<meta name="twitter:description" content="综述* 原字符  * 实例 * 练习题 备注 每日一更 +代表更新 -代表还在占坑中（没有内容暂待更新）更新内容：  新的元字符更新">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xzci.github.io/2017/12/17/study-of-Regular-Expressions/"/>
+
+
+
+
+
+  <title>study of Regular Expressions | XZC's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XZC's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">有疑问或者想讨论的，可以发送您的信息到xzci@outlook.com</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xzci.github.io/2017/12/17/study-of-Regular-Expressions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XZC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XZC's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">study of Regular Expressions</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-17T12:01:01+08:00">
+                2017-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">study</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h1><pre><code>* 原字符 
+* 实例
+* 练习题
+</code></pre><p>备注 每日一更 +代表更新 -代表还在占坑中（没有内容暂待更新）<br>更新内容：</p>
+<ul>
+<li>新的元字符更新<a id="more"></a>
+</li>
+</ul>
+<h1 id="编程依赖"><a href="#编程依赖" class="headerlink" title="编程依赖"></a>编程依赖</h1><p>使用C#作为正则表达式的学习工具，正则表达式在各种语言中都支持（自带或者相关的库）<br>在这里使用C#作为学习的工具。<br>C#中使用正则表达式可以有几种方式：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 本次主要采用这样的实现方式（便于书写）</span></span><br><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"catTheOtherText"</span>, <span class="string">"TheOtherTextcat"</span>,</span><br><span class="line">               <span class="string">"TheOtherText"</span>, <span class="string">"TheOthercatText"</span>, <span class="string">"ThecOtheraTextt"</span> &#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"^cat"</span>;</span><br><span class="line"><span class="keyword">foreach</span>( <span class="keyword">var</span> str <span class="keyword">in</span> s)</span><br><span class="line">&#123;</span><br><span class="line">    Match match = Regex.Match(str, @strRegular);</span><br><span class="line">    <span class="keyword">if</span> (match.Success)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(str + <span class="string">"    The Regular is  "</span> + strRegular);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种方式比较便于理解，但是其实缺少了很多相关的设置条件，相关的设置条件，每个语言有所不同，如果有需要，需要查阅相关的手册，进行确认。如果有需要（比如设置忽略大小写，在shell里是在正则表达式之前添加参数 <code>-i</code>），则用如下的这种方式进行书写：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"catTheOtherText"</span>, <span class="string">"TheOtherTextcat"</span>,</span><br><span class="line">               <span class="string">"TheOtherText"</span>, <span class="string">"TheOthercatText"</span>, <span class="string">"ThecOtheraTextt"</span> &#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"^cat"</span>;</span><br><span class="line"><span class="comment">// 这里的RegexOptions 提供了更多正则表达式的相关选项。</span></span><br><span class="line"><span class="comment">// 这里的IgnoreCase 是忽略大小写的含义</span></span><br><span class="line">Regex reg = <span class="keyword">new</span> Regex(@strRegular, RegexOptions.IgnoreCase);</span><br><span class="line"><span class="keyword">foreach</span>( <span class="keyword">var</span> str <span class="keyword">in</span> s)</span><br><span class="line">&#123;</span><br><span class="line">    Match match = reg.Match(str);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (match.Success)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(str + <span class="string">"    The Regular is  "</span> + strRegular);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h1><h2 id=""><a href="#" class="headerlink" title="^"></a>^</h2><p>行的起始 如：<code>^cat</code> 取得行首是cat的行 </p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"catTheOtherText"</span>, <span class="string">"TheOtherTextcat"</span>,</span><br><span class="line">               <span class="string">"TheOtherText"</span>, <span class="string">"TheOthercatText"</span>, <span class="string">"ThecOtheraTextt"</span> &#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"^cat"</span>;</span><br><span class="line"><span class="comment">// "catTheOtherText"</span></span><br></pre></td></tr></table></figure>
+<h2 id="-1"><a href="#-1" class="headerlink" title="$"></a>$</h2><p>行的结束 如： <code>cat$</code> 取得行尾是cat的行<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"catTheOtherText"</span>, <span class="string">"TheOtherTextcat"</span>,</span><br><span class="line">                           <span class="string">"TheOtherText"</span>, <span class="string">"TheOthercatText"</span>, <span class="string">"ThecOtheraTextt"</span> &#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"cat$"</span>;</span><br><span class="line"><span class="comment">// output</span></span><br><span class="line"><span class="comment">// "TheOtherTextcat"</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="-2"><a href="#-2" class="headerlink" title="[]"></a>[]</h2><p>匹配多个字符 如<code>[ab]</code> 匹配a或者b<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"aTheOtherText"</span>, <span class="string">"bTheOtherText"</span>,</span><br><span class="line">               <span class="string">"abTheOtherText"</span>, <span class="string">"TheOtheraText"</span>, <span class="string">"b"</span> &#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"[ab]"</span>;</span><br><span class="line"><span class="comment">// output</span></span><br><span class="line"><span class="comment">// aTheOtherText    The Regular is  [ab]</span></span><br><span class="line"><span class="comment">// bTheOtherText    The Regular is  [ab]</span></span><br><span class="line"><span class="comment">// abTheOtherText    The Regular is  [ab]</span></span><br><span class="line"><span class="comment">// TheOtheraText    The Regular is  [ab]</span></span><br><span class="line"><span class="comment">// b    The Regular is  [ab]</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="-3"><a href="#-3" class="headerlink" title="[-]"></a>[-]</h3><p><code>[]</code>中的连字符，可以连接有顺序的序列 如：<code>[1-3]</code> 取1到3中任意<strong>一个</strong>数<br>特别的<code>[0123456789abcdefgABCDEFG]</code>可以写作：<code>[0-9a-gA-G]</code> 或<code>[A-G0-9a-g]</code> (顺序无关)</p>
+<h3 id="展开"><a href="#展开" class="headerlink" title="展开"></a>展开</h3><p><em>（以后讲到）</em> 只有<code>-</code>在<code>[]</code>中是作为有意义的字符，其他字符保留原来含义。<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"2TheOtherText"</span>, <span class="string">"1TheOtherText"</span>,</span><br><span class="line">               <span class="string">"90TheOtherText"</span>, <span class="string">"TheOtheraText"</span>, <span class="string">"9"</span>, <span class="string">"TheOther?Text"</span> &#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"[0-9?]"</span>;</span><br><span class="line"><span class="comment">// 2TheOtherText    The Regular is  [0-9?]</span></span><br><span class="line"><span class="comment">// 1TheOtherText    The Regular is  [0-9?]</span></span><br><span class="line"><span class="comment">// 90TheOtherText    The Regular is  [0-9?]</span></span><br><span class="line"><span class="comment">// 9    The Regular is  [0-9?]</span></span><br><span class="line"><span class="comment">// TheOther?Text    The Regular is  [0-9?]</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="-4"><a href="#-4" class="headerlink" title="[^]"></a>[^]</h3><p>表示除此以外 如：<code>[^a]</code> 取得除了有a的行<br>也可以使用<code>[^0-9]</code> 取得除了只包含0-9的其他行<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"123456"</span>, <span class="string">"Text"</span>,</span><br><span class="line">               <span class="string">"?Text"</span>, <span class="string">"123456Text"</span>, <span class="string">"9"</span> , <span class="string">"?"</span>, </span><br><span class="line">               <span class="string">"Text123456"</span>, <span class="string">"T123e45x6t"</span> &#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"[^0-9?]"</span>;</span><br><span class="line"><span class="comment">// Text    The Regular is  [^0-9?]</span></span><br><span class="line"><span class="comment">// ?Text    The Regular is  [^0-9?]</span></span><br><span class="line"><span class="comment">// 123456Text    The Regular is  [^0-9?]</span></span><br><span class="line"><span class="comment">// Text123456    The Regular is  [^0-9?]</span></span><br><span class="line"><span class="comment">// T123e45x6t    The Regular is  [^0-9?]</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="-5"><a href="#-5" class="headerlink" title="|"></a>|</h2><p>或 如 <code>ab|ba</code> 匹配ab和ba<br>如同编程中的<code>|</code>（或）<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"abc"</span>, <span class="string">"cba"</span>,</span><br><span class="line">               <span class="string">"bca"</span>, <span class="string">"ab"</span>, <span class="string">"a"</span>&#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"ab|ba"</span>;</span><br><span class="line"><span class="comment">// abc    The Regular is  ab|ba</span></span><br><span class="line"><span class="comment">// cba    The Regular is  ab|ba</span></span><br><span class="line"><span class="comment">// ab    The Regular is  ab|ba</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="-6"><a href="#-6" class="headerlink" title="()"></a>()</h3><p>使用<code>()</code>包含<code>|</code>，限制<code>|</code>的作用范围 则只针对括号中的内容进行或匹配 如<code>a(ab|ba)</code> 匹配aab 或者aba<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"abc"</span>, <span class="string">"cba"</span>,</span><br><span class="line">                <span class="string">"bca"</span>, <span class="string">"ab"</span>, <span class="string">"a"</span>, <span class="string">"aab"</span>&#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"c(ab|ba)"</span>;</span><br><span class="line"><span class="comment">// cba    The Regular is  c(ab|ba)</span></span><br></pre></td></tr></table></figure></p>
+<p>值得注意的是，以下3者等价：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> strRegular1 = <span class="string">"(Geoff|Jeff)(rey|ery)"</span>;</span><br><span class="line"><span class="keyword">string</span> strRegular2 = <span class="string">"(Geo|Je)ff(rey|ery)"</span>;</span><br><span class="line"><span class="keyword">string</span> strRegular3 = <span class="string">"(Geo|Je)ff(re|er)y"</span></span><br></pre></td></tr></table></figure></p>
+<p>下面这种方式与上面3者也等价（较为蠢）<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> strOtherWayRegular = <span class="string">"Jeffrey|Geoffery|Jeffery|Geoffrey"</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="单词分界符"><a href="#单词分界符" class="headerlink" title="单词分界符"></a>单词分界符</h2><p>C#的实现不同，本例参照所选用语言的正则表达式手册。<br>标准中提供<code>\&lt;</code>和<code>\&gt;</code> 来匹配单词的首位，和末尾。<br>C#中则只提供<code>\b</code> 匹配单词分割，不特别区分首尾（看放置于哪个部分）。</p>
+<h2 id="模糊匹配"><a href="#模糊匹配" class="headerlink" title="模糊匹配"></a>模糊匹配</h2><h3 id="-7"><a href="#-7" class="headerlink" title="?"></a>?</h3><p><strong>一定会被匹配到。</strong><br>必须前面有一个字符, 前面字符出现<strong>0次或1次</strong> 如 <code>abca?</code> 匹配abc或者abca<br>一个有歧义，其实可以将多个用括号包裹起来，这样的话也算一个 如 <code>ab(abc)?</code> 匹配ababc或ab<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"abca"</span>, <span class="string">"abcaaa"</span>,</span><br><span class="line">                <span class="string">"abc"</span>, <span class="string">"abcd"</span>, <span class="string">"babcd"</span>&#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"abca?"</span>;</span><br><span class="line"><span class="comment">// abca    The Regular is  abca?</span></span><br><span class="line"><span class="comment">// abcaaa    The Regular is  abca?</span></span><br><span class="line"><span class="comment">// abc    The Regular is  abca?</span></span><br><span class="line"><span class="comment">// abcd    The Regular is  abca?</span></span><br><span class="line"><span class="comment">// babcd    The Regular is  abca?</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"ababc"</span>, <span class="string">"abca"</span>,</span><br><span class="line">                <span class="string">"babcdeg"</span>, <span class="string">"cbagcd"</span> &#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"ab(abc)?"</span>;</span><br><span class="line"><span class="comment">// ababc    The Regular is  ab(abc)?</span></span><br><span class="line"><span class="comment">// abca    The Regular is  ab(abc)?</span></span><br><span class="line"><span class="comment">// babcdeg    The Regular is  ab(abc)?</span></span><br></pre></td></tr></table></figure>
+<h3 id="-8"><a href="#-8" class="headerlink" title="+"></a>+</h3><p>必须前面有一个字符, 前面字符出现<strong>1次或多次</strong> 如 <code>abca?</code> 匹配abca或者abcaa<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"abca"</span>, <span class="string">"abcaaa"</span>,</span><br><span class="line">                <span class="string">"abc"</span>, <span class="string">"abcd"</span>, <span class="string">"babcd"</span>&#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"abca+"</span>;</span><br><span class="line"><span class="comment">// abca    The Regular is  abca+</span></span><br><span class="line"><span class="comment">// abcaaa    The Regular is  abca+</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="-9"><a href="#-9" class="headerlink" title="*"></a>*</h3><p><strong>一定会被匹配到。</strong><br>必须前面有一个字符, 前面字符出现<strong>0次或多次</strong> 如 <code>ba?</code> 匹配b或者ba或者baa<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"abca"</span>, <span class="string">"abcaaa"</span>,</span><br><span class="line">                <span class="string">"abc"</span>, <span class="string">"abcd"</span>, <span class="string">"babcd"</span>&#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"abca*"</span>;</span><br><span class="line"><span class="comment">// abca    The Regular is  abca*</span></span><br><span class="line"><span class="comment">// abcaaa    The Regular is  abca*</span></span><br><span class="line"><span class="comment">// abc    The Regular is  abca*</span></span><br><span class="line"><span class="comment">// abcd    The Regular is  abca*</span></span><br><span class="line"><span class="comment">// babcd    The Regular is  abca*</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="展开-1"><a href="#展开-1" class="headerlink" title="展开 ? *"></a>展开 ? *</h3><p>看了上面的例子是不是对这2个有点困惑。看起来结果是一样的。其实主要在于，只有存在于明确首尾的情况时，才能使之不同。比如：<br><code>^aa?b</code>和<code>^aa*b</code><br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"ab"</span>, <span class="string">"aaaab"</span>,</span><br><span class="line">                <span class="string">"aab"</span>&#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"^aa?b"</span>;</span><br><span class="line"><span class="comment">// ab    The Regular is  ^aa?b</span></span><br><span class="line"><span class="comment">// aab    The Regular is  ^aa?b</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span>[] s = &#123; <span class="string">"ab"</span>, <span class="string">"aaaab"</span>,</span><br><span class="line">                <span class="string">"aab"</span>&#125;;</span><br><span class="line"><span class="keyword">string</span> strRegular = <span class="string">"^aa*b"</span>;</span><br><span class="line"><span class="comment">// ab    The Regular is  ^aa*b</span></span><br><span class="line"><span class="comment">// aaaab    The Regular is  ^aa*b</span></span><br><span class="line"><span class="comment">// aab    The Regular is  ^aa*b</span></span><br></pre></td></tr></table></figure>
+<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><h2 id="-10"><a href="#-10" class="headerlink" title="[][^]"></a>[][^]</h2><pre><code>&apos;q1xText&apos;, &apos;Textq1&apos;,
+&apos;q2cText&apos;, &apos;Textq2c&apos;
+</code></pre><ol>
+<li><p><code>q[0-9][^x]</code> 会匹配哪一个呢？</p>
+</li>
+<li><p><code>q[0-9][^x]$</code>会匹配哪一个呢？</p>
+</li>
+<li><p><code>^q[0-9][^x]</code>会匹配哪一个呢？</p>
+</li>
+</ol>
+<h1 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h1><ol>
+<li><p>q2cText    The Regular is  q[0-9][^x]<br>Textq2c    The Regular is  q[0-9][^x]</p>
+</li>
+<li><p>Textq2c    The Regular is  q[0-9][^x]$</p>
+</li>
+<li><p>q2cText    The Regular is  ^q[0-9][^x]</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+            <a href="/tags/Regular-Expression/" rel="tag"># Regular-Expression</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/07/DeepLearning-Part1/" rel="next" title="DeepLearning Part1">
+                <i class="fa fa-chevron-left"></i> DeepLearning Part1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/18/study-of-C/" rel="prev" title="study of C">
+                study of C <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XZC</p>
+              <p class="site-description motion-element" itemprop="description">自言自语的无名小站</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#综述"><span class="nav-number">1.</span> <span class="nav-text">综述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编程依赖"><span class="nav-number">2.</span> <span class="nav-text">编程依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元字符"><span class="nav-number">3.</span> <span class="nav-text">元字符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.1.</span> <span class="nav-text">^</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">3.2.</span> <span class="nav-text">$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-2"><span class="nav-number">3.3.</span> <span class="nav-text">[]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#-3"><span class="nav-number">3.3.1.</span> <span class="nav-text">[-]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#展开"><span class="nav-number">3.3.2.</span> <span class="nav-text">展开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-4"><span class="nav-number">3.3.3.</span> <span class="nav-text">[^]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-5"><span class="nav-number">3.4.</span> <span class="nav-text">|</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#-6"><span class="nav-number">3.4.1.</span> <span class="nav-text">()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单词分界符"><span class="nav-number">3.5.</span> <span class="nav-text">单词分界符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模糊匹配"><span class="nav-number">3.6.</span> <span class="nav-text">模糊匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#-7"><span class="nav-number">3.6.1.</span> <span class="nav-text">?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-8"><span class="nav-number">3.6.2.</span> <span class="nav-text">+</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-9"><span class="nav-number">3.6.3.</span> <span class="nav-text">*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#展开-1"><span class="nav-number">3.6.4.</span> <span class="nav-text">展开 ? *</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练习"><span class="nav-number">4.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#-10"><span class="nav-number">4.1.</span> <span class="nav-text">[][^]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#答案"><span class="nav-number">5.</span> <span class="nav-text">答案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XZC</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

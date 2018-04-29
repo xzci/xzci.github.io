@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习,C," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="综述* const的含义 (++) 11-19  * const与指针结合 (+) 11-18 * 使用Typeof提升可读性 (+) 11-20 * 指针 (+) 12-06 备注 每日一更 +代表更新完成。-为待续">
+<meta name="keywords" content="学习,C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="study of C part3">
+<meta property="og:url" content="http://xzci.github.io/2017/11/17/study-of-C-part3/index.html">
+<meta property="og:site_name" content="XZC&#39;s Blog">
+<meta property="og:description" content="综述* const的含义 (++) 11-19  * const与指针结合 (+) 11-18 * 使用Typeof提升可读性 (+) 11-20 * 指针 (+) 12-06 备注 每日一更 +代表更新完成。-为待续">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-07T16:22:58.468Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="study of C part3">
+<meta name="twitter:description" content="综述* const的含义 (++) 11-19  * const与指针结合 (+) 11-18 * 使用Typeof提升可读性 (+) 11-20 * 指针 (+) 12-06 备注 每日一更 +代表更新完成。-为待续">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xzci.github.io/2017/11/17/study-of-C-part3/"/>
+
+
+
+
+
+  <title>study of C part3 | XZC's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XZC's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">有疑问或者想讨论的，可以发送您的信息到xzci@outlook.com</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xzci.github.io/2017/11/17/study-of-C-part3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XZC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XZC's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">study of C part3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-17T11:20:27+08:00">
+                2017-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">study</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h1><pre><code>* const的含义 (++) 11-19 
+* const与指针结合 (+) 11-18
+* 使用Typeof提升可读性 (+) 11-20
+* 指针 (+) 12-06
+</code></pre><p>备注 每日一更 +代表更新完成。-为待续<br><a id="more"></a></p>
+<h1 id="const的含义"><a href="#const的含义" class="headerlink" title="const的含义"></a>const的含义</h1><p> 首先明确， const是<strong>告诉程序员</strong>这是一个常量。嗯。在C中，const是假的。  </p>
+<p>不信？可以试试如下代码:<br>根据 <a href="http://jiaqingxu.github.io" target="_blank" rel="noopener">大佬</a>  <strong>←大佬的博客</strong>的测试，<br>如下代码仍然存在着一些问题。<br>同时，如果该代码是在<strong>全局变量</strong>中，会产生error。<strong>不能</strong>通过编译。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> i = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;i;</span><br><span class="line"><span class="comment">// 修改了i</span></span><br><span class="line">*p = <span class="number">5</span>;</span><br></pre></td></tr></table></figure></p>
+<p>VS2017中，该代码修改了const所声明的变量。但在mac的gcc中，i的值并未发生改变，不过当你去获取i地址上的值时，发现已经改变了。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// code </span></span><br><span class="line"><span class="comment">// i 的值为 12</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>, i);</span><br><span class="line"><span class="keyword">int</span> *q = &amp;i;</span><br><span class="line"><span class="comment">//  *q 的值为5</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>, *q);</span><br></pre></td></tr></table></figure></p>
+<p>这是为什么呢？<br>根据<a href="https://stackoverflow.com/questions/3801557/can-we-change-the-value-of-an-object-defined-with-const-through-pointers" target="_blank" rel="noopener">爆栈</a><br> 的数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">When it does optimisation, the compiler presumably loads 12 into a register and doesn&apos;t bother to load it again when it needs to access a for the printf because it &quot;knows&quot; that a can&apos;t change.</span><br></pre></td></tr></table></figure></p>
+<p>所以是一个很神奇的未定义行为。 </p>
+<h2 id="展开"><a href="#展开" class="headerlink" title="展开"></a>展开</h2><p>应该去写可以移植的代码，一个好的可移植的代码应该遵守：</p>
+<h3 id="可移植代码"><a href="#可移植代码" class="headerlink" title="可移植代码"></a>可移植代码</h3><ul>
+<li>只使用已知的特性</li>
+<li>不突破编译器的限制</li>
+<li>不使用，依赖任何的未定义行为 </li>
+</ul>
+<h3 id="不可移植代码"><a href="#不可移植代码" class="headerlink" title="不可移植代码"></a>不可移植代码</h3><p>由编译器定义的代码，是由编译器决定的如何采取行动</p>
+<h3 id="烂代码"><a href="#烂代码" class="headerlink" title="烂代码"></a>烂代码</h3><ul>
+<li>有未定义行为的</li>
+<li>没有遵守约束条件的（常量表达式不被赋值或修改，变量和常量的值应该在其所在的范围内）</li>
+<li>其他可以导致程序出现异常或增加读代码人的劳动的</li>
+</ul>
+<p>综上，其实在C编译器中其实不能很好的做到对const声明变量的保护，gcc的保护行为也是未定义的，不能假象某一个编译器的实现去类推其他操作系统或者代码。<strong>远离未定义</strong> 是否修改了const也是程序员应该关心的问题呢。<strong>（←别指望编译器了。）</strong></p>
+<p>所以，这个大前提一定要明白，清楚。const是<strong>告诉程序员</strong>这是一个常量。所以你要自己去保证不要去乱改const里所保存的值。<strong>（出了问题就是你的锅）</strong>  </p>
+<p>const的含义就是：<br><strong>告诉你</strong>这是一个常量，你不要改。</p>
+<p>当然你希望这个常量不能被改，理所应当给它设个初始值。这是常识。什么时候用const也不必说。<br>但是在新手中常犯的错误有：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\\ 不理解<span class="keyword">const</span>的是假的含义,但知道程序中不能存在魔法数的规范：</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">\\ 会报错 </span><br><span class="line">\\ C99 后不报错，成为新的规则。具体情况请参阅自己编译器所支持的语言版本。</span><br><span class="line"><span class="keyword">int</span> arrA[i] = &#123; <span class="number">1</span> &#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="const与指针结合"><a href="#const与指针结合" class="headerlink" title="const与指针结合"></a>const与指针结合</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> n = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> m = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p>效果等价。<br>但是如果和指针相互结合在一起。就会有很大的不同。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p;</span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> *q;</span><br></pre></td></tr></table></figure></p>
+<p>这2个所指向的类型是什么呢？ 根据上文所说，去掉<strong>*变量名</strong>所剩下的就是所指向的类型，那么这两个所剩下的是：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span></span><br></pre></td></tr></table></figure></p>
+<p>由根据上文所说，const和int的位置交换所代表的含义相同。所以这2个变量所指向的类型也是相同的，<strong>指向const int类型</strong>，所以这个p和q是可以随便指向其他的const int类型的，甚至int类型（你关了warming的话）</p>
+<p>为了避免误解，请将变量名自己规定为const在前。（←正常人的想法） </p>
+<p>那么我现在其实想声明一个不可以改变的指针怎么办？<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> r = &amp;n;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码片段才是正确的写法。<strong>用正确的写法能够最大的减少误解</strong>， <strong>程序是给人读的</strong>！ </p>
+<p>再按照之前的原则拆分一下。*变量名，哎？变量名中间有const，那就是指针本身不可改。剩下了int，那就是指向int类型。 </p>
+<h2 id="下面给出一些栗子。（举个栗子，请脑补）"><a href="#下面给出一些栗子。（举个栗子，请脑补）" class="headerlink" title="下面给出一些栗子。（举个栗子，请脑补）"></a>下面给出一些栗子。（举个栗子，请脑补）</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> **p;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> **p2;</span><br><span class="line"><span class="keyword">char</span> *<span class="keyword">const</span> *p3;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *<span class="keyword">const</span> *p4;</span><br><span class="line"><span class="keyword">char</span> **<span class="keyword">const</span> p5;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> **<span class="keyword">const</span> p6;</span><br><span class="line"><span class="keyword">char</span> *<span class="keyword">const</span> *<span class="keyword">const</span> p7;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *<span class="keyword">const</span>* <span class="keyword">const</span> p8;</span><br></pre></td></tr></table></figure>
+<p>方法学会了么？<br>以第4个为例，</p>
+<ul>
+<li>首先抽出 *const p4, 证明这是一个const 指针</li>
+<li>剩下的为const char *A</li>
+<li>所以这是一个const指针指向[ 一个指向const char 类型的指针 ] </li>
+</ul>
+<h2 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h2><ul>
+<li>p1是指向char类型的指针的指针；</li>
+<li>p2是指向const char类型的指针的指针；</li>
+<li>p3是指向char类型的const指针；</li>
+<li>p4是指向const char类型的const指针；</li>
+<li>p5是指向char类型的指针的const指针；</li>
+<li>p6是指向const char类型的指针的const指针；</li>
+<li>p7是指向char类型const指针的const指针；</li>
+<li>p8是指向const char类型的const指针的const指针。 <h1 id="使用Typeof提升可读性"><a href="#使用Typeof提升可读性" class="headerlink" title="使用Typeof提升可读性"></a>使用Typeof提升可读性</h1>良好的使用typedef可以使你的代码具有更好的可读性。<br>比如：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> * PCHAR; </span><br><span class="line"><span class="comment">// 声明了2个指向字符的指针 p，q</span></span><br><span class="line">PCHAR p,q;</span><br><span class="line"><span class="comment">//类比如下代码</span></span><br><span class="line"><span class="keyword">char</span> *p, q;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>最后一行代码读懂了么？乍一看是也是声明了2个指针。其实是声明了一个指针和一个char类型的变量。所以要分清指针的*表述的意思。</p>
+<h2 id="与-define的区别"><a href="#与-define的区别" class="headerlink" title="与#define的区别"></a>与#define的区别</h2><ul>
+<li>typedef 遵守作用域规则。而#define是全局的，全部替换，并且不能正确的处理指针类型。</li>
+<li>但是#define 可以使用#ifedf。<br>所以要根据实际情况进行选择。</li>
+</ul>
+<h2 id="命名方式展开"><a href="#命名方式展开" class="headerlink" title="命名方式展开"></a>命名方式展开</h2><p>推荐采用：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *p;</span><br></pre></td></tr></table></figure></p>
+<p>这样(星号靠右)的命名方式，这样你才能理解到，这个指针是针对于p的。即，只有char，int等类型，和一个指针类型<strong>*</strong>, 前面的类型仅仅是用来标识，从内存中读出几位字节而已。这样理解就不会出现如上的声明方式，而产生误解。或者采用 typedef 来讲其进行别名转换。 </p>
+<p>具体的好处可以参见如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> *a;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> a <span class="title">b</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">typedef</span> b *c;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> c <span class="title">d</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">typedef</span> d *e;</span><br><span class="line">e var[<span class="number">10</span>];</span><br></pre></td></tr></table></figure></p>
+<p>是不是一下子就晕了。<br>咱们来慢慢梳理一下。</p>
+<p><strong>由后往前看。</strong> </p>
+<ul>
+<li>这是一个 1.数组。 <strong>（1类型是e）</strong></li>
+<li>这是一个 2.指针类型的 1.数组。 <strong>（2指向的类型是d）</strong></li>
+<li>这是一个 3.指向函数的 2.指针类型的 1.数组。 <strong>（3函数返回的类型是c）</strong></li>
+<li>这是一个 4.指向有返回值的 3.指向函数的 2.指针类型的 1.数组。 <strong>（4指向的类型是b）</strong></li>
+<li>这是一个 4.指向返回值 5.是指针的 3.指向函数的 2.指针类型的 1.数组。 <strong>（5函数返回的类型是a）</strong></li>
+<li>这是一个 4.指向返回值 5.是指针指向 6.返回值是指向char类型的 3.指向函数的 2.指针类型的 1.数组。 <strong>（6指向的类型是char）</strong></li>
+</ul>
+<p>是不是一下子就懂了呢。<br>然后以此类推。<br>初次使用typedef可能会晕，还是要多多练习。<br>同时，在使用typedef时，注意。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 普通声明变量</span></span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="comment">// typedef申明变量别名</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> a;</span><br></pre></td></tr></table></figure></p>
+<p>typedef在保证原来申明语法不变的前提下，将原变量的命名，作为空格之前的<strong>东西</strong>作为它的别名。<br>这点要在以后的函数指针中要理解透彻。  </p>
+<h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><h2 id="指针和数组"><a href="#指针和数组" class="headerlink" title="指针和数组"></a>指针和数组</h2><p>指针和数组的关系，千丝万缕。因为C语言的懒操作，对于数组这个东西，其实是由一个指针所维护的，其不保存数组长度在每个数组的类型之中，所以会在传参后丢失数组的长度。<br>sizeof实在编译时发生作用，在数组传递后，C内部只保存数组的头指针。此时在函数中很容易出现越位的错误。（并且越位后，如果不对其做取指，赋值操作，很难发现这个错误<strong>编译器因为不知道长度，不会检查此错误</strong>）所以要非常小心的使用数组。<br>如果要传递数组进行操作时，有如下3种方式：</p>
+<ul>
+<li><ol>
+<li>定义数组的文件中，声明，定义并初始化一个变量，用以保存数组长度。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file1.c:</span></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">array</span>[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> array_size = <span class="keyword">sizeof</span>(<span class="built_in">array</span>) / <span class="built_in">array</span>[<span class="number">0</span>];</span><br><span class="line"><span class="comment">// file2.c</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> <span class="built_in">array</span>[];</span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> array_size;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>使用#define确定数组的长度<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ARRAYSZ 3</span></span><br><span class="line"><span class="comment">// file1.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"file.h"</span></span></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">array</span>[ARRAYSZ];</span><br><span class="line"><span class="comment">// file2.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"file.h"</span></span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> <span class="built_in">array</span>[ARRAYSZ];</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>在数组的最后的一个元素放入一个 “哨兵值” （通常0， -1， NULL）<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file1.c</span></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">array</span>[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"><span class="comment">// file2.c</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> <span class="built_in">array</span>[];</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<p>如果数组已经被初始化，使用2的话就不太好。</p>
+<p>虽然C中的数组是由指针假扮的，但是仍然满足C语言的定义匹配规则。即<strong>数组和指针是不同的</strong>，所以你不能写如下代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file1.c</span></span><br><span class="line"><span class="keyword">char</span> a[<span class="number">6</span>];</span><br><span class="line"><span class="comment">// file2.c</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">char</span> *a;</span><br></pre></td></tr></table></figure></p>
+<p>这时是类型不匹配的。<br>你需要将代码改成：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">char</span> a[<span class="number">6</span>];</span><br></pre></td></tr></table></figure></p>
+<h2 id="指针和假的字符串"><a href="#指针和假的字符串" class="headerlink" title="指针和假的字符串"></a>指针和假的字符串</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Q1</span></span><br><span class="line"><span class="keyword">char</span> *p = <span class="string">"asdadada"</span>;</span><br><span class="line">p[<span class="number">1</span>] = <span class="string">'S'</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s\n"</span>, p);</span><br><span class="line"><span class="comment">// Q2</span></span><br><span class="line"><span class="keyword">char</span> a[] = <span class="string">"adadasda"</span>;</span><br><span class="line"><span class="keyword">char</span> *q = a;</span><br><span class="line">q[<span class="number">1</span>] = <span class="string">'S'</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s\n"</span>, q);</span><br></pre></td></tr></table></figure>
+<p>这段程序的运行结果是什么呢？<br>是否会被迷惑住，以为都会修改了这个值。其实答案是只有Q2成功修改了该值。<br>这是为什么呢？</p>
+<ul>
+<li>Q1 是用数组作为初始值，只是多了一个结尾的数组，与其他数组作无异。</li>
+<li>Q2 将改字符串转换为一个无名的静态字符串数组。可能存储在只读内存之中。这将导致它不会被修改。（这里指向的是无名数组的第一个元素）。</li>
+</ul>
+<h2 id="空指针"><a href="#空指针" class="headerlink" title="空指针"></a>空指针</h2><h3 id="0"><a href="#0" class="headerlink" title="0"></a>0</h3><p>原来将设定0的指针称之为空指针。如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *p = <span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
+<p>判断指针为空可以简单的记做：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(p)</span><br><span class="line">    <span class="comment">//</span></span><br></pre></td></tr></table></figure></p>
+<p>可以直接使用空指针的情况请确保在如下之一：</p>
+<ul>
+<li>初始化</li>
+<li>赋值</li>
+<li>比较（判断开始，或结尾）</li>
+<li>固定参数的函数调用且在作用域中有函数原型<br>必须要显示的类型转换的：</li>
+<li>函数调用， 作用域内没有原型</li>
+<li>变参函数调用中的可变参数 </li>
+</ul>
+<h3 id="NULL"><a href="#NULL" class="headerlink" title="NULL"></a>NULL</h3><p>是一个宏， 其值是一个空指针。（原先是为了避免魔法数0的出现）<br><strong>NULL只能用作指针</strong>， 并且NULL和0完全等价。上记的注意都是一样的。<br>同时，编译器还是根据上下文的来进行处理NULL，仍然需要对NULL进行相应的转换。</p>
+<p>###总结<br>简单来说，保证如下2点即可</p>
+<ul>
+<li>当源码中需要空指针常量时，用<strong>0</strong>或<strong>NULL</strong></li>
+<li>如果在函数中调用0，或者NULL时，要把它转换成被调用函数需要的指针类型 </li>
+</ul>
+<h2 id="好玩的"><a href="#好玩的" class="headerlink" title="好玩的"></a>好玩的</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"%c\n"</span>,<span class="string">"helloworld"</span>[<span class="number">5</span>]);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%c\n"</span>, <span class="number">5</span>[<span class="string">"helloworld"</span>]);</span><br></pre></td></tr></table></figure>
+<p>结果是一样的。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+            <a href="/tags/C/" rel="tag"># C</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/16/study-of-C-Part2/" rel="next" title="study of C Part2">
+                <i class="fa fa-chevron-left"></i> study of C Part2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/18/study-of-Python/" rel="prev" title="study of Python">
+                study of Python <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XZC</p>
+              <p class="site-description motion-element" itemprop="description">自言自语的无名小站</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#综述"><span class="nav-number">1.</span> <span class="nav-text">综述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const的含义"><span class="nav-number">2.</span> <span class="nav-text">const的含义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#展开"><span class="nav-number">2.1.</span> <span class="nav-text">展开</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可移植代码"><span class="nav-number">2.1.1.</span> <span class="nav-text">可移植代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不可移植代码"><span class="nav-number">2.1.2.</span> <span class="nav-text">不可移植代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#烂代码"><span class="nav-number">2.1.3.</span> <span class="nav-text">烂代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const与指针结合"><span class="nav-number">3.</span> <span class="nav-text">const与指针结合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下面给出一些栗子。（举个栗子，请脑补）"><span class="nav-number">3.1.</span> <span class="nav-text">下面给出一些栗子。（举个栗子，请脑补）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#答案"><span class="nav-number">3.2.</span> <span class="nav-text">答案</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Typeof提升可读性"><span class="nav-number">4.</span> <span class="nav-text">使用Typeof提升可读性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#与-define的区别"><span class="nav-number">4.1.</span> <span class="nav-text">与#define的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名方式展开"><span class="nav-number">4.2.</span> <span class="nav-text">命名方式展开</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针"><span class="nav-number">5.</span> <span class="nav-text">指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指针和数组"><span class="nav-number">5.1.</span> <span class="nav-text">指针和数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针和假的字符串"><span class="nav-number">5.2.</span> <span class="nav-text">指针和假的字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空指针"><span class="nav-number">5.3.</span> <span class="nav-text">空指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0"><span class="nav-number">5.3.1.</span> <span class="nav-text">0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NULL"><span class="nav-number">5.3.2.</span> <span class="nav-text">NULL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#好玩的"><span class="nav-number">5.4.</span> <span class="nav-text">好玩的</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XZC</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

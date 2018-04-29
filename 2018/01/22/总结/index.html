@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="总结," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这是个大纲版，随便乱写，还没有时间整理（&amp;lt;-这行什么时候被删掉就是整理好了） 对项目的总结和分析-个人 * 代码 * 测试 * 合作 对项目的总结和分析-团体 * 管理 * 分工 对项目的总结和分析-自身 * 自身">
+<meta name="keywords" content="总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结 ">
+<meta property="og:url" content="http://xzci.github.io/2018/01/22/总结/index.html">
+<meta property="og:site_name" content="XZC&#39;s Blog">
+<meta property="og:description" content="这是个大纲版，随便乱写，还没有时间整理（&amp;lt;-这行什么时候被删掉就是整理好了） 对项目的总结和分析-个人 * 代码 * 测试 * 合作 对项目的总结和分析-团体 * 管理 * 分工 对项目的总结和分析-自身 * 自身">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-28T04:45:32.498Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="总结 ">
+<meta name="twitter:description" content="这是个大纲版，随便乱写，还没有时间整理（&amp;lt;-这行什么时候被删掉就是整理好了） 对项目的总结和分析-个人 * 代码 * 测试 * 合作 对项目的总结和分析-团体 * 管理 * 分工 对项目的总结和分析-自身 * 自身">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xzci.github.io/2018/01/22/总结/"/>
+
+
+
+
+
+  <title>总结  | XZC's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XZC's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">有疑问或者想讨论的，可以发送您的信息到xzci@outlook.com</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xzci.github.io/2018/01/22/总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XZC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XZC's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">总结 </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T23:17:34+08:00">
+                2018-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/项目/" itemprop="url" rel="index">
+                    <span itemprop="name">项目</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这是个大纲版，随便乱写，还没有时间整理（&lt;-这行什么时候被删掉就是整理好了）</p>
+<pre><code>对项目的总结和分析-个人
+* 代码
+* 测试
+* 合作
+对项目的总结和分析-团体
+* 管理
+* 分工
+对项目的总结和分析-自身
+* 自身
+</code></pre><a id="more"></a>
+<h1 id="对项目的总结和分析-个人"><a href="#对项目的总结和分析-个人" class="headerlink" title="对项目的总结和分析-个人"></a>对项目的总结和分析-个人</h1><p>这里就是单独对于团队成员的综合分析和理解。这里的个人不单单是我自己个人，而是其他任何可以被代替的人。<br>通过第一个项目，使我更加明确到，对于项目之中，尤其是大的项目，不能只考一两个牛人撑起这个项目，反而是需要各种各样的螺丝钉来完成这个项目，（螺丝钉可以被轻易的换掉，但是这个项目不会因为螺丝钉被换掉而产生问题）</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>为了能够以后对程序进行更好的维护和更新，所以首先要做到：</p>
+<ul>
+<li>代码风格（编程规约）</li>
+<li>代码设计（共通函数）</li>
+<li>继承关系</li>
+</ul>
+<p>保证这些之后，才能对程序的质量有所保证。</p>
+<h3 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h3><p>这里，根据团队，对编程的代码风格进行统一。比如<br>    变量名使用规则<br>    函数体行数<br>    具体的函数实现（一些函数禁止使用等）<br>这里的编程规范，可以根据公司团队自己制定的，或者根据大公司的标准，比如阿里，谷歌所公布的代码标准进行编写。<br>统一的格式，统一的换行，能够在对项目进行统计的时候，计算出代码行数，和传说中的<strong>千行bug率</strong>。来达到品质的要求。</p>
+<h3 id="代码设计"><a href="#代码设计" class="headerlink" title="代码设计"></a>代码设计</h3><p>这里是通过该项目中，如果存在功能相近，或者功能一致的函数的时候，建立相应的共通函数，如果语言中有继承，可以通过接口来实现。<br>来使得编程更加的简单。你不需要自己去实现每个功能的函数，通过调用，继承的方法。来获取相应的结果。<br>一开始经常容易犯的错误是，讲全部的功能实现在一起，比如，有一个需要先查找然后在赋值的功能，在一开始大学的时候，很自然会将他们全部写在一起，（这样查找出来的值就可以直接一步赋值，非常简单）但是在真正的项目中，往往你需要查找的数据范围是未知的，可能会出现<strong>脏数据</strong>， 那么如果程序出现问题，你要去查找这个问题的所在，如果按照上文的所说的情况，很可能需要非常长的时间才能找到这个错误。并且在查找的时候，你可能无法去判断这个错误的所在。<br>这时候有可能会问。为什么我会找不到这个错误的所在呢？我加个断点，或者在函数中添加一行打出log的语句不就好了？其实不然，往往有可能因为函数依赖的缘故，你可能无法去看到这个代码的文件，那么直接改code的debug法就会失败，并且在code中添加debug语句，很可能在最终发布的时候，忘记删除，造成更多的问题。<br>所以在一开始，保证程序的良好设计，首先要保持团队合作的这个重心去设计代码，比如上面的例子，可以将查找设置一个函数，通过其他测试文件，单独去测试这个查找功能，往往是更加良好的代码设计。</p>
+<h3 id="继承关系"><a href="#继承关系" class="headerlink" title="继承关系"></a>继承关系</h3><p>这是如果有相应的提供继承的语言中，你可以通过继承来达到简化代码量的方法。</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>一个好的代码是需要进行测试的。测试主要有： 单元测试，功能测试，性能测试，结合测试等。<br>每个测试都要自己去根据功能提供相应的测试，如果要做到全覆盖，可能会有成百上千的case。（根据客户的需求，可能根据不同的测试观点，制作同样的case）</p>
+<h2 id="合作"><a href="#合作" class="headerlink" title="合作"></a>合作</h2><p>主要是指，在公司中怎么样去实现相应的功能，并且能够在做好合理的划分。虽然每个人都可以各司其职，但是一开始的职责划分也是非常重要的，，比如对于同一项目可以有如下划分：</p>
+<ul>
+<li>中 难 易</li>
+<li>易 中 难</li>
+<li>易 难 中</li>
+<li>交替穿插</li>
+<li>其他&amp;混合</li>
+</ul>
+<h3 id="难-易-中"><a href="#难-易-中" class="headerlink" title="难 易 中"></a>难 易 中</h3><p>这样的划分是因为，在难的部分，可以充分理解这个需求，如果能够克服，那么以后的功能也会更见的去实现。如果难的地方发生延误，可以通过以后的功能拉回进度（因为难度逐渐降低，理论上完成的时间就会更少）</p>
+<h3 id="易-中-难"><a href="#易-中-难" class="headerlink" title="易 中 难"></a>易 中 难</h3><p>这样的划分是因为通过简单的部分来使得团队更好的去理解这个功能，通过由易到难的安排，逐步完成，但是如果易的地方发生延迟，基本上就是gg了。</p>
+<h3 id="易-难-中"><a href="#易-难-中" class="headerlink" title="易 难 中"></a>易 难 中</h3><p>这是第一个划分的改进版本。先由易的地方来了解相互的功能，建立相应的共通函数，逐步的去完成相应的设计。</p>
+<h3 id="交替穿插"><a href="#交替穿插" class="headerlink" title="交替穿插"></a>交替穿插</h3><p>这个是比较混乱的划分，首先要保证对功能划分的人员对功能的评估一定正确，这样很容易产生过松或过紧的情况。</p>
+<h3 id="其他-amp-混合"><a href="#其他-amp-混合" class="headerlink" title="其他&amp;混合"></a>其他&amp;混合</h3><p>这个是需要有技术很不错的人员在项目初期进行技术支持，对于新上项目的同事，随时解答问题，并做好相关的问题记录。这是一个行之有效的方法，但是因为价格过高（技术大牛的工资高，初期不安排任何任务）需要根据现实情况进行取舍。</p>
+<h1 id="对项目的总结和分析-团体"><a href="#对项目的总结和分析-团体" class="headerlink" title="对项目的总结和分析-团体"></a>对项目的总结和分析-团体</h1><h2 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h2><p>首先要保证每个人都知道自己要去做什么，这件事是由谁负责的。<br>每个任务都应该要有专人进行负责，出现问题，应该第一个进行沟通的是谁。等。<br>其中最为重要的是，要有<strong>书面记录</strong>，可以是聊天的信息，或者最烂是笔的记录。要留存信息，便于查阅。</p>
+<h2 id="分工"><a href="#分工" class="headerlink" title="分工"></a>分工</h2><p>跟上文类似</p>
+<h1 id="对项目的总结和分析-自身"><a href="#对项目的总结和分析-自身" class="headerlink" title="对项目的总结和分析-自身"></a>对项目的总结和分析-自身</h1><p>我主要的问题是</p>
+<ul>
+<li>单纯求快， 代码质量不高</li>
+<li>丢三拉四的，小问题不断</li>
+<li>做事不认知，不仔细</li>
+<li>有些规约没有遵守</li>
+<li>懒</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/18/study-of-R/" rel="next" title="study of R">
+                <i class="fa fa-chevron-left"></i> study of R
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/01/我的项目设计/" rel="prev" title="我的项目设计">
+                我的项目设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XZC</p>
+              <p class="site-description motion-element" itemprop="description">自言自语的无名小站</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#对项目的总结和分析-个人"><span class="nav-number">1.</span> <span class="nav-text">对项目的总结和分析-个人</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.1.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码风格"><span class="nav-number">1.1.1.</span> <span class="nav-text">代码风格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码设计"><span class="nav-number">1.1.2.</span> <span class="nav-text">代码设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承关系"><span class="nav-number">1.1.3.</span> <span class="nav-text">继承关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">1.2.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合作"><span class="nav-number">1.3.</span> <span class="nav-text">合作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#难-易-中"><span class="nav-number">1.3.1.</span> <span class="nav-text">难 易 中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#易-中-难"><span class="nav-number">1.3.2.</span> <span class="nav-text">易 中 难</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#易-难-中"><span class="nav-number">1.3.3.</span> <span class="nav-text">易 难 中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交替穿插"><span class="nav-number">1.3.4.</span> <span class="nav-text">交替穿插</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他-amp-混合"><span class="nav-number">1.3.5.</span> <span class="nav-text">其他&混合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对项目的总结和分析-团体"><span class="nav-number">2.</span> <span class="nav-text">对项目的总结和分析-团体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#管理"><span class="nav-number">2.1.</span> <span class="nav-text">管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分工"><span class="nav-number">2.2.</span> <span class="nav-text">分工</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对项目的总结和分析-自身"><span class="nav-number">3.</span> <span class="nav-text">对项目的总结和分析-自身</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XZC</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
