@@ -14,7 +14,7 @@ Here is the answer of <Thinking in Java> which is made by myself.
 
 创新一个包含一个float的类，并用这个类来展现别名机制。
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -48,7 +48,7 @@ class Test {
 
 编写一个计算速度的程序，它所使用的距离和时间都是常量。
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -62,7 +62,7 @@ public class Main {
 # Test 5
 创建一个名为Dog的类，它包含两个String域，name和says。 在main()方法种，创建两个Dog对象，一个名为Spot（它的叫声为“Ruff！”）另一个名为scruffy（它的叫声为“Wurf！”）然后显示它们的名字和叫声。
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -91,7 +91,7 @@ class Dog {
 # Test 6
 创建一个新的Dog的索引，并对其赋值为spot对象，测试用==和equals（）来比较所有引用的效果
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
