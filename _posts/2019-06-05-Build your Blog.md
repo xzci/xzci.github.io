@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: Build your Blog
 categories:
  - Tech note
 tags:
