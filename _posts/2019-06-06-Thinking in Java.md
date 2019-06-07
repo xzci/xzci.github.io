@@ -6,7 +6,7 @@ tags:
 - Java 
 ---
 
-Here is the answer of <Thinking in Java> which is made by myself.
+Here is the answer of __Thinking in Java__ which is made by myself.
 
 # Chapter 3
 
