@@ -1,7 +1,7 @@
 ---
 title: Thinking in Java
 categories:
- - Answer
+ - Answers
 tags:
 - Java 
 ---
@@ -352,6 +352,38 @@ public class Main {
 只用2层for和%找出素数
 
 ```java
+import java.util.Random;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Chapter4 c = new Chapter4();
+        c.CheckPrimeNumber0ToInput(0);
+    }
+}
+
+class Chapter4 {
+    //you should type a number which is larger than 0
+    void CheckPrimeNumber0ToInput(int num) {
+        int isPrimeNumber = 0;
+
+        for (int j = 0; j <= num; j++) {
+            if (j == 1 || j == 0)
+                isPrimeNumber = 1;
+            else {
+                for (int i = 2; i < j; i++)
+                    if ((j % i) == 0)
+                        isPrimeNumber++;
+            }
+            if (isPrimeNumber == 0)
+                System.out.println(j + " is Prime Number");
+            else
+                System.out.println(j + " is not Prime Number");
+            isPrimeNumber = 0;
+        }
+    }
+}
 ```
 
 ## Test 5
@@ -359,14 +391,91 @@ public class Main {
 
 ## Test 6
 
+增加两个参数，判断输入是否是在他们之间
+
+```java
+public class Main {
+    static int test(int testval, int target, int begin, int end)
+    {
+        int returnValue = 0;
+        if(testval > target)
+            returnValue = 1;
+        else if (testval < target)
+             returnValue = -1;
+        else
+            returnValue = 0;
+        if(testval <= end && testval >= begin)
+            System.out.println("test value is within the range");
+        else
+            System.out.println("test value is not within the range");
+
+        return returnValue;
+
+    }
+    public static void main(String[] args) {
+        System.out.println(test(5,10,2,8));
+        System.out.println(test(5,0,1,3));
+    }
+}
+```
+
 ## Test 7
 
 使用break 和return 打到99
 
 ```java
 // break
+public class Main {
+    static void test() {
+        for (int i = 1; i <= 100; i++) {
+
+            System.out.print(i + " ");
+            if ((i % 10) == 0) {
+                System.out.println();
+            }
+            if (i == 99)
+                break;
+        }
+    }
+
+    public static void main(String[] args) {
+        test();
+    }
+}
 ```
 
 ```java
 // return
+public class Main {
+    static void test() {
+        for (int i = 1; i <= 100; i++) {
+
+            System.out.print(i + " ");
+            if ((i % 10) == 0) {
+                System.out.println();
+            }
+            if (i == 99)
+                return;
+        }
+    }
+
+    public static void main(String[] args) {
+        test();
+    }
+}
 ```
+
+## Test 8
+
+写一个switch 开关，放入for中测试每次的情况，测试有break和没有break的区别
+
+```java
+```
+
+## Test 9
+
+输出斐波那契数列
+
+## Test 10
+
+输出4位数的吸血鬼数
