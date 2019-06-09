@@ -738,21 +738,197 @@ class Test {
 
 创建一个默认构造器，打印一行话
 
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Test t = new Test();
+    }
+}
+
+class Test {
+    Test() {
+        System.out.println("This is a sentence");
+    }
+}
+```
 
 ## Test 4
 
 为上一个问题添加一个重载的构造器，接受一个字符串参数，把自己的话和新增的话打印出来
 
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        Test t1 = new Test("again??");
+    }
+}
+
+class Test {
+    Test() {
+        System.out.println("This is a sentence");
+    }
+    Test(String str)
+    {
+        System.out.println("This is a sentence. " + str);
+    }
+}
+```
+
 ## Test 5
-创建一个Dog类，有一个重载的bark()方法，打印不同类型的狗吠，咆哮
+创建一个Dog类，有一个重载的bark()方法，打印不同类型的狗吠barking，咆哮 howling
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Dog myDog = new Dog(1);
+        Dog yourDog = new Dog("1");
+    }
+}
+
+class Dog {
+    Dog(int i) {
+        System.out.println("Barking");
+    }
+
+    Dog(String str) {
+        System.out.println("Howling");
+    }
+}
+```
 
 ## Test 6
 
 设置2个参数来实现重载，但是顺序不同，判断是否工作
 
+Because java does not Implicit convert data type, so these codes will all be fine to Java.
+But if you were writing C++ code, you should pay much attention on these.
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Dog dog1 = new Dog(1,1);
+        Dog dog2 = new Dog(1,1.0);
+        Dog dog3 = new Dog(1.0,1.0);
+        Dog dog4 = new Dog(1.0f,1.0);
+        Dog dog5 = new Dog(1.0,1.0f);
+        Dog dog6 = new Dog(1,1.0f);
+        Dog dog7 = new Dog(1.0f,1);
+        Dog dog8 = new Dog(1.0,1);
+        Dog dog9 = new Dog(1,1l);
+        Dog dog10 = new Dog(1l,1);
+    }
+}
+
+class Dog {
+    Dog(int i,float j) {
+        System.out.println("int float");
+    }
+    Dog(double i, double j) {
+        System.out.println("double double");
+    }
+    Dog(int i, int j) {
+        System.out.println("int int");
+    }
+    Dog(int i, double j) {
+        System.out.println("int double");
+    }
+    Dog(float i, int j) {
+        System.out.println("float int");
+    }
+    Dog(double i, int j) {
+        System.out.println("double int");
+    }
+    Dog(int i, long j) {
+        System.out.println("int long");
+    }
+    Dog(long i, int j) {
+        System.out.println("long int");
+    }
+    Dog(float i, double j) {
+        System.out.println("float double");
+    }
+    Dog(double i, float j) {
+        System.out.println("double float");
+    }
+}
+```
+
 ## Test 7
 
 创建一个没有构造器的类，在main中创建对象，验证是否有自动加入了默认构造器
 
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+
+        System.out.println("Work well");
+    }
+}
+
+class Dog {
+}
+```
+
+## Test 8
+
+写一个有2个方法的类，调用方法2次，一次单纯调用，一次使用this
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.g();
+    }
+}
+
+class Dog {
+    void f()
+    {
+        System.out.println("It's a test");
+    }
+    void g()
+    {
+        f();
+        this.f();
+    }
+}
+```
+
+## Test 9
+
+编写2个重载构造器，一个调用另外的一个
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        Dog dog1 = new Dog("Java");
+    }
+}
+
+class Dog {
+    Dog() {
+        this("C++");
+        System.out.println("Good baby\n");
+    }
+
+    Dog(String str) {
+        System.out.println("I like " + str.replace("Java", "C++"));
+    }
+}
+```
+
+## Test 10 - 12
+
+略
 
 
