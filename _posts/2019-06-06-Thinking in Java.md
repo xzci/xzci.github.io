@@ -470,12 +470,289 @@ public class Main {
 写一个switch 开关，放入for中测试每次的情况，测试有break和没有break的区别
 
 ```java
+// with break
+public class Main {
+    
+    public static void main(String[] args) {
+
+        for (int i = 0; i != 3; i++) {
+            switch (i) {
+                case 0:
+                    System.out.println("First");
+                    break;
+                case 1:
+                    System.out.println("Second");
+                    break;
+                case 2:
+                    System.out.println("Third");
+                    break;
+            }
+        }
+    }
+}
+```
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        for (int i = 0; i != 3; i++) {
+            switch (i) {
+                case 0:
+                    System.out.println("First");
+                case 1:
+                    System.out.println("Second");
+                case 2:
+                    System.out.println("Third");
+            }
+        }
+    }
+}
 ```
 
 ## Test 9
 
 输出斐波那契数列
 
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Fibonacci f = new Fibonacci(5);
+    }
+}
+
+class Fibonacci {
+    Fibonacci(int index) {
+        for (int i = 1; i <= index; i++) {
+            System.out.println(fibonacci(i));
+        }
+    }
+
+    int fibonacci(int i) {
+        if (i == 1 || i == 2)
+            return 1;
+        else
+            return fibonacci((i - 1)) + fibonacci((i - 2));
+    }
+}
+```
+
 ## Test 10
 
 输出4位数的吸血鬼数
+
+In this question, I made a big mistake, I should use method to replace the codes, because they are nearly same. (method in some way can help you type less code and make it readable).
+
+for example:
+
+>((ones * 10 + tens) * (hundreds * 10 + thousands) == i)
+
+I should add the new methods:
+
+```java
+static int multiply(int i, int j)
+{
+    return i * 10 + j;
+}
+
+static boolean check(int number, int i, int j)
+{
+    return number == (i * j);
+}
+static void print(int ones, int tens, int hundreds, int thousands)
+{
+    System.out.println("The Vampire number is " + i +
+                        " --" + ones + tens + " * " + hundreds + thousands);
+}
+```
+and replace my code like this:
+
+```java
+// ....
+// In this way, you can make your code look well and readable.
+if(check(i, multiply(ones, tens), multiply(hundreds, thousands)))
+    print(ones, tens, hundreds, thousands);
+// ....
+```
+and here is my old answer. pretty messy.
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        VampireNumber v = new VampireNumber();
+        v.vampireNumber();
+    }
+}
+
+
+class VampireNumber {
+    void vampireNumber() {
+        int ones, tens, hundreds, thousands;
+        for (int i = 1000; i < 10000; i++) {
+            
+            ones = i % 10;
+            tens = i / 10 % 10;
+            hundreds = i / 100 % 10;
+            thousands = i / 1000;
+
+            if(ones == 0 && tens == 0)
+                continue;
+            // 1
+            if ((ones * 10 + tens) * (hundreds * 10 + thousands) == i)
+            {
+                System.out.println("The Vampire number is " + i +
+                        " --" + ones + tens + " * " + hundreds + thousands);
+            }
+            // 2
+            else if ((ones * 10 + tens) * (thousands * 10 + hundreds) == i)
+            {
+                System.out.println("The Vampire number is " + i +
+                        " --" + ones + tens + " * " + thousands + hundreds);
+            }
+            // 3
+            else if ((ones * 10 + hundreds) * (tens  * 10 + thousands) == i)
+            {
+                System.out.println("The Vampire number is " + i +
+                        " --" + ones + hundreds + " * " + tens + thousands);
+            }
+            // 4
+            else if ((ones * 10 + hundreds) * (thousands * 10 + tens) == i)
+            {
+                System.out.println("The Vampire number is " + i +
+                        " --" + ones + hundreds + " * " + thousands + tens);
+            }
+            // 5
+            else if ((ones * 10 + thousands) * (tens * 10 + hundreds) == i)
+            {
+                System.out.println("The Vampire number is " + i +
+                        " --" + ones + thousands + " * " + tens + hundreds);
+            }
+            // 6
+            else if ((ones * 10 + thousands) * (hundreds * 10 + tens) == i)
+            {
+                System.out.println("The Vampire number is " + i +
+                        " --" + ones + thousands + " * " + hundreds + tens );
+            }
+
+            // 21 34
+            else if ((tens * 10 + ones) * (hundreds * 10 + thousands) == i)
+            {
+                System.out.println("The Vampire number is " + i +
+                        " --" + tens + ones + " * " + hundreds + thousands);
+            }
+            // 23 41
+            else if ((tens * 10 + hundreds) * (thousands * 10 + ones) == i)
+            {
+                System.out.println("The Vampire number is " + i +
+                        " --" + tens + hundreds + " * " + thousands + ones);
+            }
+            // 24 31
+            else if ((tens * 10 + thousands) * (hundreds * 10 + ones) == i)
+            {
+                System.out.println("The Vampire number is " + i +
+                        " --" + tens + thousands + " * " + hundreds + ones);
+            }
+
+            // 31 42
+            else if ((hundreds * 10 + ones) * (thousands * 10 + tens) == i)
+            {
+                System.out.println("The Vampire number is " + i +
+                        " --" + hundreds + ones + " * " + thousands + tens);
+            }
+            // 32 41
+            else if ((hundreds * 10 + tens) * (thousands * 10 + ones) == i )
+            {
+                System.out.println("The Vampire number is " + i +
+                        " --" + hundreds + tens + " * " + thousands + ones);
+            }
+        }
+    }
+}
+```
+
+
+# Chapter 5
+
+## Test 1
+
+创建类，包含一个string，验证被初始化为了null
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        if(t.str == null)
+            System.out.println("It's null");
+        else
+            System.out.println("It isn't null");
+    }
+}
+
+class Test {
+    String str;
+}
+```
+
+## Test 2
+
+创建类，判断差异，一个string在定义时被初始化，一个通过构造器初始化
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        Test t = new Test("a value");
+        System.out.println("t.str " + t.str);
+        System.out.println("t.testStr " + t.testStr);
+
+        Test t1 = new Test();
+        System.out.println("t1.str " + t1.str);
+        System.out.println("t1.testStr " + t1.testStr);
+
+        t1.str = "131";
+        t1.testStr = "13123";
+        System.out.println("t1.str " + t1.str);
+        System.out.println("t1.testStr " + t1.testStr);
+    }
+}
+
+class Test {
+    String str = "get";
+    String testStr;
+    Test(String testStr)
+    {
+        this.testStr = testStr;
+    }
+    Test()
+    {
+
+    }
+}
+```
+## Test 3
+
+创建一个默认构造器，打印一行话
+
+
+## Test 4
+
+为上一个问题添加一个重载的构造器，接受一个字符串参数，把自己的话和新增的话打印出来
+
+## Test 5
+创建一个Dog类，有一个重载的bark()方法，打印不同类型的狗吠，咆哮
+
+## Test 6
+
+设置2个参数来实现重载，但是顺序不同，判断是否工作
+
+## Test 7
+
+创建一个没有构造器的类，在main中创建对象，验证是否有自动加入了默认构造器
+
+
+
