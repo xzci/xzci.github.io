@@ -6,7 +6,8 @@ tags:
 - Java 
 ---
 
-Here is the answer of __Thinking in Java__ which is made by myself.
+Here is some answers of __Thinking in Java__, during the time i am studying Java, I find lots of differences and improvements between C++. I try my best to finish all questions behind every chapters, because I think the best way to study a programming language is to code as much as can. And here they are, these questions can be good practices for me to train my coding ability.  __last update: 19_06_10__ 
+ 
 
 # Chapter 3
 
@@ -931,4 +932,86 @@ class Dog {
 
 略
 
+## Test 13
 
+验证段落中的语句
+
+```java
+class Cup {
+    Cup(int marker) {
+        System.out.println("Cup(" + marker + ")");
+    }
+
+    void f(int marker) {
+        System.out.println("f(" + marker + ")");
+    }
+}
+
+class Cups {
+    static Cup cup1;
+    static Cup cup2;
+
+    static {
+        cup1 = new Cup(1);
+        cup2 = new Cup(2);
+    }
+
+    Cups() {
+        System.out.println("Cups()");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("Inside main()");
+        Cups.cup1.f(99);
+    }
+
+    static Cups cups1 = new Cups();
+    //static Cups cups2 = new Cups();
+}
+```
+
+## Test 14
+
+编写一个类，拥有2个字符串域，一个在定义的时候初始化，一个在静态块中初始化，加入一个静态方法，打印他们的值，证明，他们会在使用之前完成初始化的动作
+```java
+class Test14 {
+    static String s = "s";
+    static String s1;
+    static {
+        s1 = "s1";
+        System.out.println("s1 is initialized");
+    }
+    static void f() {
+        System.out.println(s + " and " + s1);
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("Inside main()");
+        Test14.f();
+    }
+
+}
+```
+
+# Chapter 6
+
+## Test 1
+
+## Test 1
+
+## Test 1
+
+## Test 1
+
+## Test 1
+
+## Test 1
+
+## Test 1

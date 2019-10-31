@@ -1,8 +1,9 @@
 ---
 title: Multiple answers
 categories:
- - algorithm
+ - Notes
 tags:
+ - Algorithms
 ---
 
 Hi guys, here are some interesting questions i have collected. Most of them have multiple answers. Those can help you increase both you programming skills and mathematics.
