@@ -16,7 +16,7 @@ tags:
 
 ## 单独输出整数每个位置上的数
 
-```c
+```c++
 void print(int unsigned N)
 {
     if(N >= 10)
