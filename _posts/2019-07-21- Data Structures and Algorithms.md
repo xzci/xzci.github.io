@@ -16,7 +16,7 @@ tags:
 
 ## 单独输出整数每个位置上的数
 
-```C
+```c
 void print(int unsigned N)
 {
     if(N >= 10)
@@ -33,13 +33,13 @@ void print(int unsigned N)
 
 ### 分治法
 
-```C
+```c
 //待补充
 ```
 
 ### 最简单的大O算法
 
-```C
+```c
 int MaxSubSequence(const int A[], int N)
 {
     int thisSum, maxSum = 0;
@@ -59,7 +59,7 @@ int MaxSubSequence(const int A[], int N)
 
 ## 二分搜索
 
-```C
+```c
 #define NOT_FOUND -1
 int BinarySearch(const float A[], float x, int N)
 {
@@ -82,7 +82,7 @@ int BinarySearch(const float A[], float x, int N)
 
 ## 计算最大公因数 （欧几里得算法）
 
-```C
+```c
 long Gcd(long m, long n)
 {
     long rem;
@@ -98,7 +98,7 @@ long Gcd(long m, long n)
 
 ## 求幂（优化版）
 
-```C
+```c
 int Isbool(long x)
 {
     if(x % 2 == 0)
