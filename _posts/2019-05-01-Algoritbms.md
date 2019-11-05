@@ -6,8 +6,6 @@ tags:
 - 数据结构
 ---
 
----
-
 I have deleted all my posts and i want to rebuild a new blog, including new tools and new programming languages. 
 By the way, I got an conditional offer from UQ， Hope i can pass all the text. :smile:
 
