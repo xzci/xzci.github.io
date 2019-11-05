@@ -75,7 +75,7 @@ design and code---------->get wrong or do not understand
 3. 使用Merge方法
 4. Select New 这个datatable，并删除flag column中值为空的行。
 
-```Csharp
+```C#
 static DataTable CompareAndDelete(DataTable dtNew, DataTable dtOld)
 {
     // DataTable has only 2 columns
@@ -103,7 +103,7 @@ static DataTable CompareAndDelete(DataTable dtNew, DataTable dtOld)
 
 在使用dataTable的select时，发现了奇怪的问题。
 
-```Csharp
+```csharp
 DataTable Name = new DataTable();
 Name.Columns.Add("Test");
 Name.Columns.Add("TestA");
