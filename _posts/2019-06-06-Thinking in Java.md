@@ -1,7 +1,7 @@
 ---
 title: Thinking in Java
 categories:
- - Answers
+- Answers
 tags:
 - Java 
 ---

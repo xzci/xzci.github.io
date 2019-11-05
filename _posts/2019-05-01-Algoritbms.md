@@ -6,12 +6,10 @@ tags:
 - 数据结构
 ---
 
-# 综述
-* 基本数据结构
-* Mastering Algorithms with C 代码使用
+---
 
-
-
+I have deleted all my posts and i want to rebuild a new blog, including new tools and new programming languages. 
+By the way, I got an conditional offer from UQ， Hope i can pass all the text. :smile:
 
 # 基本数据结构
 
