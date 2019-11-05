@@ -6,13 +6,12 @@ tags:
 - 数据结构
 ---
 
+# 综述
+* 基本数据结构
+* Mastering Algorithms with C 代码使用
 
-这是因为对可能成为**API调用者**的恐惧而创建的项目,使用C作为编程的语言,为了全部都由自己完成，并且理解数据结构
 
 
-代码主要使用的这本书：
-
->Mastering Algorithms with C
 
 # 基本数据结构
 
