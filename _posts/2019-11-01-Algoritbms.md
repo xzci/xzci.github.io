@@ -6,9 +6,12 @@ tags:
 - 数据结构
 ---
 
+
 这是因为对可能成为**API调用者**的恐惧而创建的项目,使用C作为编程的语言,为了全部都由自己完成，并且理解数据结构
 
+
 代码主要使用的这本书：
+
 >Mastering Algorithms with C
 
 # 基本数据结构
@@ -58,7 +61,8 @@ tags:
 
 如果插入、删除的__位置为NULL__，则默认插入、删除的位置在表头。
 
-```C 节点定义
+```c 
+//节点定义
 typedef struct ListElmt_
 {
     void *data; // can use point to get the real data
@@ -77,7 +81,8 @@ typedef struct List_
 
 然后定义相关的函数： 增删查改
 
-```C 接口函数
+```c 
+//接口函数
 void list_init(List *list, void(*destroy)(void *data));
 void list_destroy(List *list);
 
@@ -99,7 +104,8 @@ int list_rem_next(List *list, ListElmt *element, void **data);
 #define list_next(element) ((element)->next)
 ```
 
-```C 函数实现
+```c 
+//函数实现
 void list_init(List *list, void(*destroy)(void *data))
 {
     list->size = 0;
@@ -192,11 +198,13 @@ int list_rem_next(List *list, ListElmt *element, void **data)
 
 栈的实现方式很简单，可以通过很多的方式来实现，栈只要保证操作只在头部就可以称之为栈。这里栈的实现是利用先前做出的假设，**如果插入位置为空的话将操作位置设定为表的头部**
 
-```C 节点定义
+```c 
+//节点定义
 typedef List Stack;
 ```
 
-```C 接口函数
+```c 
+//接口函数
 #define stack_init list_init
 #define stack_destroy list_destroy
 
@@ -207,7 +215,8 @@ int stack_push(Stack *stack, const void *data);
 int stack_pop(Stack *stack, void **data);
 ```
 
-```C 函数实现
+```c 
+//函数实现
 int stack_push(Stack *stack, const void *data)
 {
     return list_ins_next(stack, NULL, data);
@@ -224,11 +233,13 @@ int stack_pop(Stack *stack, void **data)
 队列也可以看作特殊的链表，操作分别在头尾两端。在头部进行删除，在尾部进行插入。
 同栈一样，没有操作内部节点的接口。
 
-```C 节点定义
+```c 
+//节点定义
 typedef List Queue;
 ```
 
-```C 接口函数
+```c 
+//接口函数
 #define queue_init list_init
 #define queue_destroy list_destroy
 
@@ -239,7 +250,8 @@ int queue_enqueue(Queue *queue, const void *data);
 int queue_dequeue(Queue *queue, void **data);
 ```
 
-```C 函数实现
+```c 
+//函数实现
 int queue_enqueue(Queue *queue, const void *data)
 {
     return list_ins_next(queue, list_tail(queue), data);
@@ -260,11 +272,13 @@ int queue_dequeue(Queue *queue, void **data)
 
 集合是一种很特殊的数据结构，（set），它所拥有的性质**元素唯一性**，可以为编程提供很大的便利。比如去重可以直接将数据存入到set就可以了。
 
-```C 节点定义
+```c 
+//节点定义
 typedef List Set;
 ```
 
-```C 接口函数
+```c 
+//接口函数
 void set_init(Set *set, int(*match)(const void *key1, const void *key2), void(*destroy)(void *data));
 int set_insert(Set *set, const void *data);
 int set_remove(Set *set, void **data);
@@ -279,7 +293,8 @@ int set_is_equal(const Set *set1, const Set *set2);
 #define set_destroy list_destroy
 ```
 
-```C 函数实现
+```c 
+//函数实现
 void set_init(Set *set, int(*match)(const void *key1, const void *key2), void(*destroy)(void *data))
 {
     list_init(set, destroy);
@@ -427,7 +442,8 @@ int set_is_equal(const Set *set1, const Set *set2)
 区块链等新的技术基本上也利用了如此的原理来实现。
 哈希表，通过唯一的哈希值保证每个元素都可以在O(1)的时间内被访问。
 
-```C 节点定义
+```c 
+//节点定义
 typedef struct CHTbl_
 {
     int buckets;
@@ -440,7 +456,8 @@ typedef struct CHTbl_
 }CHTbl;
 ```
 
-```C 接口函数
+```c 
+//接口函数
 int chtbl_init(CHTbl *htbl, int buckets, int(*h)(const void *key),
     int(*match)(const void *key1, const void *key2), void(*destroy)(void *data));
 void chtbl_destroy(CHTbl *htbl);
@@ -451,7 +468,8 @@ int chtbl_lookup(const CHTbl *htbl, void **data);
 #define chtbl_size(htbl) ((htbl)->size)
 ```
 
-```C 函数实现
+```c 
+//函数实现
 int chtbl_init(CHTbl *htbl, int buckets, int(*h)(const void *key),
     int(*match)(const void *key1, const void *key2), void(*destroy)(void *data))
 {
@@ -556,7 +574,8 @@ int chtbl_lookup(const CHTbl *htbl, void **data)
 
 树是一定要熟练掌握的数据结构，包括相应的算法，比如，反转二叉树，最短路径等，一定要在理解的前提下，可以手写代码。
 
-```C 节点定义
+```c 
+//节点定义
 typedef struct BiTreeNode_
 {
     void *data;
@@ -574,7 +593,8 @@ typedef struct BiTree_
 } BiTree;
 ```
 
-```C 接口函数
+```c 
+//接口函数
 void bitree_init(BiTree *tree, void(*destroy) (void *data));
 void bitree_destroy(BiTree *tree);
 int bitree_ins_left(BiTree *tree, BiTreeNode *node, const void *data);
@@ -592,7 +612,8 @@ int bitree_merge(BiTree *merge, BiTree *left, BiTree *right, const void *data);
 #define bitree_right(node) ((node)->right)
 ```
 
-```C 函数实现
+```c 
+//函数实现
 
 ```
 
