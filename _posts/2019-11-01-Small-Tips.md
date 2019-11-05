@@ -6,6 +6,8 @@ tags:
 - Others
 ---
 
+作为个人不知道如何分类的一些反思和总结。
+
 # 总结
 
 ## 封装
@@ -75,7 +77,7 @@ design and code---------->get wrong or do not understand
 3. 使用Merge方法
 4. Select New 这个datatable，并删除flag column中值为空的行。
 
-```C#
+```csharp
 static DataTable CompareAndDelete(DataTable dtNew, DataTable dtOld)
 {
     // DataTable has only 2 columns
