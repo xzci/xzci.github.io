@@ -1,0 +1,241 @@
+---
+title: Study of R
+categories:
+ - Notes
+tags:
+- R
+---
+
+# help
+You can type these codes to help you to understand the funcation which R is provided
+```R
+# get the help of function
+help(functionName)
+# get the args of one function
+args(functionName)
+# get example of one function
+example(functionName)
+
+# Or you can use opeaator '?' which is same as help
+?functionname
+```
+Or perhaps you don't know the exactly name of function, you can use these:
+```R
+help.search(partOfFunctionName)
+# Or
+??partOfFunctionName
+```
+If you want some details, or your computer dosen't have the document of R. you can type this code:
+```R
+RSiteSearch(functionName)
+```
+# R
+In fact, some constant values or functions you can type the name at will:
+```R
+pi
+[1] 3.141593
+sqrt(2)
+[1] 1.414214
+```
+>When you enter expressions like that, R evaluates the expression and then implicitly calls the print function
+By the way, you can also write down the code `print()` to print the value of variable. 
+
+## Vector
+In your task, maybe you will find your sometime, data has miss one or two value,
+you can use `NA` to replace it. if you do this. be sure to use `na.rm=TRUE`
+For example, When you use the function to calculate the average
+```R
+x <- c(0,1,1,2,3,NA)
+mean(x, na.rm=TRUE)
+```
+## Sequence
+To create the simple sequence n, n+1, n+2, ..., m.
+You can use two different way to initialize a sequence:
+* use operator `:` with two numbers. the first one means the begin of the sequence, the last one means the end of this sequence.
+* or you can type all this function name `seq` to build a sequence. using from as the begin, and to as the end of the sequence.  
+
+The squence default the step is 1, if you want to change special step, use `by` to change it. 
+```R
+1:5
+# [1] 1 2 3 4 5
+seq(from=1, to=5, by=2)
+# [1] 1 3 5
+```
+In some time you don't know the exactly the step which you need. you can use `length.out = #step#` #step# you can replace it as the count Which you want get in Vector or Sequence. The R will calculate the step.
+```R
+seq(from=0, to=20, length.out=5)
+# [1] 0 5 10 15 20
+```
+If you want to create repeated sequence, you __must__ use `req` to initialize
+```R
+rep(1, times=5)
+# [1] 1 1 1 1 1
+```
+## Compare
+The R can compare between numbers, squence or vector. even number and squence.
+In that case the only number will compare the value from vector, one by one. 
+and the operator is same as C. using the `<`, `>`, `>=`, `<=`, `==`, `!=`.
+for example:
+```R
+x <- c(3,4,4)
+v <- 2
+x == v
+# [1] FALSE FALSE FALSE
+```
+## Get the value
+The way to get value from Vector or Squence is same as C.
+```R
+x <- seq(from=1, to=5)
+x[1]
+# [1] 1
+```
+## Selecting Vector Elements
+It's same as python.
+```R
+fib <- c(0,1,1,2,3,5,8,13,21,34)
+fib[c(1,2,4,8)]
+# [1] 0 1 2 13
+```
+__Be care__ How to deal with __[-1]__ R is different from Python.
+Cheak the different:
+```R
+fib[1:3]
+# [1] 0 1 1
+fib[-(1:3)] 
+# [1] 2 3 5 8 13 21 34
+```
+In python -index, means that is a value, which The penultimate index of  Vector or Sequence.
+But In R, -index, means the index in Vector or Sequence will be ignored.
+
+# Operator
+## <-
+assign a value to name
+syntax:
+```R
+# These are same
+name <- value
+value -> name
+```
+And `<-` means the local variable, when you want to use the global variable, you should use `<<-`
+
+## c
+Use the c() to initialize a vector.
+You __can not__ use `C`.
+```R
+c(1,1,2,3,5,8,13,21)
+# [1] 1 1 2 3 5 8 13 21
+v1 <- c(1,2,3)
+v3 <- c("A","B","C")
+c(v1,v3)
+# [1] "1" "2" "3" "A" "B" "C"
+```
+### Be Care
+when you give different type in one vector, R will change some types, to make all the types are same.
+for example is case below, the vector has two different types, numeric, character. Before creating the vector, thereby(从而) making the data elements
+compatible(兼容).
+```R
+mode(3.1415)
+# [1] "numeric"
+mode("foo")
+# [1] "character"
+c(3.1415, "foo")
+# [1] "3.1415" "foo"
+mode(c(3.1415, "foo"))
+# "character"
+```
+
+# funcation
+## cat
+Use this funcation to combine multiple items into one string.
+Be noticed that the __cat__ put one _space_ between each items. for example:
+```R
+cat("The zero occurs at", 2*pi, "radians.", "\n")
+# The zero occurs at 6.283185 radians.
+```
+* You must provide a newline __character (\n)__ to terminate the line.
+* A serious limitation is that it cannot print compound(夝坈) data structures such as matrices and lists.
+
+## ls()
+The function displays the name of object in workspace.
+or you can yuo `ls.str()` to show more details.
+```R
+# if you workspace is empty
+ls()
+# character(0)
+x <- 3
+ls()
+# [1] "x"
+# use ls.str() to get more details
+ls.str()
+# x :  num 3
+```
+### AddSomeThing
+The variables which begins with a dot(.) name are __considered hidden and are not and are not normally of interest to users__
+```R
+.x <-10
+ls()
+# character(0)
+```
+but you can use `ls(all.name=TRUE)` to show all variables include the hiddened one. _R is Case sensitive_
+
+## rm()
+Remove the variables.
+for example 
+```R
+x <- 10
+rm(x)
+ls()
+# character(0)
+```
+if you want to remove all variables, use `rm(list=ls())`
+>Never put rm(list=ls()) into code you share with others, such as a library function or sample code sent to a mailing list. Deleting all the variables in someone else’s workspace is worse than rude and will make you extremely unpopular.
+
+## mode()
+To cheak the type of variables.
+```R
+mode(3.14)
+# [1] "numeric"
+```
+
+## Vector Math Function
+* mean (average value)
+* median
+* standard deviation 
+* variance (方差)
+* correlation (相关系数)
+* covariance (坝方差)
+use these function below:
+    • mean(x)
+    • median(x)
+    • sd(x)
+    • var(x)
+    • cor(x, y)
+    • cov(x, y)
+
+
+## names()
+Give the squence or vector every column a name.
+if you do not give enough names, R will give that column named  `<NA>`
+Then you can just use name to get the value.
+```R
+v <- c("123", "123", "123")
+names(v)<-c("test1")
+v
+# test1  <NA>  <NA> 
+# "123" "123" "123" 
+```
+```R
+v["test1"]
+# test1 
+# "123" 
+```
+
+
+# Packages
+You can use Packages to help you finish a lot of things more easily.
+```R
+# This funcation will show all the function support in the libray
+libray()
+# Or you can use the code below
+install.packages()[,c("Package", "Version")]
+```
