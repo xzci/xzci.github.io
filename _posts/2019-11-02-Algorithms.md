@@ -1,10 +1,12 @@
 ---
-title: 数据结构
+title: 数据结构和算法
 categories:
  - 中文笔记
 tags:
 - 数据结构
 - Algorithms
+- C
+- Java
 ---
 
 通过反复的练习，达到自己手写的程度（白板写代码），基本上为了理解好的代码，进行的代码摘抄。
@@ -612,7 +614,109 @@ int bitree_merge(BiTree *merge, BiTree *left, BiTree *right, const void *data);
 
 # 基本算法
 
-## 查找
+使用java 语言进行实现
 
 ## 二分查找
 
+### 递归实现
+
+```java
+    public static int rank(int key, int []a, int lo, int hi) {
+        if(lo > hi)
+            return -1;
+        int mid = lo + (hi - lo) / 2;
+        if (key < a[mid])
+            return rank(key, a, lo,mid -1);
+        else if (key > a[mid])
+            return rank(key, a, mid+1, hi);
+        else
+            return mid;
+
+    }
+    public static int rank(int key, int []a) {
+        return rank(key, a, 0, a.length - 1);
+    }
+
+```
+
+### 循环实现
+
+```java
+ public static int rank(int key, int []a) {
+        int lo = 0;
+        int hi = a.length - 1;
+        while(lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (key < a[mid])
+                hi = mid - 1;
+            else if (key > a[mid])
+                lo = mid + 1;
+            else
+                return mid;
+        }
+        return -1;
+    }
+```
+
+
+```java
+class MySort {
+    private static boolean less(Comparable v, Comparable w) {
+        return v.compareTo(w) < 0;
+    }
+    private static void exch(Comparable[] a, int i, int j) {
+        Comparable t = a[i];
+        a[i] = a[j];
+        a[j] = t;
+    }
+    public static void sort(Comparable[] a) {
+        // 实现
+    }
+}
+```
+
+## 选择排序
+
+```java
+public static void sort(Comparable[] a) {
+        int N = a.length;
+        for(int i = 0; i < N; i++) {
+            int min = i;
+            for (int j = i + 1; j < N; j++) {
+                if (less(a[j], a[min]))
+                    min = j;
+            }
+            exch(a, i, min);
+        }
+}
+```
+
+## 插入排序
+
+```java
+public static void sort(Comparable[] a) {
+    int N = a.length;
+    for (int i = 0; i < N; i++) {
+        for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
+            exch(a, j, j - 1);
+        }
+    }
+}
+```
+
+## 希尔排序
+
+```java
+public static void sort(Comparable[] a) {
+    int N = a.length;
+    int h = 1;
+    while(h < N/3)
+        h = 3 * h + 1;
+    while(h >= 1) {
+        for(int i = h; i < N; i++) 
+            for(int j = i; j >= h && less(a[j], a[j - h]); j -= h) 
+                exch(a, j, j - h);
+        h = h / 3;
+    }
+}
+```
