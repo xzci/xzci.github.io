@@ -612,7 +612,83 @@ int bitree_merge(BiTree *merge, BiTree *left, BiTree *right, const void *data);
 
 ```
 
-# 基本算法
+# 基本算法 （C）
+
+## 最大子序列和
+
+```c
+int max_sub_sequence(const int a[], int n) {
+    int this_sum, max_sum;
+    this_sum = max_sum = 0;
+    for(int i = 0; i < N; i++) {
+        this_sum += a[i];
+        if(this_sum > max_sum)
+            max_sum = this_sum;
+        else if(this_sum < 0)
+            this_sum = 0;
+    }
+    return max_sum;
+}
+```
+
+## 对分查找
+
+```c
+#define NOTFOUND -1
+int binary_search(const int a[], int x, int n) {
+    int low, mid, high;
+    low = 0;
+    high = n - 1;
+    while(low <= high) {
+        mid = (low + high) / 2;
+        if(a[mid] < x)
+            low = mid + 1;
+        else if(a[mid] > x)
+                high = mid - 1;
+        else
+            return mid;
+    }
+    return -1;
+    //return NOTFOUND;
+}
+```
+
+## 欧几里得算法（计算最大公约数）
+
+```c
+unsigned int gcd(unsigned int m, unsigned int n) {
+    unsigned int rem;
+    while(n > 0) {
+        rem = m % n;
+        m = n;
+        n = rem;
+    }
+    return m;
+}
+```
+
+## 求幂运算 (幂大于0)
+
+```c
+int is_even(int n) {
+    if(n % 2)
+        return 0;
+    else
+        return 1;
+}
+long int my_pow(long int x, unsigned int n) {
+    if(n == 0)
+        return 1;
+    if(n == 1)
+        return x;
+    if(is_even(n))
+        return my_pow(x * x, n / 2);
+    else
+        return my_pow(x * x, n / 2) * x;
+}
+```
+
+# 基本算法 （JAVA）
 
 使用java 语言进行实现
 
