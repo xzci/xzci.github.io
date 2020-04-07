@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Remove Duplicates from Sorted Array
 categories:
 tags:
 - C++

@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Palindrome Number
 categories:
 tags:
 - C++

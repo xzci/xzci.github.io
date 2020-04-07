@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Maximum 69 Number
 categories:
 tags:
 - C++

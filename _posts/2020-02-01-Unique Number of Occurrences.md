@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title:  Unique Number of Occurrences
 categories:
 tags:
 - C++

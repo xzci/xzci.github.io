@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title:  Element Appearing More Than 25% In Sorted Array
 categories:
 tags:
 - C++

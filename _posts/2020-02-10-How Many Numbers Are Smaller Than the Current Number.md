@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: How Many Numbers Are Smaller Than the Current Number
 categories:
 tags:
 - C++

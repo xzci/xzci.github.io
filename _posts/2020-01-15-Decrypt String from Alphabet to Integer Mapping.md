@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Decrypt String from Alphabet to Integer Mapping
 categories:
 tags:
 - C++

@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Reverse Integer 15ms 77.99%
 categories:
 tags:
 - C++

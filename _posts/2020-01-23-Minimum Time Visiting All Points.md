@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Minimum Time Visiting All Points
 categories:
 tags:
 - C++

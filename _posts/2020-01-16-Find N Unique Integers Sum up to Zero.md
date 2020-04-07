@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title:  Find N Unique Integers Sum up to Zero
 categories:
 tags:
 - C++

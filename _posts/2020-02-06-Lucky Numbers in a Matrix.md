@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Lucky Numbers in a Matrix
 categories:
 tags:
 - C++

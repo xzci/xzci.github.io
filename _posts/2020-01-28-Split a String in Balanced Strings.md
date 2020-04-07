@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Split a String in Balanced Strings
 categories:
 tags:
 - C++

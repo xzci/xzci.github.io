@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Play with Chips
 categories:
 tags:
 - C++

@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Create Target Array in the Given Order
 categories:
 tags:
 - C++

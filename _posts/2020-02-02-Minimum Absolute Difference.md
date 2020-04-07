@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Minimum Absolute Difference
 categories:
 tags:
 - C++

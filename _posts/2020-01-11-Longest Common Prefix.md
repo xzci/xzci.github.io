@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Longest Common Prefix
 categories:
 tags:
 - C++

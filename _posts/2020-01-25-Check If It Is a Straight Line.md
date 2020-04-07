@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Check If It Is a Straight Line
 categories:
 tags:
 - C++

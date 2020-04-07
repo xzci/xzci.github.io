@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Subtract the Product and Sum of Digits of an Integer    
 categories:
 tags:
 - C++

@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title:  Replace Elements with Greatest Element on Right Side
 categories:
 tags:
 - C++

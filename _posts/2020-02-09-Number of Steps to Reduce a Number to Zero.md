@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title: Number of Steps to Reduce a Number to Zero
 categories:
 tags:
 - C++

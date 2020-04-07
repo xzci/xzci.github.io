@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title:  Convert Binary Number in a Linked List to Integer
 categories:
 tags:
 - C++

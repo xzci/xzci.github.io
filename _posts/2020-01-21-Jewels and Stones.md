@@ -1,5 +1,5 @@
 ---
-title: Leetcode
+title:  Jewels and Stones
 categories:
 tags:
 - C++
