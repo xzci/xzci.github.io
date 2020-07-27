@@ -1,5 +1,5 @@
 ---
-title: Maximum Number of Balloons
+title: Remove Palindromic Subsequences
 categories:
 tags:
 - C++

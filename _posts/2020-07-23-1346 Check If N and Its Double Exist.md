@@ -1,5 +1,5 @@
 ---
-title: Maximum Number of Balloons
+title: Check If N and Its Double Exist
 categories:
 tags:
 - C++

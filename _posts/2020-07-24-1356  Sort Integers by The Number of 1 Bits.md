@@ -1,5 +1,5 @@
 ---
-title: Maximum Number of Balloons
+title: Sort Integers by The Number of 1 Bits
 categories:
 tags:
 - C++
