@@ -7,7 +7,7 @@ tags:
 - Algorithms
 ---
 
-# <-E 896l> Monotonic Array
+# <-E 896> Monotonic Array
 
 ```c++
 class Solution {
