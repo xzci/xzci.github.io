@@ -14,18 +14,18 @@ class Solution {
 public:
     vector<int> shortestToChar(string S, char C) {
         vector<int> ans(S.size(), -1);
-        vector<int> martch;
+        vector<int> march;
         int index = 0;
         for(auto i : S) {
             if(i == C) {
                 ans[index] = 0;
-                martch.push_back(index);
+                march.push_back(index);
             }
             index++;
         }
         int add = 1;
         for(auto j : S) {
-            for(auto i : martch) {
+            for(auto i : march) {
                 if(i+ add < S.size())
                     if(ans[i + add] == -1)
                     ans[i + add] = add;
