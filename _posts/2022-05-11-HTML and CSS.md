@@ -9,7 +9,7 @@ tags:
 
 # HTML and CSS
 
-10 next one
+This a note of studying HTML and CSS
 
 ## the first class - HTML
 
@@ -30,6 +30,7 @@ shows on the search engine
 Do not index page
 ```
 
+## Shortcut
 __command + enter__ add a new ling whatever your mouse are
 
 __shift + option + down__ copy the line
@@ -55,4 +56,79 @@ do not repeat id in the same page
 
 HTML5 Semantic Tags
 
+
 ![](/images/Semantic_Tags.png)
+
+
+The difference between an ID and a class is that an ID is only used to identify one single element in our HTML. IDs are only used when one element on the page should have a particular style applied to it. However, a class can be used to identify more than one HTML element.
+
+
+https://fonts.google.com/
+
+add font
+
+
+## CSS Units
+
+Absolute
+
+```
+cm Centimeter
+mm Millimeters
+in Inches
+px Pixels (1px = 1/96 of 1 in)
+pt Ponint (1pt = 1/72 of 1 in)
+pc Picas picas (1pc = 12 pt)
+```
+
+Relative
+```
+%   To parent element
+em  To font-size of parent element
+rem To font size of root element
+vw  To 1% of viewport width
+vh  To 1% of viewport height
+```
+
+find beauty color:
+https://www.color-hex.com/
+
+
+```
+- margin
+-- border (outside)
+--- padding (inside)
+---- element
+
+```
+
+the one in the furthdown will overwirte the furthup in css
+
+## display
+
+make inline as block :
+```
+display: block;
+```
+
+make block as inline :
+```
+display: inline;
+```
+
+make block as inline and use margin and width:
+```
+display: inline-block;
+```
+
+## Position
+
+__Static__ Not effected by tblr(Top, bottom, left, right) properties/values
+
+__Relative__ tblr values cause element to be moved from its normal position
+
+__Absolute__ Positioned relative to its parent element that is positioned "relative"
+
+__Fixed__ Positioned relative to the viewport
+
+__Sticky__ Positioned based on scroll position
