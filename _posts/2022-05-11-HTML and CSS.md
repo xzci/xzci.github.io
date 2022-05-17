@@ -63,9 +63,6 @@ HTML5 Semantic Tags
 The difference between an ID and a class is that an ID is only used to identify one single element in our HTML. IDs are only used when one element on the page should have a particular style applied to it. However, a class can be used to identify more than one HTML element.
 
 
-https://fonts.google.com/
-
-add font
 
 
 ## CSS Units
@@ -90,8 +87,17 @@ vw  To 1% of viewport width
 vh  To 1% of viewport height
 ```
 
+## Useful links
+
 find beauty color:
 https://www.color-hex.com/
+
+font icon
+https://fontawesome.com/start
+
+https://fonts.google.com/
+
+add font
 
 
 ```
@@ -99,7 +105,6 @@ https://www.color-hex.com/
 -- border (outside)
 --- padding (inside)
 ---- element
-
 ```
 
 the one in the furthdown will overwirte the furthup in css
@@ -132,3 +137,12 @@ __Absolute__ Positioned relative to its parent element that is positioned "relat
 __Fixed__ Positioned relative to the viewport
 
 __Sticky__ Positioned based on scroll position
+
+## Responsive Design
+
+### Practices To Use
+- Set the viewport / scale
+- Use fluid widths as oppose to fixed 
+- Media queries - Different css styling for different screeen sizes
+- Rem units over px
+- Mobile first method
