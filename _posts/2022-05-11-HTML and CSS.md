@@ -92,12 +92,18 @@ vh  To 1% of viewport height
 find beauty color:
 https://www.color-hex.com/
 
-font icon
+font icon:
 https://fontawesome.com/start
 
+add font:
 https://fonts.google.com/
 
-add font
+photo engine:
+https://unsplash.com/developers
+
+cdnjs is a free and open-source CDN service:
+https://cdnjs.com/
+
 
 
 ```
@@ -146,3 +152,24 @@ __Sticky__ Positioned based on scroll position
 - Media queries - Different css styling for different screeen sizes
 - Rem units over px
 - Mobile first method
+
+
+## Em & Rem
+
+Rem is only based on root
+
+```
+change the base root font size
+html {
+      font-size: 10px;
+    }
+```
+
+em is based on the element which in front of it
+
+
+## Alognment Properties
+
+- justify-content: Align along the main axis (horizontal)
+- align-item: Align item along the cross axis(Vertical)
+- align-content: Align when extra space in cross axis
