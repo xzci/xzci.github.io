@@ -1,10 +1,10 @@
 ---
 title: HTML and CSS
 categories:
- - 中文笔记
+  - 中文笔记
 tags:
-- HTML
-- CSS
+  - HTML
+  - CSS
 ---
 
 # HTML and CSS
@@ -17,53 +17,47 @@ This a note of studying HTML and CSS
 - Usually have a start & end tag
 - Some tags closse themselves(Remnant of XHTML)
 
-__index.html__ is your __home page__.
+**index.html** is your **home page**.
 
 Must use `<!DOCTYPE html> `and this means this page is using html 5
 
-mac: __command + option + U__ show the source code of the website.
+mac: **command + option + U** show the source code of the website.
 
 ```html
-<meta name="" content="">
+<meta name="" content="" />
 shows on the search engine
-<meta name="robots" content="NOINDEX, NOFOLLOW">
+<meta name="robots" content="NOINDEX, NOFOLLOW" />
 Do not index page
 ```
 
 ## Shortcut
-__command + enter__ add a new ling whatever your mouse are
 
-__shift + option + down__ copy the line
+**command + enter** add a new ling whatever your mouse are
 
-__option + arrows__ cross the words
+**shift + option + down** copy the line
 
-__holding option + arrows__ move the line
+**option + arrows** cross the words
 
-__holidng option +  D__ select the same words(you can change them all)
+**holding option + arrows** move the line
 
+**holidng option + D** select the same words(you can change them all)
 
 w3school can provide:
+
 - blocks level this element contain whole line and give an cross line
-- inline element 
+- inline element
 
+quick input **div#idname + tab** =` <div id="idname"></div>`
 
-quick input __div#idname + tab__ =` <div id="idname"></div>`
-
-__#idname + tab__ = `<div id="idname"></div>
-` other need to be specificy
+**#idname + tab** = `<div id="idname"></div> ` other need to be specificy
 
 do not repeat id in the same page
 
 HTML5 Semantic Tags
 
-
 ![](/Image/Semantic_Tags.png)
 
-
 The difference between an ID and a class is that an ID is only used to identify one single element in our HTML. IDs are only used when one element on the page should have a particular style applied to it. However, a class can be used to identify more than one HTML element.
-
-
-
 
 ## CSS Units
 
@@ -79,6 +73,7 @@ pc Picas picas (1pc = 12 pt)
 ```
 
 Relative
+
 ```
 %   To parent element
 em  To font-size of parent element
@@ -104,7 +99,14 @@ https://unsplash.com/developers
 cdnjs is a free and open-source CDN service:
 https://cdnjs.com/
 
+jquery:
+https://releases.jquery.com/
 
+LIGHTBOX:
+https://lokeshdhakar.com/projects/lightbox2/
+
+generate the icon in the website title:
+http://tools.dynamicdrive.com/favicon/
 
 ```
 - margin
@@ -118,41 +120,44 @@ the one in the furthdown will overwirte the furthup in css
 ## display
 
 make inline as block :
+
 ```
 display: block;
 ```
 
 make block as inline :
+
 ```
 display: inline;
 ```
 
 make block as inline and use margin and width:
+
 ```
 display: inline-block;
 ```
 
 ## Position
 
-__Static__ Not effected by tblr(Top, bottom, left, right) properties/values
+**Static** Not effected by tblr(Top, bottom, left, right) properties/values
 
-__Relative__ tblr values cause element to be moved from its normal position
+**Relative** tblr values cause element to be moved from its normal position
 
-__Absolute__ Positioned relative to its parent element that is positioned "relative"
+**Absolute** Positioned relative to its parent element that is positioned "relative"
 
-__Fixed__ Positioned relative to the viewport
+**Fixed** Positioned relative to the viewport
 
-__Sticky__ Positioned based on scroll position
+**Sticky** Positioned based on scroll position
 
 ## Responsive Design
 
 ### Practices To Use
+
 - Set the viewport / scale
-- Use fluid widths as oppose to fixed 
+- Use fluid widths as oppose to fixed
 - Media queries - Different css styling for different screeen sizes
 - Rem units over px
 - Mobile first method
-
 
 ## Em & Rem
 
@@ -166,7 +171,6 @@ html {
 ```
 
 em is based on the element which in front of it
-
 
 ## Alognment Properties
 
