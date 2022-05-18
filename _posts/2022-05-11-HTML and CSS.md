@@ -57,7 +57,7 @@ do not repeat id in the same page
 HTML5 Semantic Tags
 
 
-![](/images/Semantic_Tags.png)
+![](/Image/Semantic_Tags.png)
 
 
 The difference between an ID and a class is that an ID is only used to identify one single element in our HTML. IDs are only used when one element on the page should have a particular style applied to it. However, a class can be used to identify more than one HTML element.
