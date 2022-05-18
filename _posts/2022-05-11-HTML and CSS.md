@@ -11,7 +11,7 @@ tags:
 
 This a note of studying HTML and CSS
 
-## the first class - HTML
+## The basic of HTML
 
 - Elements surrounded in angle brackets
 - Usually have a start & end tag
@@ -25,9 +25,9 @@ mac: **command + option + U** show the source code of the website.
 
 ```html
 <meta name="" content="" />
-shows on the search engine
+<!-- shows on the search engine -->
 <meta name="robots" content="NOINDEX, NOFOLLOW" />
-Do not index page
+<!-- Do not index page -->
 ```
 
 ## Shortcut
@@ -108,6 +108,8 @@ https://lokeshdhakar.com/projects/lightbox2/
 generate the icon in the website title:
 http://tools.dynamicdrive.com/favicon/
 
+## display
+
 ```
 - margin
 -- border (outside)
@@ -117,23 +119,21 @@ http://tools.dynamicdrive.com/favicon/
 
 the one in the furthdown will overwirte the furthup in css
 
-## display
-
 make inline as block :
 
-```
+```css
 display: block;
 ```
 
 make block as inline :
 
-```
+```css
 display: inline;
 ```
 
 make block as inline and use margin and width:
 
-```
+```css
 display: inline-block;
 ```
 
@@ -163,11 +163,11 @@ display: inline-block;
 
 Rem is only based on root
 
-```
-change the base root font size
+```css
+/* change the base root font size */
 html {
-      font-size: 10px;
-    }
+  font-size: 10px;
+}
 ```
 
 em is based on the element which in front of it
