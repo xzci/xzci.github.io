@@ -11,6 +11,16 @@ tags:
 
 This a note of studying HTML and CSS
 
+## Warming
+
+```
+.example .pp = E F 是后代选择器。
+
+.example.pp2 则是在一个元素上，这个元素包括这两个类才会有效果。
+
+do not repeat id in the same page
+```
+
 ## The basic of HTML
 
 - Elements surrounded in angle brackets
@@ -19,16 +29,75 @@ This a note of studying HTML and CSS
 
 **index.html** is your **home page**.
 
-Must use `<!DOCTYPE html> `and this means this page is using html 5
-
-mac: **command + option + U** show the source code of the website.
+Must use `<!DOCTYPE html> `and this means this page is using html 5.
 
 ```html
+<!-- the content showed on the search engine -->
 <meta name="" content="" />
-<!-- shows on the search engine -->
-<meta name="robots" content="NOINDEX, NOFOLLOW" />
 <!-- Do not index page -->
+<meta name="robots" content="NOINDEX, NOFOLLOW" />
 ```
+
+w3school can provide:
+
+- blocks level this element contain whole line and give an cross line
+- inline element
+
+Quick input **div#idname + tab** =` <div id="idname"></div>`
+
+**#idname + tab** = `<div id="idname"></div> ` other need to be specificy
+
+HTML5 Semantic Tags:
+
+![](/Image/Semantic_Tags.png)
+
+The difference between an ID and a class is that an ID is only used to identify one single element in our HTML. IDs are only used when one element on the page should have a particular style applied to it. However, a class can be used to identify more than one HTML element.
+
+## CSS selectors
+
+- Descendant Selector (space)
+- Child Selector (>)
+- Adjacent Sibling Selector (+)
+- General Sibling Selector (~)
+
+```html
+<div class="container">
+  <p>Apple</p>
+  <div>
+    <p>An apple a day keeps doctor away!</p>
+  </div>
+  <p>Banana</p>
+  <p>Cherry</p>
+</div>
+```
+
+### Space Symbol
+
+```css
+div.container p {
+  font-size: 20px;
+}
+```
+
+It is called the Descendant selector. It will target all <p> tags within container div. All <p> elements that are children of #container at any depth.
+
+### ‘>’ Symbol
+
+This is called the child selector. CSS rules will be applied to elements which are direct children of the particular element.
+
+It will target all the `<p>` tags which are immediate children of container `<div>`, but **the children of children will not be selected**
+
+### ‘+’ Symbol
+
+This is Adjacent Sibling Selector. It selects all elements that are the adjacent siblings of a specified element.
+
+Sibling elements must have the same parent element, and “adjacent” means **“immediately following”**.
+
+### ‘~’ Symbol
+
+It is General Sibling Selector and similar to Adjacent Sibling Selector. It selects **all** next elements that are siblings of a specified element.
+
+The following example selects all next `<p>` elements that are siblings of `<div>` elements.
 
 ## Shortcut
 
@@ -42,22 +111,7 @@ mac: **command + option + U** show the source code of the website.
 
 **holidng option + D** select the same words(you can change them all)
 
-w3school can provide:
-
-- blocks level this element contain whole line and give an cross line
-- inline element
-
-quick input **div#idname + tab** =` <div id="idname"></div>`
-
-**#idname + tab** = `<div id="idname"></div> ` other need to be specificy
-
-do not repeat id in the same page
-
-HTML5 Semantic Tags
-
-![](/Image/Semantic_Tags.png)
-
-The difference between an ID and a class is that an ID is only used to identify one single element in our HTML. IDs are only used when one element on the page should have a particular style applied to it. However, a class can be used to identify more than one HTML element.
+mac: **command + option + U** show the source code of the website.
 
 ## CSS Units
 
@@ -178,10 +232,70 @@ em is based on the element which in front of it
 - align-item: Align item along the cross axis(Vertical)
 - align-content: Align when extra space in cross axis
 
-## Warming
+## Types of Web Hosting
 
-```
-.example .pp = E F 是后代选择器。
+- Shared Hosting
+- VPS Hosting
+- Dedicated Server
+- Reseller Hosting
+- Cloud Hosting
+- Static Hosting
 
-.example.pp2 则是在一个元素上，这个元素包括这两个类才会有效果。
-```
+### Shared Hosting
+
+- One account of many on a server (same environment)
+- Cheapest(aside from free static hosting)
+- Used for small websites
+- Most include email, FTP, PHP, databases, software
+- $3 ~ $15 per month
+
+Example: Inmotion Hosting, Hostgator, Bluehost
+
+### VPS Hosting（Virtual Private Server)
+
+- Your own virtualized server
+- Can create & multiple shared accounts
+- More access & privileges
+- Everything shared hosting offers
+- $20 ~ $100 per month
+
+Example: Inmotion Hosting, Hostgator, Bluehost
+
+### Dedicated Server
+
+- Your own actual server
+- You rent out a physcial machine
+- Full access & privileges
+- Header to manager but very powerful
+- $100 ~ $400 per month
+
+Example: Inmotion Hosting, Hostgator, Bluehost
+
+### Reseller Hosting
+
+- Can create & multiple shared accounts
+- Can sell shared accounts to your own customers
+- Very similar to a VPS
+- Usually comes with reseller software
+- $15 ~ $100q per month
+
+Example: Inmotion Hosting, Hostgator
+
+### Cloud Hosting
+
+- Used for web apps
+- Multiple servers work together
+- Very scalable and great for large apps
+- Not for beginners / harder to manager
+- pay as you go
+
+Example: Digital Ocean, Linode, Vultr
+
+### Static Hosting
+
+- Does not come with bells and whistles of managed hosting
+- Upload static site via Git
+- Great for static websites
+- Free, but pay for extra features
+
+Example: Netlify, Github Pages
