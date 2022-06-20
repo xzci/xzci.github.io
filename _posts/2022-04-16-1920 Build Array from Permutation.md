@@ -10,21 +10,14 @@ tags:
 # <-E 1920> Build Array from Permutation
 
 ```c++
-//method 1
 class Solution {
 public:
-    bool makeEqual(vector<string>& words) {
-        int freq[26] = {0};
-
-        for (auto word : words)
-            for (auto c : word)
-                freq[c - 'a']++;
-
-        for (int i = 0; i < 26; i++)
-            if (freq[i] && freq[i] % words.size() != 0)
-                return false;
-
-        return true;
+    vector<int> buildArray(vector<int>& nums) {
+        vector<int> ans(nums.size(),0);
+        for(int i = 0; i != nums.size(); i++) {
+            ans[i] = nums[nums[i]];
+        }
+        return ans;
     }
 };
 ```
