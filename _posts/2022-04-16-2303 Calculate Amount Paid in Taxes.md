@@ -10,21 +10,19 @@ tags:
 # <-E 2303> Calculate Amount Paid in Taxes
 
 ```c++
-//method 1
 class Solution {
 public:
-    bool makeEqual(vector<string>& words) {
-        int freq[26] = {0};
-
-        for (auto word : words)
-            for (auto c : word)
-                freq[c - 'a']++;
-
-        for (int i = 0; i < 26; i++)
-            if (freq[i] && freq[i] % words.size() != 0)
-                return false;
-
-        return true;
+    double calculateTax(vector<vector<int>>& brackets, int income) {
+        double ans = 0;
+        int j = 0;
+        for (auto v : brackets) {
+            int upper = v[0], prcnt = v[1];
+            int curr = min(income, upper - j);
+            ans +=  prcnt * 0.01 * curr;
+            income -= curr;
+            j = upper;
+        }
+        return ans;
     }
 };
 ```
