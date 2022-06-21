@@ -10,21 +10,42 @@ tags:
 # <-E 2089> Find Target Indices After Sorting Array
 
 ```c++
-//method 1
+// Method 1
 class Solution {
 public:
-    bool makeEqual(vector<string>& words) {
-        int freq[26] = {0};
+    vector<int> targetIndices(vector<int>& nums, int target) {
+        sort(nums.begin(), nums.end());
+        vector<int> ans;
+        for(int i = 0; i != nums.size(); i++) {
+            if(nums[i] == target) {
+                ans.push_back(i);
+            }
+        }
+        return ans;
+    }
+};
 
-        for (auto word : words)
-            for (auto c : word)
-                freq[c - 'a']++;
+// Method 2
+class Solution {
+public:
+    vector<int> targetIndices(vector<int>& nums, int target) {
+        int smaller = 0;
+        int target_number = 0;
+        for(int i : nums) {
+            if(i < target) {
+                smaller++;
+            } else if(i == target) {
+                target_number++;
+            }
+        }
+        vector<int> ans;
+        while(t) {
+            ans.push_back(smaller);
+            smaller++;
+            target_number--;
+        }
 
-        for (int i = 0; i < 26; i++)
-            if (freq[i] && freq[i] % words.size() != 0)
-                return false;
-
-        return true;
+        return ans;
     }
 };
 ```
