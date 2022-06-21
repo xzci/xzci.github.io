@@ -10,21 +10,26 @@ tags:
 # <-E 1961> Check If String Is a Prefix of Array
 
 ```c++
-//method 1
 class Solution {
 public:
-    bool makeEqual(vector<string>& words) {
-        int freq[26] = {0};
+    bool isPrefixString(string s, vector<string>& words) {
+        int i = 0;
 
-        for (auto word : words)
-            for (auto c : word)
-                freq[c - 'a']++;
-
-        for (int i = 0; i < 26; i++)
-            if (freq[i] && freq[i] % words.size() != 0)
+        for(auto word : words) {
+            bool check = true;
+            for (auto c : word) {
+               if(check == true) {
+                   if(c != s[i])
+                       check = false;
+                }
+                i++;
+            }
+            if(check == false)
                 return false;
-
-        return true;
+            if(i == s.size())
+                return true;
+        }
+        return false;
     }
 };
 ```
