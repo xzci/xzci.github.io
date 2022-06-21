@@ -60,24 +60,7 @@ The difference between an ID and a class is that an ID is only used to identify 
 - Adjacent Sibling Selector (+)
 - General Sibling Selector (~)
 
-```html
-<div class="container">
-  <p>Apple</p>
-  <div>
-    <p>An apple a day keeps doctor away!</p>
-  </div>
-  <p>Banana</p>
-  <p>Cherry</p>
-</div>
-```
-
 ### Space Symbol
-
-```css
-div.container p {
-  font-size: 20px;
-}
-```
 
 It is called the Descendant selector. It will target all <p> tags within container div. All <p> elements that are children of #container at any depth.
 
