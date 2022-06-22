@@ -1,0 +1,42 @@
+---
+title: Keep Multiplying Found Values by Two
+categories:
+tags:
+  - C++
+  - Leetcode
+  - Algorithms
+---
+
+# <-E 2154> Keep Multiplying Found Values by Two
+
+```c++
+// Method 1
+class Solution {
+public:
+    int findFinalValue(vector<int>& nums, int original) {
+        int ans = original;
+        while(find(nums.begin(), nums.end(), ans) != nums.end()) {
+            ans *= 2;
+        }
+        return ans;
+    }
+
+};
+
+// Method 2
+class Solution {
+public:
+    int findFinalValue(vector<int>& nums, int original) {
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<nums.size();i++)
+        {
+            if(nums[i]==original)
+            {
+                nums[i]*=2;
+                original=nums[i];
+            }
+        }
+        return original;
+    }
+};
+```
