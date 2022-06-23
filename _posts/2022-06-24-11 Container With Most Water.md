@@ -12,12 +12,17 @@ tags:
 ```c++
 class Solution {
 public:
-    string largestOddNumber(string num) {
-        int i = num.size();
-        for(;i >= 0; i--)
-            if((num[i] - '0') % 2 != 0)
-                break;
-        return num.substr(0, i+1);
+    int maxArea(vector<int>& height) {
+        int l = 0, r = height.size() - 1;
+        int ans = 0;
+        while(l < r) {
+            ans = max(ans, (r - l) * min(height[l], height[r]));
+            if(height[l] < height[r])
+                l++;
+            else
+                r--;
+        }
+      return ans;
     }
 };
 ```
