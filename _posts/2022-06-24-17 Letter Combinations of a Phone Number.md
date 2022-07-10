@@ -26,7 +26,7 @@ public:
 
     vector<string> letterCombinations(string digits) {
         if(!digits.size()) return {};
-        vector<string> res; // we store our answer here
+        vector<string> res;
         vector<string> pad = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         string c = "";
         getLetterCombinations(digits, c, pad, res);
