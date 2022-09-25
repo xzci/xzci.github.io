@@ -1,0 +1,49 @@
+I"á<h1 id="-e-1935-maximum-number-of-words-you-can-type">&lt;-E 1935&gt; Maximum Number of Words You Can Type</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Method 1</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">canBeTypedWords</span><span class="p">(</span><span class="n">string</span> <span class="n">text</span><span class="p">,</span> <span class="n">string</span> <span class="n">brokenLetters</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">check</span><span class="p">[</span><span class="mi">26</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">c</span> <span class="o">:</span> <span class="n">brokenLetters</span><span class="p">)</span>
+            <span class="n">check</span><span class="p">[</span><span class="n">c</span> <span class="o">-</span><span class="sc">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="kt">bool</span> <span class="n">cannot</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">c</span> <span class="o">:</span> <span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">' '</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">cannot</span> <span class="o">!=</span> <span class="nb">true</span><span class="p">)</span>
+                    <span class="n">ans</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">cannot</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">check</span><span class="p">[</span><span class="n">c</span> <span class="o">-</span> <span class="sc">'a'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+               <span class="n">cannot</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">cannot</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span>
+            <span class="n">ans</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Method 2</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">canBeTypedWords</span><span class="p">(</span><span class="n">string</span> <span class="n">text</span><span class="p">,</span> <span class="n">string</span> <span class="n">brokenLetters</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">lookup</span><span class="p">(</span><span class="n">cbegin</span><span class="p">(</span><span class="n">brokenLetters</span><span class="p">),</span> <span class="n">cend</span><span class="p">(</span><span class="n">brokenLetters</span><span class="p">));</span>
+        <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">bool</span> <span class="n">broken</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">c</span> <span class="o">:</span> <span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">' '</span><span class="p">)</span> <span class="p">{</span>
+              <span class="n">result</span> <span class="o">+=</span> <span class="kt">int</span><span class="p">(</span><span class="n">broken</span> <span class="o">==</span> <span class="nb">false</span><span class="p">);</span>
+              <span class="n">broken</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">lookup</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">broken</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">result</span> <span class="o">+</span> <span class="kt">int</span><span class="p">(</span><span class="n">broken</span> <span class="o">==</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+:ET

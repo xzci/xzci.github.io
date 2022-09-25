@@ -1,0 +1,51 @@
+I"Y<h1 id="-e-235-lowest-common-ancestor-of-a-binary-search-tree">&lt;-E 235&gt; Lowest Common Ancestor of a Binary Search Tree</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Method 1</span>
+<span class="cm">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */</span>
+
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">lowestCommonAncestor</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="n">TreeNode</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="n">TreeNode</span><span class="o">*</span> <span class="n">q</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">lowestCommonAncestor</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">);</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&gt;</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&amp;&amp;</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&gt;</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">lowestCommonAncestor</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">);</span>
+        
+        <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Method 2</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="c1">// ITERATIVE</span>
+    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">lowestCommonAncestor</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="n">TreeNode</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="n">TreeNode</span><span class="o">*</span> <span class="n">q</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TreeNode</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// same branch but need to traverse</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">val</span> <span class="n">and</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">)</span> <span class="c1">// traverse left subtree</span>
+            <span class="p">{</span>
+                <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&gt;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">val</span> <span class="n">and</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&gt;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">)</span> <span class="c1">// traverse right subtree</span>
+            <span class="p">{</span>
+                <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// found root that's equal to p/q OR found a fork so LCA</span>
+                <span class="k">return</span> <span class="n">curr</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

@@ -1,0 +1,62 @@
+I"È%<h1 id="-m-39-combination-sum">&lt;-M 39&gt; Combination Sum</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Method 1</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="n">solve</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">temp</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">target</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">target</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">return</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+            <span class="k">return</span><span class="p">;</span>
+
+        <span class="n">solve</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">target</span><span class="p">);</span>
+
+        <span class="n">temp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="n">solve</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">target</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="n">temp</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+
+    <span class="p">}</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">combinationSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ans</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">temp</span><span class="p">;</span>
+        <span class="n">solve</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">target</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Method 2</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+
+    <span class="kt">void</span> <span class="n">comb</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">t</span> <span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">ans</span> <span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">candidates</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">target</span> <span class="p">,</span><span class="kt">int</span> <span class="n">i</span> <span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">target</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="p">;</span>
+            <span class="k">return</span> <span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidates</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">target</span> <span class="o">-</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="n">t</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">;</span>
+            <span class="n">comb</span><span class="p">(</span><span class="n">t</span> <span class="p">,</span> <span class="n">ans</span> <span class="p">,</span> <span class="n">candidates</span> <span class="p">,</span> <span class="n">target</span> <span class="o">-</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">,</span> <span class="n">i</span> <span class="p">)</span> <span class="p">;</span>
+                <span class="n">i</span><span class="o">++</span> <span class="p">;</span>
+            <span class="n">t</span><span class="p">.</span><span class="n">pop_back</span><span class="p">()</span> <span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">combinationSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">candidates</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">candidates</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="p">,</span> <span class="n">candidates</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">;</span>
+        <span class="n">candidates</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">candidates</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="p">,</span> <span class="n">candidates</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">,</span><span class="n">candidates</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">t</span> <span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span> <span class="p">;</span>
+        <span class="n">comb</span><span class="p">(</span><span class="n">t</span> <span class="p">,</span> <span class="n">ans</span> <span class="p">,</span> <span class="n">candidates</span> <span class="p">,</span> <span class="n">target</span> <span class="p">,</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">;</span>
+        <span class="k">return</span> <span class="n">ans</span> <span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+:ET

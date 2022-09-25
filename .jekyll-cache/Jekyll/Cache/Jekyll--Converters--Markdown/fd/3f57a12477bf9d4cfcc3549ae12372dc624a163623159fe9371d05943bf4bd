@@ -1,0 +1,25 @@
+I"�<p>整理一些不知道的计算方法</p>
+
+<h2 id="不使用除号计算除法整数">不使用除号计算除法(整数)</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">quotient</span><span class="p">,</span> <span class="n">remainder</span><span class="p">;</span>
+    <span class="n">quotient</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">quotient</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">a</span> <span class="o">-=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">remainder</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d, %d"</span><span class="p">,</span> <span class="n">quotient</span><span class="p">,</span> <span class="n">remainder</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="取得数字各位的值的加和">取得数字各位的值的加和</h2>
+
+<p>```c
+while(x &gt; 0) {
+    y += x % 10;
+    x /= 10;
+}</p>
+
+:ET

@@ -1,0 +1,27 @@
+I"»<h1 id="-e-933-number-of-recent-calls">&lt;-E 933&gt; Number of Recent Calls</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">RecentCounter</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+    <span class="n">RecentCounter</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+            <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="kt">int</span> <span class="n">ping</span><span class="p">(</span><span class="kt">int</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">3000</span><span class="p">)</span>
+            <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>  
+        <span class="k">return</span> <span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+<span class="p">};</span>
+
+<span class="cm">/**
+ * Your RecentCounter object will be instantiated and called as such:
+ * RecentCounter* obj = new RecentCounter();
+ * int param_1 = obj-&gt;ping(t);
+ */</span>
+</code></pre></div></div>
+
+:ET

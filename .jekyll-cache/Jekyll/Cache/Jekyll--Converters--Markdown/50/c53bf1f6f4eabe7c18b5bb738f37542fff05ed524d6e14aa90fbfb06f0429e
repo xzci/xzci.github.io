@@ -1,0 +1,19 @@
+I"K<h1 id="-e-1374-generate-a-string-with-characters-that-have-odd-counts">&lt;-E 1374&gt; Generate a String With Characters That Have Odd Counts</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">string</span> <span class="n">generateTheString</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">){</span>
+            <span class="n">string</span> <span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span><span class="p">{</span>   
+            <span class="n">string</span> <span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">);</span>
+            <span class="k">return</span> <span class="s">"b"</span><span class="o">+</span><span class="n">a</span><span class="p">;</span>
+        <span class="p">}</span>
+            
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

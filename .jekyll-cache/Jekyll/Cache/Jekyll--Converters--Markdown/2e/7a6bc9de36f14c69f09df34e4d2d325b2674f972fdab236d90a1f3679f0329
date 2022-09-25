@@ -1,0 +1,8 @@
+I"p<h1 id="html-and-css">HTML and CSS</h1>
+<p>This a note of studying HTML and CSS</p>
+<h2 id="warming">Warming</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.example .pp = E F 是后代选择器。 .example.pp2 则是在一个元素上，这个元素包括这两个类才会有效果。 do not repeat id in the same page </code></pre></div></div>
+<h2 id="the-basic-of-html">The basic of HTML</h2>
+<ul> <li>Elements surrounded in angle brackets</li> <li>Usually have a start &amp; end tag</li> <li>Some tags closse themselves(Remnant of XHTML)</li> </ul>
+<p>…</p>
+:ET

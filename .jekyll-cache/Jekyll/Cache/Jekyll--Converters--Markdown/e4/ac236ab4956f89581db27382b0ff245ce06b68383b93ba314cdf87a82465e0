@@ -1,0 +1,34 @@
+I"a<h1 id="-e-1360-number-of-days-between-two-dates">&lt;-E 1360&gt; Number of Days Between Two Dates</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">daysBetweenDates</span><span class="p">(</span><span class="n">string</span> <span class="n">date1</span><span class="p">,</span> <span class="n">string</span> <span class="n">date2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">abs</span><span class="p">(</span><span class="n">daysPassedSince1971</span><span class="p">(</span><span class="n">date1</span><span class="p">)</span> <span class="o">-</span> <span class="n">daysPassedSince1971</span><span class="p">(</span><span class="n">date2</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">isLeapYear</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">){</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">year</span><span class="o">%</span><span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">year</span><span class="o">%</span><span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">year</span><span class="o">%</span><span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">daysPassedSince1971</span><span class="p">(</span><span class="n">string</span> <span class="n">date</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">year</span> <span class="o">=</span> <span class="n">stoi</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">));</span>
+        <span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">stoi</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+        <span class="kt">int</span> <span class="n">day</span> <span class="o">=</span> <span class="n">stoi</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+        
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">months</span> <span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">});</span>
+        
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1971</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">year</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">day</span> <span class="o">+=</span> <span class="n">isLeapYear</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">?</span> <span class="mi">366</span> <span class="o">:</span> <span class="mi">365</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">month</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">isLeapYear</span><span class="p">(</span><span class="n">year</span><span class="p">)){</span>
+                <span class="n">day</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">day</span> <span class="o">+=</span> <span class="n">months</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">day</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

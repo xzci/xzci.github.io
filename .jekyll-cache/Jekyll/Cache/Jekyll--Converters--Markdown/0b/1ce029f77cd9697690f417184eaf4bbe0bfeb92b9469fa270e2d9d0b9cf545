@@ -1,0 +1,85 @@
+I"(<h1 id="-m-109-convert-sorted-list-to-binary-search-tree">&lt;-M 109&gt; Convert Sorted List to Binary Search Tree</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */</span>
+<span class="cm">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */</span>
+<span class="c1">// Method 1</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">sortedListToBST</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">sortedListToBST</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">listLength</span><span class="p">(</span><span class="n">head</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="nl">private:</span>
+    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">sortedListToBST</span><span class="p">(</span><span class="n">ListNode</span> <span class="o">*</span><span class="n">head</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">len</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">nullptr</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">len</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+
+        <span class="n">TreeNode</span> <span class="o">*</span><span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">nth_node</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">len</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+        <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="n">sortedListToBST</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">len</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">sortedListToBST</span><span class="p">(</span><span class="n">nth_node</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">len</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="kt">int</span> <span class="n">listLength</span><span class="p">(</span><span class="n">ListNode</span> <span class="o">*</span><span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+            <span class="o">++</span><span class="n">n</span><span class="p">;</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">nth_node</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">node</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">--</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">node</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Method 2</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">TreeNode</span> <span class="o">*</span> <span class="n">buildBST</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">lo</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">hi</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">lo</span> <span class="o">&gt;</span> <span class="n">hi</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+
+        <span class="k">const</span> <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="p">((</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">TreeNode</span> <span class="o">*</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">v</span><span class="p">[</span> <span class="n">m</span> <span class="p">]);</span>
+        <span class="n">ret</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="n">buildBST</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">ret</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">buildBST</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">sortedListToBST</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">ListNode</span> <span class="o">*</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span> <span class="n">cur</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span>
+            <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+
+        <span class="n">TreeNode</span> <span class="o">*</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">buildBST</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+:ET

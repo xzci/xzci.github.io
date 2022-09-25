@@ -1,0 +1,22 @@
+I"`<h1 id="-e-2169-count-operations-to-obtain-zero">&lt;-E 2169&gt; Count Operations to Obtain Zero</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">countOperations</span><span class="p">(</span><span class="kt">int</span> <span class="n">num1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">num2</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">num1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">num2</span> <span class="o">&gt;</span> <span class="n">num1</span><span class="p">)</span>
+                <span class="n">swap</span><span class="p">(</span><span class="n">num2</span><span class="p">,</span> <span class="n">num1</span><span class="p">);</span>
+            <span class="n">num1</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">-</span> <span class="n">num2</span><span class="p">;</span>
+            <span class="n">ans</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+:ET

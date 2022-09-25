@@ -1,0 +1,114 @@
+I"B<h1 id="-h-127-word-ladder">&lt;-H 127&gt; Word Ladder</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Method 1</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">ladderLength</span><span class="p">(</span><span class="n">string</span> <span class="n">beginWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">endWord</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">wordList</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">it</span> <span class="o">:</span> <span class="n">wordList</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">endWord</span> <span class="o">==</span> <span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">flag</span><span class="p">)</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+        <span class="n">wordList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">beginWord</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">wordList</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">wordList</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">string</span> <span class="n">res</span> <span class="o">=</span> <span class="n">wordList</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+                <span class="n">res</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'*'</span><span class="p">;</span>
+                <span class="n">m</span><span class="p">[</span><span class="n">res</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">wordList</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">vis</span><span class="p">;</span>
+        <span class="n">queue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="n">q</span><span class="p">;</span>
+        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">beginWord</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+            <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">string</span> <span class="n">res</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">res</span> <span class="o">==</span> <span class="n">endWord</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+                <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+
+                <span class="c1">// if(vis[res])continue;</span>
+                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">res</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">string</span> <span class="n">pattern</span> <span class="o">=</span> <span class="n">res</span><span class="p">;</span>
+                    <span class="n">pattern</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'*'</span><span class="p">;</span>
+                    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">it</span> <span class="o">:</span> <span class="n">m</span><span class="p">[</span><span class="n">pattern</span><span class="p">])</span> <span class="p">{</span>
+                        <span class="k">if</span><span class="p">(</span><span class="n">vis</span><span class="p">[</span><span class="n">it</span><span class="p">])</span>
+                            <span class="k">continue</span><span class="p">;</span>
+                        <span class="k">else</span> <span class="p">{</span>
+                            <span class="n">vis</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+                            <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Method 2</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+
+    <span class="kt">int</span> <span class="n">BBFS</span><span class="p">(</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">dictionary</span><span class="p">,</span>
+             <span class="kt">int</span> <span class="n">length</span><span class="p">,</span>
+             <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">beginSet</span><span class="p">,</span>
+             <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">endSet</span><span class="p">,</span>
+             <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">workingSet</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">workingSet</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">beginSet</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">();</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">i</span> <span class="o">:</span> <span class="n">beginSet</span><span class="p">)</span>
+            <span class="n">dictionary</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">word</span> <span class="o">:</span> <span class="n">beginSet</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">string</span> <span class="n">newWord</span> <span class="o">=</span> <span class="n">word</span><span class="p">;</span>
+                <span class="k">for</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">'a'</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">'z'</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">newWord</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">dictionary</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">newWord</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="k">if</span><span class="p">(</span><span class="n">endSet</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">newWord</span><span class="p">))</span>
+                            <span class="k">return</span> <span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+                        <span class="n">workingSet</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">newWord</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">workingSet</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">endSet</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">workingSet</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">BBFS</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">endSet</span><span class="p">,</span> <span class="n">workingSet</span><span class="p">,</span> <span class="n">beginSet</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">BBFS</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">workingSet</span><span class="p">,</span> <span class="n">endSet</span><span class="p">,</span> <span class="n">beginSet</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">ladderLength</span><span class="p">(</span><span class="n">string</span> <span class="n">beginWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">endWord</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">wordList</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">(</span><span class="n">wordList</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">wordList</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">dictionary</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">endWord</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">beginSet</span><span class="p">;</span>
+        <span class="n">beginSet</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">beginWord</span><span class="p">);</span>
+
+        <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">endSet</span><span class="p">;</span>
+        <span class="n">endSet</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">endWord</span><span class="p">);</span>
+
+        <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">workingSet</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="n">BBFS</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">beginSet</span><span class="p">,</span> <span class="n">endSet</span><span class="p">,</span> <span class="n">workingSet</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+:ET

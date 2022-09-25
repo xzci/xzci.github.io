@@ -1,0 +1,26 @@
+I"¨
+<h1 id="-e-1009-complement-of-base-10-integer">&lt;-E 1009&gt; Complement of Base 10 Integer</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">bitwiseComplement</span><span class="p">(</span><span class="kt">int</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">N</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+		    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">;</span>
+        <span class="n">n1</span> <span class="o">=</span> <span class="n">log2</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">n2</span> <span class="o">=</span> <span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">N</span> <span class="o">^</span> <span class="n">n2</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">bitwiseComplement</span><span class="p">(</span><span class="kt">int</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">N</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> 
+            <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">~</span><span class="p">((</span><span class="mh">0xffffffff</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">32</span> <span class="o">-</span> <span class="n">__builtin_clz</span><span class="p">(</span><span class="n">N</span><span class="p">)))</span> <span class="o">|</span> <span class="n">N</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+:ET

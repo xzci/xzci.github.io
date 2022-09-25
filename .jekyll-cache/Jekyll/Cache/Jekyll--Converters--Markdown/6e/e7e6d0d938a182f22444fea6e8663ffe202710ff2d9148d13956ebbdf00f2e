@@ -1,0 +1,70 @@
+I"�<h1 id="xt4">XT4</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>光圈 在镜头上
+
+右边 快门设置
+
+左边 iso 设置
+
+左边 下面：
+模式拨盘：s 单张拍摄模式
+        cl 低速连拍
+        ch 高速连拍
+        bkt 包围曝光模式（有6种模式）
+        adv 高级模式（滤镜）
+（胶片模拟只能在s，cl， ch 里用，右下按钮左键）
+
+af 是 开启自动对焦
+ael 自动曝光
+
+正面 右下
+ 
+m 手动对焦
+c 连续自动对焦
+s 单词自动对焦
+
+</code></pre></div></div>
+
+<h2 id="曝光模式">曝光模式</h2>
+
+<ul>
+  <li>P 挡</li>
+</ul>
+
+<p>光圈（镜头上的） a</p>
+
+<p>右面 （快门） a</p>
+
+<ul>
+  <li>A 挡 （光圈优先）</li>
+</ul>
+
+<p>光圈（镜头上的）不是 a</p>
+
+<p>右面 （快门） a</p>
+
+<ul>
+  <li>S 挡 （快门优先）街上拍</li>
+</ul>
+
+<p>光圈（镜头上的） a</p>
+
+<p>右面 （快门） 不是a</p>
+
+<ul>
+  <li>M 挡 （自动挡）</li>
+</ul>
+
+<p>光圈（镜头上的）不是 a</p>
+
+<p>右面 （快门） 不是a</p>
+
+<ul>
+  <li>
+    <p>全自动，3个a</p>
+  </li>
+  <li>
+    <p>3个里面有一个a和曝光补偿一起才会有用，没有a 的话，曝光补偿无用</p>
+  </li>
+</ul>
+:ET

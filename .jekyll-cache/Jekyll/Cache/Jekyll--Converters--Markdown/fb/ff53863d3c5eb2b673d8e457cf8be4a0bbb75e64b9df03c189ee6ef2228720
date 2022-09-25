@@ -1,0 +1,56 @@
+I"x"<h1 id="-e-1880-check-if-word-equals-summation-of-two-words">&lt;-E 1880&gt; Check if Word Equals Summation of Two Words</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//method 1</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">bool</span> <span class="n">isSumEqual</span><span class="p">(</span><span class="n">string</span> <span class="n">firstWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">secondWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">targetWord</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">string</span> <span class="n">s1</span><span class="o">=</span><span class="s">""</span><span class="p">,</span><span class="n">s2</span><span class="o">=</span><span class="s">""</span><span class="p">,</span><span class="n">s3</span><span class="o">=</span><span class="s">""</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">firstWord</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">x</span><span class="o">=</span> <span class="n">firstWord</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
+            <span class="n">string</span> <span class="n">s</span><span class="o">=</span><span class="n">to_string</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+            <span class="n">s1</span><span class="o">=</span><span class="n">s1</span><span class="o">+</span><span class="n">s</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">secondWord</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">x</span><span class="o">=</span> <span class="n">secondWord</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
+            <span class="n">string</span> <span class="n">s</span><span class="o">=</span><span class="n">to_string</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+            <span class="n">s2</span><span class="o">=</span><span class="n">s2</span><span class="o">+</span><span class="n">s</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">targetWord</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">x</span><span class="o">=</span> <span class="n">targetWord</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
+            <span class="n">string</span> <span class="n">s</span><span class="o">=</span><span class="n">to_string</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+            <span class="n">s3</span><span class="o">=</span><span class="n">s3</span><span class="o">+</span><span class="n">s</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="p">((</span><span class="n">stoi</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">+</span> <span class="n">stoi</span><span class="p">(</span><span class="n">s2</span><span class="p">))</span> <span class="o">==</span> <span class="n">stoi</span><span class="p">(</span><span class="n">s3</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Method 2</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">bool</span> <span class="n">isSumEqual</span><span class="p">(</span><span class="n">string</span> <span class="n">firstWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">secondWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">targetWord</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">f</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">firstWord</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="o">*</span><span class="mi">10</span><span class="o">+</span><span class="p">(</span><span class="n">firstWord</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="sc">'a'</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">secondWord</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="o">*</span><span class="mi">10</span><span class="o">+</span><span class="p">(</span><span class="n">secondWord</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="sc">'a'</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">targetWord</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="o">*</span><span class="mi">10</span><span class="o">+</span><span class="p">(</span><span class="n">targetWord</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="sc">'a'</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">+</span><span class="n">s</span> <span class="o">==</span> <span class="n">t</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

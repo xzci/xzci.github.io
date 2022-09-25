@@ -1,0 +1,44 @@
+I"O<h1 id="-e-1995-count-special-quadruplets">&lt;-E 1995&gt; Count Special Quadruplets</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//method 1</span>
+<span class="c1">// class Solution {</span>
+<span class="c1">// public:</span>
+<span class="c1">//     int countQuadruplets(vector&lt;int&gt;&amp; nums) {</span>
+<span class="c1">//         int ans=0;</span>
+<span class="c1">//         int n=nums.size();</span>
+<span class="c1">//         for(int i=0;i&lt;n;i++) {</span>
+<span class="c1">//             for(int j=i+1;j&lt;n;j++) {</span>
+<span class="c1">//                 for(int k=j+1;k&lt;n;k++) {</span>
+<span class="c1">//                     for(int l=k+1;l&lt;n;l++) {</span>
+<span class="c1">//                         if(nums[i]+nums[j]+nums[k]==nums[l])</span>
+<span class="c1">//                             ans++;</span>
+<span class="c1">//                     }</span>
+<span class="c1">//                 }</span>
+<span class="c1">//             }</span>
+<span class="c1">//         }</span>
+<span class="c1">//         return ans;</span>
+<span class="c1">//     }</span>
+<span class="c1">// };</span>
+
+<span class="c1">// Method 2</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">countQuadruplets</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">mp</span><span class="p">(</span><span class="mi">201</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">mp</span><span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span> <span class="n">k</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">d</span><span class="o">=</span><span class="n">nums</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">-</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">d</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+                    <span class="n">ans</span><span class="o">+=</span><span class="n">mp</span><span class="p">[</span><span class="n">d</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+     <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

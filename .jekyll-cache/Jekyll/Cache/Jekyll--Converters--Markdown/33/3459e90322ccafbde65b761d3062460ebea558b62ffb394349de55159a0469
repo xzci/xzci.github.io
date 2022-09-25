@@ -1,0 +1,52 @@
+I"¦<h1 id="-m-22-generate-parentheses">&lt;-M 22&gt; Generate Parentheses</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Method 1</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">generateParenthesis</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">"()"</span><span class="p">);</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">inner</span> <span class="o">:</span> <span class="n">generateParenthesis</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+                <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">outer</span> <span class="o">:</span> <span class="n">generateParenthesis</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>
+                    <span class="n">result</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">"("</span> <span class="o">+</span> <span class="n">inner</span> <span class="o">+</span> <span class="s">")"</span> <span class="o">+</span> <span class="n">outer</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Method 2</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">void</span> <span class="n">bt</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">open</span><span class="p">,</span> <span class="kt">int</span> <span class="n">close</span><span class="p">,</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">comb</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">ans</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">comb</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">comb</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">open</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">comb</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="sc">'('</span><span class="p">);</span>
+            <span class="n">bt</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">open</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">close</span><span class="p">,</span> <span class="n">comb</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+            <span class="n">comb</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">close</span> <span class="o">&lt;</span> <span class="n">open</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">comb</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="sc">')'</span><span class="p">);</span>
+            <span class="n">bt</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">open</span><span class="p">,</span> <span class="n">close</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">comb</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+            <span class="n">comb</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">generateParenthesis</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">string</span> <span class="n">comb</span><span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
+        <span class="n">bt</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">comb</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+:ET

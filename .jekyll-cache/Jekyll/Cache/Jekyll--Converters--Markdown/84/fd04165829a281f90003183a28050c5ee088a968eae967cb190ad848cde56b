@@ -1,0 +1,74 @@
+I"ü#<h1 id="-e-989-add-to-array-form-of-integer">&lt;-E 989&gt; Add to Array-Form of Integer</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Method 1</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">addToArrayForm</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">K</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ret</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">K</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">pos</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">carry</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="kt">int</span> <span class="n">kdigit</span> <span class="o">=</span> <span class="n">K</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="n">K</span> <span class="o">=</span> <span class="n">K</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">kdigit</span> <span class="o">+</span> <span class="n">carry</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">pos</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> 
+                <span class="n">sum</span> <span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">pos</span><span class="p">];</span>
+            
+            <span class="k">if</span><span class="p">(</span><span class="n">sum</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">){</span>
+                <span class="n">carry</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
+                <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span><span class="o">%</span><span class="mi">10</span><span class="p">;</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">ret</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+            <span class="o">--</span><span class="n">pos</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">reverse</span><span class="p">(</span><span class="n">ret</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ret</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Method 2</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">addToArrayForm</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">K</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">len_K</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">carry_on</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        
+        <span class="k">while</span><span class="p">(</span><span class="n">K</span> <span class="o">||</span> <span class="n">carry_on</span><span class="p">){</span>
+            <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">len</span> <span class="o">-</span> <span class="n">len_K</span><span class="p">;</span> 
+            
+            <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">K</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">carry_on</span><span class="p">;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">tmp</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">){</span>
+                    <span class="n">carry_on</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                    <span class="n">carry_on</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">A</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">tmp</span><span class="p">);</span>
+                <span class="n">K</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+            
+            <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">K</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">carry_on</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">tmp</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">){</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">%</span><span class="mi">10</span><span class="p">;</span>
+                <span class="n">carry_on</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+                
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+                <span class="n">carry_on</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            
+            <span class="n">K</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="n">len_K</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">A</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

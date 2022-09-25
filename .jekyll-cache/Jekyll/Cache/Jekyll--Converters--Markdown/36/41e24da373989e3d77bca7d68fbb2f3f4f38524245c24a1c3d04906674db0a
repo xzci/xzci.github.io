@@ -1,0 +1,42 @@
+I"À<h1 id="-e-1114-print-in-order">&lt;-E 1114&gt; Print in Order</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">Foo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_second</span><span class="p">);</span>
+        <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_third</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="o">~</span><span class="n">Foo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">pthread_mutex_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_second</span><span class="p">);</span>
+        <span class="n">pthread_mutex_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_third</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">first</span><span class="p">(</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">printFirst</span><span class="p">)</span> <span class="p">{</span>
+        
+        <span class="c1">// printFirst() outputs "first". Do not change or remove this line.</span>
+        <span class="n">printFirst</span><span class="p">();</span>
+        <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_second</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">second</span><span class="p">(</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">printSecond</span><span class="p">)</span> <span class="p">{</span>
+        
+        <span class="c1">// printSecond() outputs "second". Do not change or remove this line.</span>
+        <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_second</span><span class="p">);</span>
+        <span class="n">printSecond</span><span class="p">();</span>
+        <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_third</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">third</span><span class="p">(</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span> <span class="n">printThird</span><span class="p">)</span> <span class="p">{</span>
+        
+        <span class="c1">// printThird() outputs "third". Do not change or remove this line.</span>
+        <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_third</span><span class="p">);</span>
+        <span class="n">printThird</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="nl">private:</span>
+    <span class="n">pthread_mutex_t</span> <span class="n">m_second</span> <span class="o">=</span> <span class="n">PTHREAD_MUTEX_INITIALIZER</span><span class="p">;</span>
+    <span class="n">pthread_mutex_t</span> <span class="n">m_third</span> <span class="o">=</span> <span class="n">PTHREAD_MUTEX_INITIALIZER</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

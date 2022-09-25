@@ -1,0 +1,24 @@
+I"C<h1 id="-e-2108-find-first-palindromic-string-in-the-array">&lt;-E 2108&gt; Find First Palindromic String in the Array</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">string</span> <span class="n">firstPalindrome</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">word</span> <span class="o">:</span> <span class="n">words</span><span class="p">){</span>
+            <span class="kt">int</span> <span class="n">p1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">word</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">string</span> <span class="n">a</span> <span class="o">=</span> <span class="n">word</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">p1</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">p1</span><span class="p">]</span> <span class="o">!=</span><span class="n">a</span> <span class="p">[</span><span class="n">p2</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">p1</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">p2</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span><span class="p">((</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span> <span class="o">||</span> <span class="p">((</span><span class="n">p1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">))</span>
+                <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+:ET

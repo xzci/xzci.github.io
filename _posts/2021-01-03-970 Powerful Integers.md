@@ -14,7 +14,9 @@ class Solution {
 public:
     vector<int> powerfulIntegers(int x, int y, int bound) {
         set<int> res;
-        deque<pair<int, int>> powers = {{0,0}};
+        deque<pair<int, int>> powers = {
+            {0,0}
+            };
         while (!powers.empty()) {
             auto [i, j] = powers.front();
             int v = pow(x, i) + pow(y, j);

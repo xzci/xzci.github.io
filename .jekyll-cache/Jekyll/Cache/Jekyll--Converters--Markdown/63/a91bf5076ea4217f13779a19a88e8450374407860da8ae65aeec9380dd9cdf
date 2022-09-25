@@ -1,0 +1,34 @@
+I"M<h1 id="-e-832-flipping-an-image">&lt;-E 832&gt; Flipping an Image</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Method 1</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">flipAndInvertImage</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">A</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+            <span class="k">return</span> <span class="n">A</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">row</span> <span class="o">:</span> <span class="n">A</span><span class="p">)</span> 
+            <span class="n">reverse</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">row</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">row</span> <span class="o">:</span> <span class="n">A</span><span class="p">)</span> 
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">i</span><span class="o">:</span> <span class="n">row</span><span class="p">)</span> <span class="n">i</span> <span class="o">^=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">A</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Method 2</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">flipAndInvertImage</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">A</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+            <span class="k">return</span> <span class="n">A</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">row</span> <span class="o">:</span> <span class="n">A</span><span class="p">){</span>
+            <span class="n">reverse</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">row</span><span class="p">));</span>
+        <span class="n">for_each</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">row</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">item</span><span class="p">){</span> <span class="n">item</span> <span class="o">^=</span> <span class="mi">1</span><span class="p">;</span> <span class="p">});</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">A</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

@@ -1,0 +1,276 @@
+I"eW<p>I think this notes may help me to get better understanding of R.</p>
+
+<h1 id="help">help</h1>
+
+<p>You can type these codes to help you to understand the function which R is provided</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># get the help of function</span><span class="w">
+</span><span class="n">help</span><span class="p">(</span><span class="n">functionName</span><span class="p">)</span><span class="w">
+</span><span class="c1"># get the args of one function</span><span class="w">
+</span><span class="n">args</span><span class="p">(</span><span class="n">functionName</span><span class="p">)</span><span class="w">
+</span><span class="c1"># get example of one function</span><span class="w">
+</span><span class="n">example</span><span class="p">(</span><span class="n">functionName</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Or you can use opeaator '?' which is same as help</span><span class="w">
+</span><span class="o">?</span><span class="n">functionname</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Or perhaps you don’t know the exactly name of function, you can use these:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">help.search</span><span class="p">(</span><span class="n">partOfFunctionName</span><span class="p">)</span><span class="w">
+</span><span class="c1"># Or</span><span class="w">
+</span><span class="o">??</span><span class="n">partOfFunctionName</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If you want some details, or your computer dosen’t have the document of R. you can type this code:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">RSiteSearch</span><span class="p">(</span><span class="n">functionName</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<h1 id="r">R</h1>
+
+<p>In fact, some constant values or functions you can type the name at will:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">pi</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">3.141593</span><span class="w">
+</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">1.414214</span><span class="w">
+</span></code></pre></div></div>
+<blockquote>
+  <p>When you enter expressions like that, R evaluates the expression and then implicitly calls the print function
+By the way, you can also write down the code <code class="language-plaintext highlighter-rouge">print()</code> to print the value of variable.</p>
+</blockquote>
+
+<h2 id="vector">Vector</h2>
+
+<p>In your task, maybe you will find your sometime, data has miss one or two value,
+you can use <code class="language-plaintext highlighter-rouge">NA</code> to replace it. if you do this. be sure to use <code class="language-plaintext highlighter-rouge">na.rm=TRUE</code>
+For example, When you use the function to calculate the average</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="kc">NA</span><span class="p">)</span><span class="w">
+</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="sequence">Sequence</h2>
+
+<p>To create the simple sequence n, n+1, n+2, …, m.
+You can use two different way to initialize a sequence:</p>
+
+<ul>
+  <li>use operator <code class="language-plaintext highlighter-rouge">:</code> with two numbers. the first one means the begin of the sequence, the last one means the end of this sequence.</li>
+  <li>or you can type all this function name <code class="language-plaintext highlighter-rouge">seq</code> to build a sequence. using from as the begin, and to as the end of the sequence.</li>
+</ul>
+
+<p>The sequence default the step is 1, if you want to change special step, use <code class="language-plaintext highlighter-rouge">by</code> to change it.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="w">
+</span><span class="c1"># [1] 1 2 3 4 5</span><span class="w">
+</span><span class="n">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="m">2</span><span class="p">)</span><span class="w">
+</span><span class="c1"># [1] 1 3 5</span><span class="w">
+</span></code></pre></div></div>
+
+<p>In some time you don’t know the exactly the step which you need. you can use <code class="language-plaintext highlighter-rouge">length.out = #step#</code> #step# you can replace it as the count Which you want get in Vector or Sequence. The R will calculate the step.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="n">length.out</span><span class="o">=</span><span class="m">5</span><span class="p">)</span><span class="w">
+</span><span class="c1"># [1] 0 5 10 15 20</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If you want to create repeated sequence, you <strong>must</strong> use <code class="language-plaintext highlighter-rouge">req</code> to initialize</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">times</span><span class="o">=</span><span class="m">5</span><span class="p">)</span><span class="w">
+</span><span class="c1"># [1] 1 1 1 1 1</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="compare">Compare</h2>
+
+<p>The R can compare between numbers, squence or vector. even number and squence.
+In that case the only number will compare the value from vector, one by one. 
+and the operator is same as C. using the <code class="language-plaintext highlighter-rouge">&lt;</code>, <code class="language-plaintext highlighter-rouge">&gt;</code>, <code class="language-plaintext highlighter-rouge">&gt;=</code>, <code class="language-plaintext highlighter-rouge">&lt;=</code>, <code class="language-plaintext highlighter-rouge">==</code>, <code class="language-plaintext highlighter-rouge">!=</code>.
+for example:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">)</span><span class="w">
+</span><span class="n">v</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">v</span><span class="w">
+</span><span class="c1"># [1] FALSE FALSE FALSE</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="get-the-value">Get the value</h2>
+
+<p>The way to get value from Vector or Squence is same as C.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="o">=</span><span class="m">5</span><span class="p">)</span><span class="w">
+</span><span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">
+</span><span class="c1"># [1] 1</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="selecting-vector-elements">Selecting Vector Elements</h2>
+
+<p>It’s same as python.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">13</span><span class="p">,</span><span class="m">21</span><span class="p">,</span><span class="m">34</span><span class="p">)</span><span class="w">
+</span><span class="n">fib</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">8</span><span class="p">)]</span><span class="w">
+</span><span class="c1"># [1] 0 1 2 13</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Be care</strong> How to deal with <strong>[-1]</strong> R is different from Python.
+Cheak the different:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">]</span><span class="w">
+</span><span class="c1"># [1] 0 1 1</span><span class="w">
+</span><span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)]</span><span class="w"> 
+</span><span class="c1"># [1] 2 3 5 8 13 21 34</span><span class="w">
+</span></code></pre></div></div>
+
+<p>In python -index, means that is a value, which The penultimate index of  Vector or Sequence.
+But In R, -index, means the index in Vector or Sequence will be ignored.</p>
+
+<h1 id="operator">Operator</h1>
+
+<h2 id="-">&lt;-</h2>
+
+<p>assign a value to name
+syntax:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># These are same</span><span class="w">
+</span><span class="n">name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">value</span><span class="w">
+</span><span class="n">value</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">name</span><span class="w">
+</span></code></pre></div></div>
+<p>And <code class="language-plaintext highlighter-rouge">&lt;-</code> means the local variable, when you want to use the global variable, you should use <code class="language-plaintext highlighter-rouge">&lt;&lt;-</code></p>
+
+<h2 id="c">c</h2>
+
+<p>Use the c() to initialize a vector.
+You <strong>can not</strong> use <code class="language-plaintext highlighter-rouge">C</code>.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">13</span><span class="p">,</span><span class="m">21</span><span class="p">)</span><span class="w">
+</span><span class="c1"># [1] 1 1 2 3 5 8 13 21</span><span class="w">
+</span><span class="n">v1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span><span class="w">
+</span><span class="n">v3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span><span class="s2">"B"</span><span class="p">,</span><span class="s2">"C"</span><span class="p">)</span><span class="w">
+</span><span class="nf">c</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span><span class="n">v3</span><span class="p">)</span><span class="w">
+</span><span class="c1"># [1] "1" "2" "3" "A" "B" "C"</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="be-care">Be Care</h3>
+
+<p>when you give different type in one vector, R will change some types, to make all the types are same.
+for example is case below, the vector has two different types, numeric, character. Before creating the vector, thereby(从而) making the data elements
+compatible(兼容).</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mode</span><span class="p">(</span><span class="m">3.1415</span><span class="p">)</span><span class="w">
+</span><span class="c1"># [1] "numeric"</span><span class="w">
+</span><span class="n">mode</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">)</span><span class="w">
+</span><span class="c1"># [1] "character"</span><span class="w">
+</span><span class="nf">c</span><span class="p">(</span><span class="m">3.1415</span><span class="p">,</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">)</span><span class="w">
+</span><span class="c1"># [1] "3.1415" "foo"</span><span class="w">
+</span><span class="n">mode</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">3.1415</span><span class="p">,</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">))</span><span class="w">
+</span><span class="c1"># "character"</span><span class="w">
+</span></code></pre></div></div>
+
+<h1 id="function">function</h1>
+
+<h2 id="cat">cat</h2>
+
+<p>Use this funcation to combine multiple items into one string.
+Be noticed that the <strong>cat</strong> put one <em>space</em> between each items. for example:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span><span class="p">(</span><span class="s2">"The zero occurs at"</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="w"> </span><span class="s2">"radians."</span><span class="p">,</span><span class="w"> </span><span class="s2">"\n"</span><span class="p">)</span><span class="w">
+</span><span class="c1"># The zero occurs at 6.283185 radians.</span><span class="w">
+</span></code></pre></div></div>
+<ul>
+  <li>You must provide a newline <strong>character (\n)</strong> to terminate the line.</li>
+  <li>A serious limitation is that it cannot print compound(夝坈) data structures such as matrices and lists.</li>
+</ul>
+
+<h2 id="ls">ls()</h2>
+
+<p>The function displays the name of object in workspace.
+or you can yuo <code class="language-plaintext highlighter-rouge">ls.str()</code> to show more details.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># if you workspace is empty</span><span class="w">
+</span><span class="n">ls</span><span class="p">()</span><span class="w">
+</span><span class="c1"># character(0)</span><span class="w">
+</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="n">ls</span><span class="p">()</span><span class="w">
+</span><span class="c1"># [1] "x"</span><span class="w">
+</span><span class="c1"># use ls.str() to get more details</span><span class="w">
+</span><span class="n">ls.str</span><span class="p">()</span><span class="w">
+</span><span class="c1"># x :  num 3</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="addsomething">AddSomeThing</h3>
+
+<p>The variables which begins with a dot(.) name are <strong>considered hidden and are not and are not normally of interest to users</strong></p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">.x</span><span class="w"> </span><span class="o">&lt;</span><span class="m">-10</span><span class="w">
+</span><span class="n">ls</span><span class="p">()</span><span class="w">
+</span><span class="c1"># character(0)</span><span class="w">
+</span></code></pre></div></div>
+<p>but you can use <code class="language-plaintext highlighter-rouge">ls(all.name=TRUE)</code> to show all variables include the hiddened one. <em>R is Case sensitive</em></p>
+
+<h2 id="rm">rm()</h2>
+
+<p>Remove the variables.
+for example</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span><span class="n">rm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span><span class="n">ls</span><span class="p">()</span><span class="w">
+</span><span class="c1"># character(0)</span><span class="w">
+</span></code></pre></div></div>
+<p>if you want to remove all variables, use <code class="language-plaintext highlighter-rouge">rm(list=ls())</code></p>
+
+<blockquote>
+  <p>Never put rm(list=ls()) into code you share with others, such as a library function or sample code sent to a mailing list. Deleting all the variables in someone else’s workspace is worse than rude and will make you extremely unpopular.</p>
+</blockquote>
+
+<h2 id="mode">mode()</h2>
+
+<p>To cheak the type of variables.</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mode</span><span class="p">(</span><span class="m">3.14</span><span class="p">)</span><span class="w">
+</span><span class="c1"># [1] "numeric"</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="vector-math-function">Vector Math Function</h2>
+
+<ul>
+  <li>mean (average value)</li>
+  <li>median</li>
+  <li>standard deviation</li>
+  <li>variance (方差)</li>
+  <li>correlation (相关系数)</li>
+  <li>covariance (坝方差)
+use these function below:
+• mean(x)
+• median(x)
+• sd(x)
+• var(x)
+• cor(x, y)
+• cov(x, y)</li>
+</ul>
+
+<h2 id="names">names()</h2>
+
+<p>Give the squence or vector every column a name.
+if you do not give enough names, R will give that column named  <code class="language-plaintext highlighter-rouge">&lt;NA&gt;</code>
+Then you can just use name to get the value.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"123"</span><span class="p">)</span><span class="w">
+</span><span class="nf">names</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="s2">"test1"</span><span class="p">)</span><span class="w">
+</span><span class="n">v</span><span class="w">
+</span><span class="c1"># test1  &lt;NA&gt;  &lt;NA&gt; </span><span class="w">
+</span><span class="c1"># "123" "123" "123" </span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">v</span><span class="p">[</span><span class="s2">"test1"</span><span class="p">]</span><span class="w">
+</span><span class="c1"># test1 </span><span class="w">
+</span><span class="c1"># "123" </span><span class="w">
+</span></code></pre></div></div>
+
+<h1 id="packages">Packages</h1>
+
+<p>You can use Packages to help you finish a lot of things more easily.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This funcation will show all the function support in the libray</span><span class="w">
+</span><span class="n">libray</span><span class="p">()</span><span class="w">
+</span><span class="c1"># Or you can use the code below</span><span class="w">
+</span><span class="n">install.packages</span><span class="p">()[,</span><span class="nf">c</span><span class="p">(</span><span class="s2">"Package"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Version"</span><span class="p">)]</span><span class="w">
+</span></code></pre></div></div>
+:ET

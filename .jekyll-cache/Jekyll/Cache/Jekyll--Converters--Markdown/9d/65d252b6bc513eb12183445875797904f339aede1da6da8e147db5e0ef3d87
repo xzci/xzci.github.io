@@ -1,0 +1,20 @@
+I"×<h1 id="-e-1688-count-of-matches-in-tournament">&lt;-E 1688&gt; Count of Matches in Tournament</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">numberOfMatches</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">matches</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        
+        <span class="kt">int</span> <span class="n">crm</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">crm</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="n">crm</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="n">matches</span> <span class="o">+=</span> <span class="n">crm</span><span class="p">;</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">matches</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

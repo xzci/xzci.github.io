@@ -1,0 +1,22 @@
+I"�<h1 id="-e-longest-common-prefix">&lt;-E&gt; Longest Common Prefix</h1>
+
+<p>求出最长的公共字串。这题有些歧义，根据<code class="language-plaintext highlighter-rouge">Disucuss</code>中的内容，增加条件如下：</p>
+<blockquote>
+  <p>{“a”,”a”,”b”} should give “” as there is nothing common in all the 3 strings.
+{“a”, “a”} should give “a” as a is longest common prefix in all the strings.
+{“abca”, “abc”} as abc
+{“ac”, “ac”, “a”, “a”} as a.</p>
+</blockquote>
+
+<p>有了该条件后，可以使用双重循环进行求解，在一般的操作中，需要注重边界值的问题。</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">string</span> <span class="nf">longestCommonPrefix</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">strs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">prefix</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">idx</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">strs</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span> <span class="n">prefix</span><span class="o">+=</span><span class="n">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">idx</span><span class="p">],</span> <span class="n">idx</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">strs</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">idx</span> <span class="o">&gt;=</span> <span class="n">strs</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">()</span> <span class="o">||</span><span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">strs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">!=</span> <span class="n">strs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">idx</span><span class="p">]))</span>
+                <span class="k">return</span> <span class="n">prefix</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">prefix</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+:ET

@@ -1,0 +1,24 @@
+I"Û<h1 id="-e-1704-determine-if-string-halves-are-alike">&lt;-E 1704&gt; Determine if String Halves Are Alike</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">bool</span> <span class="n">halvesAreAlike</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="n">string</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+        <span class="n">string</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+        <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">vs</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'a'</span><span class="p">,</span><span class="sc">'e'</span><span class="p">,</span><span class="sc">'i'</span><span class="p">,</span><span class="sc">'o'</span><span class="p">,</span><span class="sc">'u'</span><span class="p">,</span><span class="sc">'A'</span><span class="p">,</span><span class="sc">'E'</span><span class="p">,</span><span class="sc">'I'</span><span class="p">,</span><span class="sc">'O'</span><span class="p">,</span><span class="sc">'U'</span><span class="p">};</span>
+        <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">a</span> <span class="o">:</span> <span class="n">s1</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">vs</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">!=</span> <span class="n">vs</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+                <span class="n">c</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">a</span><span class="o">:</span><span class="n">s2</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">vs</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">!=</span> <span class="n">vs</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+                <span class="n">c</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

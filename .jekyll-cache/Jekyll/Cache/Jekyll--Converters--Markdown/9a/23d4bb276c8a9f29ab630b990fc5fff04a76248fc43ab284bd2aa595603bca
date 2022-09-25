@@ -1,0 +1,45 @@
+I"g<h1 id="-e-1417-reformat-the-string">&lt;-E 1417&gt; Reformat The String</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">string</span> <span class="n">reformat</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span>  <span class="p">{</span>
+	<span class="n">string</span> <span class="n">ans</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="sc">' '</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">charnum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">:</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">isalpha</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> 
+             <span class="n">charnum</span><span class="o">++</span><span class="p">;</span>             
+         <span class="k">else</span> 
+             <span class="n">num</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+	<span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="n">charnum</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> 
+        <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">index_num</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">index_char</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="n">charnum</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">index_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">index_char</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">index_num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">index_char</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">:</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">isalpha</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+             <span class="n">ans</span><span class="p">[</span><span class="n">index_char</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+             <span class="n">index_char</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>    
+         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>      
+             <span class="n">ans</span><span class="p">[</span><span class="n">index_num</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+             <span class="n">index_num</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>    
+         <span class="p">}</span>
+    <span class="p">}</span>
+	<span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

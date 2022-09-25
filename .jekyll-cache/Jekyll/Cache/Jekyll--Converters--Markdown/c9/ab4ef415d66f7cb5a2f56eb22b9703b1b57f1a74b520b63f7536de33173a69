@@ -1,0 +1,14 @@
+I"B	<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Python语法 * Python新增语法(与C/C++不同的) * Python函数 * 简单Python练习 </code></pre></div></div>
+<p>备注 每日一更 +代表更新完成。-为待续 <!--more--> 先占个坑</p>
+<h1 id="python语法">Python语法</h1>
+<p>众所周知，python是个动态类型的语言。意味着，你可以不用去声明变量类型就去使用它，但是一定要记住，python是一个<strong>强类型</strong>的语言，不用声明变量类型，不是所该语言不区分变量类型，而是语言本身在底层将转换替你做好了。 所以在面对”123” + “3”和 123 + 3 时，你还是需要手工去确认它的类型。 其他的函数细节直接<code class="language-plaintext highlighter-rouge">help</code>可以去查询相关的函数细节。 对于python所提供的相对序列的操作相较C或者C++更为直观。可以讲python的这些数据结构理解为一个void* 的变长数据也好，或者一个打包好的object也好。（其实往往不需要去关心这些的内部细节）</p>
+<h2 id="闭包">闭包</h2>
+<p>闭包就是能够读取其他函数内部变量的函数。创建闭包的三点：（援引自网络）</p>
+<blockquote> <ul> <li>闭包函数必须有内嵌函数</li> <li>内嵌函数需要引用该嵌套函数上一级namespace中的变量</li> <li>闭包函数必须返回内嵌函数</li> </ul> </blockquote>
+<h2 id="list">list</h2>
+<p>相比较来说，list，以<strong>[]</strong>包括的元素，可以类比成C++中的vector，但是内部的元素可以是任意的类型，相比C++必须在vector中确定明确的数据类型，更加的便利和可读，能够实现插入，删除，更改的操作。同时也可以支持C风格的下标访问。</p>
+<p>特别的，在使用help时，内置函数的说明存在相互的包含关系，比如在list中的index，单独使用<code class="language-plaintext highlighter-rouge">help(index())</code>无法查询得到，需要使用</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">help</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> </code></pre></div></div>
+<p>来查询到相应的帮助文件。</p>
+<p>…</p>
+:ET

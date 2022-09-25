@@ -1,0 +1,16 @@
+I"�<p>一些东西还是用中文总结一下，然后看看有没有可能再用英语写，叹气自己的英语水平。学习计算机网络的书本是:计算机网络自顶向下方法(computer networking A top-down approach)</p>
+<h1 id="概念术语说明">概念术语说明</h1>
+<p><strong>端系统(end system)</strong> 彼此交换报文，通过通信链路(communication link)和 分组交换机 (Packet switch)连接在一起。 端系统通过因特网服务提供商(Internet Service Provider ISP)接入互联网。端系统、分组交换机和其他因特网部件都要运行一系列协议。TCP/IP 为因特网主要的协议。与因特网相连的端系统提供了一个套接字接口(socket interface)。</p>
+<p><strong>分组 Packet:</strong> 当一台端系统向另外的一台端系统发送数据的时候，发送端系统讲数据分段，并为每段加上首部字节，由此形成的信息包。</p>
+<p>每个分组都要经过</p>
+<ul> <li>分组交换机(Packet switch)</li> <li>通信链路(communication link)</li> </ul>
+<p>通过分组交换机和通信链路的有</p>
+<ul> <li>电路交换(circuit switching)</li> <li>分组交换(packet switching)</li> </ul>
+<p><strong>分组交换机 Packet switch:</strong> 从一条入通信链路接受到达的分组，并从他的一条出通信链路转发该分组。 多数分组交换机在链路的输入端使用存储转发传输(store-and-forward transmission)</p>
+<blockquote> <p>与电路交换的区别见下</p> </blockquote>
+<p>交换机主要有</p>
+<ul> <li>有路由器(router)</li> <li>链路层交换机 (link-layer switch)。</li> </ul>
+<p><strong>存储转发传输 store-and-forward transmission:</strong> 交换机能够在开始向输出链路传输该跟组的第一个比特之前，必须接收到整个分组。</p>
+<p><strong>路径 route/path:</strong> 一个分组所经历的一系列通信链路和分组交换机。</p>
+<p>…</p>
+:ET

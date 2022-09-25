@@ -1,0 +1,38 @@
+I"Ž<h1 id="-e-83-remove-duplicates-from-sorted-list">&lt;-E 83&gt; Remove Duplicates from Sorted List</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">deleteDuplicates</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">if</span><span class="p">(</span><span class="n">head</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">first</span><span class="o">=</span><span class="n">head</span><span class="p">,</span><span class="o">*</span><span class="n">last</span><span class="o">=</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">last</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">first</span><span class="o">-&gt;</span><span class="n">val</span><span class="o">==</span><span class="n">last</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">ListNode</span> <span class="o">*</span><span class="n">temp</span><span class="o">=</span><span class="n">last</span><span class="p">;</span>
+                <span class="n">last</span><span class="o">=</span><span class="n">last</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+                <span class="n">first</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">last</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">first</span><span class="o">=</span><span class="n">first</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+                <span class="n">last</span><span class="o">=</span><span class="n">last</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

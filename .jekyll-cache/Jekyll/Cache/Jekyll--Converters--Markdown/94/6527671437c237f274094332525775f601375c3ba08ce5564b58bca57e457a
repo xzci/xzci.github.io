@@ -1,0 +1,18 @@
+I"�<p>2020年 02 月 26 日更新</p>
+<h1 id="变量初始化">变量初始化</h1>
+<p>函数体之外的变量都被初始化为 0 函数体内部的变量都不会被初始化</p>
+<ul> <li>直接初始化 没有等号</li> <li>拷贝初始化 有等号</li> </ul>
+<h2 id="引用">引用</h2>
+<p>引用一旦被初始化后, 就不能改为其他对象, (会进行赋值操作)</p>
+<h1 id="传递引用">传递引用</h1>
+<p>可以阻止函数传递时, 对参数的拷贝</p>
+<h1 id="类">类</h1>
+<h2 id="成员函数">成员函数</h2>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Type</span> <span class="n">A</span><span class="o">::</span><span class="n">f</span><span class="p">()</span> <span class="k">const</span> <span class="p">{}</span> </code></pre></div></div>
+<p>若将成员函数声明为const，则不允许通过其修改类的数据成员。 值得注意的是，如果类中存在指针类型的数据成员即便是const函数只能保证不修改该指针的值，并不能保证不修改指针指向的对象。</p>
+<p>设置友元类, 可以访问 私有变量</p>
+<h2 id="构造函数初始值">构造函数初始值</h2>
+<p>在构造函数中,<strong>无法忽略</strong> 初始化和赋值之间的差异</p>
+<ul> <li>构造函数初始化存在顺序关系 最好让保证于成名声明的顺序一致</li> </ul>
+<p>&lt;div class=”language-c++…</p>
+:ET

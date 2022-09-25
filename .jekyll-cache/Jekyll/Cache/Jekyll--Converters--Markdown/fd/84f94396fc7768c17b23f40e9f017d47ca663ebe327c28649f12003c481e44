@@ -1,0 +1,56 @@
+I"ñ <h1 id="-e-720-longest-word-in-dictionary">&lt;-E 720&gt; Longest Word in Dictionary</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">private:</span>
+    <span class="k">struct</span> <span class="nc">TrieNode</span> <span class="p">{</span>
+        <span class="n">TrieNode</span> <span class="o">*</span><span class="n">children</span><span class="p">[</span><span class="mi">26</span><span class="p">];</span>
+        <span class="kt">bool</span> <span class="n">isEndOfWord</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">};</span>
+    
+<span class="nl">public:</span>
+    <span class="k">static</span> <span class="kt">bool</span> <span class="n">compare</span><span class="p">(</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">){</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="kt">void</span> <span class="n">TrieInsert</span><span class="p">(</span><span class="n">TrieNode</span> <span class="o">*</span><span class="n">root</span><span class="p">,</span> <span class="kt">int</span> <span class="n">idx</span><span class="p">,</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">canBeBuilt</span><span class="p">,</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">res</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">idx</span> <span class="o">==</span> <span class="n">word</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span>
+            <span class="n">root</span><span class="o">-&gt;</span><span class="n">isEndOfWord</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">canBeBuilt</span><span class="p">){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">==</span><span class="n">word</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span>
+                    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span><span class="o">&lt;</span><span class="n">word</span><span class="p">)</span> <span class="o">?</span> <span class="n">res</span> <span class="o">:</span> <span class="n">word</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">&lt;</span><span class="n">word</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span>
+                    <span class="n">res</span> <span class="o">=</span> <span class="n">word</span><span class="p">;</span>
+                <span class="p">}</span> 
+            <span class="p">}</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">-</span><span class="sc">'a'</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+            <span class="n">root</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">-</span><span class="sc">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="p">();</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">){</span>
+            <span class="n">canBeBuilt</span>  <span class="o">&amp;=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">-</span><span class="sc">'a'</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">isEndOfWord</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="n">TrieInsert</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">children</span><span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">-</span><span class="sc">'a'</span><span class="p">],</span> <span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="n">canBeBuilt</span><span class="p">,</span> <span class="n">res</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="n">string</span> <span class="n">longestWord</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+            <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">words</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">compare</span><span class="p">);</span>
+        
+        <span class="n">TrieNode</span> <span class="o">*</span><span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+        <span class="n">string</span> <span class="n">res</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">words</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">TrieInsert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">true</span><span class="p">,</span> <span class="n">res</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

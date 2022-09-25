@@ -1,0 +1,11 @@
+I"m<h1 id="-e-1523-count-odd-numbers-in-an-interval-range">&lt;-E 1523&gt; Count Odd Numbers in an Interval Range</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">countOdds</span><span class="p">(</span><span class="kt">int</span> <span class="n">low</span><span class="p">,</span><span class="kt">int</span> <span class="n">high</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span> <span class="o">+</span> <span class="n">high</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">low</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

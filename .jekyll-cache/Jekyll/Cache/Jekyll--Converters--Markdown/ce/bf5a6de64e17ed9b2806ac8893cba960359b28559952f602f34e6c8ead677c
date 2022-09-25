@@ -1,0 +1,45 @@
+I"Ã<h1 id="-e-155-min-stack">&lt;-E 155&gt; Min Stack</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MinStack</span> <span class="p">{</span>
+<span class="nl">private:</span>
+    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stk</span><span class="p">;</span>
+    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">min</span><span class="p">;</span>
+    
+<span class="nl">public:</span>
+    <span class="cm">/** initialize your data structure here. */</span>
+    <span class="n">MinStack</span><span class="p">()</span> <span class="p">{</span>
+        
+    <span class="p">}</span>
+    
+    <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">min</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span> <span class="n">min</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">x</span><span class="p">)</span>
+            <span class="n">min</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="kt">void</span> <span class="n">pop</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">min</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">==</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">())</span>
+            <span class="n">min</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="kt">int</span> <span class="n">top</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="kt">int</span> <span class="n">getMin</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">min</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="cm">/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack* obj = new MinStack();
+ * obj-&gt;push(x);
+ * obj-&gt;pop();
+ * int param_3 = obj-&gt;top();
+ * int param_4 = obj-&gt;getMin();
+ */</span>
+</code></pre></div></div>
+
+:ET

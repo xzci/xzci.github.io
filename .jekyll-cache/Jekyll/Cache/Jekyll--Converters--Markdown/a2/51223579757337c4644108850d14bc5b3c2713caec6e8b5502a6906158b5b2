@@ -1,0 +1,28 @@
+I"E<h1 id="-e-290-word-pattern">&lt;-E 290&gt; Word Pattern</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">bool</span> <span class="n">wordPattern</span><span class="p">(</span><span class="n">string</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">stringstream</span> <span class="n">ss</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">mp1</span><span class="p">;</span>
+        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">mp2</span><span class="p">;</span>
+        <span class="n">string</span> <span class="n">str</span><span class="p">;</span> 
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">ss</span> <span class="o">&gt;&gt;</span> <span class="n">str</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">mp1</span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="n">and</span> <span class="n">mp2</span><span class="p">[</span><span class="n">pattern</span><span class="p">[</span><span class="n">i</span><span class="p">]].</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">){</span>
+                <span class="n">mp1</span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">pattern</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+                <span class="n">mp2</span><span class="p">[</span><span class="n">pattern</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">str</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">mp1</span><span class="p">[</span><span class="n">str</span><span class="p">]</span> <span class="o">!=</span> <span class="n">pattern</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="n">or</span> <span class="n">mp2</span><span class="p">[</span><span class="n">pattern</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">!=</span> <span class="n">str</span><span class="p">)</span>
+                <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">pattern</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> 
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    
+<span class="p">};</span>
+</code></pre></div></div>
+
+:ET

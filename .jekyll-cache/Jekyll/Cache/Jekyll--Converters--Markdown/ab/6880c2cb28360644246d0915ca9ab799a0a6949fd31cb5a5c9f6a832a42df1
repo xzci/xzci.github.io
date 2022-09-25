@@ -1,0 +1,8 @@
+I"<p>算法竞赛入门经典的习题，变种题是自己想的和自己添加的，其他的题目则为书本上选取</p>
+<h1 id="第二章">第二章</h1>
+<h2 id="水仙花数">水仙花数</h2>
+<p>输出100-999 中所有的水仙花数, ABC 满足 ABC = A^3 + B^3 + C^3 则称之为水仙花数</p>
+<p>适合穷举法</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">f_1</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span> <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">999</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">a</span>&lt;span...
+</code></pre></div></div>
+:ET

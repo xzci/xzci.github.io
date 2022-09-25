@@ -1,0 +1,6 @@
+I"x<p>I think this notes may help me to get better understanding of R.</p>
+<h1 id="help">help</h1>
+<p>You can type these codes to help you to understand the function which R is provided</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># get the help of function</span><span class="w"> </span><span class="n">help</span><span class="p">(</span><span class="n">functionName</span><span class="p">)</span><span class="w"> </span><span class="c1"># get the args of one function</span><span class="w"> </span><span class="n">args</span>&lt;span...
+</code></pre></div></div>
+:ET

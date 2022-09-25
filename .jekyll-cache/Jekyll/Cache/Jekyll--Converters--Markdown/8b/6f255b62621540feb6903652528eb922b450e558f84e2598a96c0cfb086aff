@@ -1,0 +1,12 @@
+I"ÿ<p>This blog is talking about the tips about C which i think are most important.</p>
+
+<h1 id="covert-to-string">Covert to String</h1>
+
+<p>##</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"test"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+:ET

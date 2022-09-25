@@ -1,0 +1,228 @@
+I"c(<h1 id="00-search">00 Search</h1>
+
+<p>Finding a solution to a problem, like a navigator app that finds the best route from your origin to the destination, or like playing a game and figuring out the next move.</p>
+
+<h2 id="basic-terminology">Basic terminology</h2>
+
+<ul>
+  <li>
+    <p>initial state</p>
+
+    <p>the state in which the agent begins</p>
+
+    <ul>
+      <li>agent</li>
+    </ul>
+
+    <p>entity that perceives its environment and acts upon that environment</p>
+
+    <ul>
+      <li>
+        <p>state</p>
+
+        <p>a configuration of the agent and its environment</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>actions</p>
+
+    <p>choices that can be made in a state</p>
+
+    <ul>
+      <li>
+        <p>actions</p>
+
+        <p><strong>ACTIONS(s)</strong> returns the set of actions that can be executed in state s</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>transition model</p>
+
+    <p>a description of what state results from performing any applicable action in any state</p>
+
+    <p><strong>RESULT(s, a)</strong> returns the state resulting from performing action a in state s</p>
+
+    <ul>
+      <li>
+        <p>state space</p>
+
+        <p>the set of all states reachable from the initial state by any sequence of actions</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>goal test</p>
+
+    <p>way to determine whether a given state is a goal state</p>
+  </li>
+  <li>
+    <p>path cost</p>
+
+    <p>numerical cost associated with a given path</p>
+  </li>
+  <li>
+    <p>solution</p>
+
+    <p>a sequence of actions that leads from the initial state to a goal state</p>
+  </li>
+  <li>
+    <p>optimal solution</p>
+
+    <p>a solution that has the lowest path cost among all solutions</p>
+  </li>
+  <li>
+    <p>evaluation function</p>
+
+    <p>function that estimates the expected utility of the game from a given state</p>
+  </li>
+</ul>
+
+<h3 id="data-structure">Data structure</h3>
+
+<ol>
+  <li>
+    <p>node (Actually it is not a typical Data structure)</p>
+
+    <p>a data structure that keeps track of
+         - a state
+         - a parent (node that generated this node)
+         - an action (action applied to parent to get node)
+         - a path cost (from initial state to node)</p>
+  </li>
+  <li>
+    <p>stack</p>
+
+    <p>last-in first-out data type</p>
+  </li>
+  <li>
+    <p>queue</p>
+
+    <p>first-in first-out data type</p>
+  </li>
+</ol>
+
+<h2 id="uninformed-search">uninformed search</h2>
+
+<p>Search strategy that uses no problem- specific knowledge.</p>
+
+<p>They both are always work, and not necessarily a optimal solution.</p>
+
+<h3 id="dfs-depth-first-search">DFS depth-first search</h3>
+
+<p>search algorithm that always expands the deepest node in the frontier, using stack.</p>
+
+<ul>
+  <li>
+    <p>Pros:
+At best, this algorithm is the fastest. If it “lucks out” and always chooses the right path to the solution (by chance), then depth-first search takes the least possible time to get to a solution.</p>
+  </li>
+  <li>
+    <p>Cons:
+It is possible that the found solution is not optimal.
+At worst, this algorithm will explore every possible path before finding the solution, thus taking the longest possible time before reaching the solution.</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># Define the function that removes a node from the frontier and returns it.
+</span>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    	  <span class="c1"># Terminate the search if the frontier is empty, because this means that there is no solution.
+</span>        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="nb">Exception</span><span class="p">(</span><span class="s">"empty frontier"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+        	  <span class="c1"># Save the last item in the list (which is the newest node added)
+</span>            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">frontier</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="c1"># Save all the items on the list besides the last node (i.e. removing the last node)
+</span>            <span class="bp">self</span><span class="p">.</span><span class="n">frontier</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">frontier</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">node</span>
+</code></pre></div></div>
+
+<h3 id="bfs-breadth-first-search">BFS breadth-first search</h3>
+
+<p>search algorithm that always expands the shallowest node in the frontier, using queue.</p>
+
+<ul>
+  <li>
+    <p>Pros:
+This algorithm is guaranteed to find the optimal solution.</p>
+  </li>
+  <li>
+    <p>Cons:
+This algorithm is almost guaranteed to take longer than the minimal time to run.
+At worst, this algorithm takes the longest possible time to run.</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Define the function that removes a node from the frontier and returns it.
+</span>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    	  <span class="c1"># Terminate the search if the frontier is empty, because this means that there is no solution.
+</span>        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">empty</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="nb">Exception</span><span class="p">(</span><span class="s">"empty frontier"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Save the oldest item on the list (which was the first one to be added)
+</span>            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">frontier</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="c1"># Save all the items on the list besides the first one (i.e. removing the first node)
+</span>            <span class="bp">self</span><span class="p">.</span><span class="n">frontier</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">frontier</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">return</span> <span class="n">node</span>
+</code></pre></div></div>
+
+<h2 id="informed-search">informed search</h2>
+
+<p>search strategy that uses problem-specific knowledge to find solutions more efficiently</p>
+
+<ul>
+  <li>greedy best-first search</li>
+</ul>
+
+<p>search algorithm that expands the node that is closest to the goal, as estimated by a <strong>heuristic</strong> function h(n)</p>
+
+<p>It is important to emphasize that, as with any heuristic, it can go wrong and lead the algorithm down a slower path than it would have gone otherwise. It is possible that an uninformed search algorithm will provide a better solution faster, but it is less likely to do so than an informed algorithm.</p>
+
+<ul>
+  <li>A* search</li>
+</ul>
+
+<p>search algorithm that expands node with lowest value of g(n) + h(n)</p>
+
+<p>g(n) = cost to reach node h(n) = estimated cost to goal</p>
+
+<p>optimal if</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>h(n) is admissible (never overestimates the true cost), and
+h(n) is consistent (for every node n and successor n' with step cost c, h(n) ≤ h(n') + c)
+</code></pre></div></div>
+
+<h2 id="adversarial-search">Adversarial Search</h2>
+
+<h3 id="minimax">Minimax</h3>
+
+<p>Minimax represents winning conditions as (-1) for one side and (+1) for the other side. Further actions will be driven by these conditions, with the minimizing side trying to get the lowest score, and the maximizer trying to get the highest score.</p>
+
+<p>Representing a Tic-Tac-Toe AI:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>S₀: Initial state (in our case, an empty 3X3 board)
+
+Players(s): a function that, given a state s, returns which player’s turn it is (X or O).
+
+Actions(s): a function that, given a state s, return all the legal moves in this state (what spots are free on the board).
+
+Result(s, a): a function that, given a state s and action a, returns a new state. This is the board that resulted from 
+performing the action a on state s (making a move in the game).
+
+Terminal(s): a function that, given a state s, checks whether this is the last step in the game, i.e. if someone won or there is a tie. Returns True if the game has ended, False otherwise.
+
+Utility(s): a function that, given a terminal state s, returns the utility value of the state: -1, 0, or 1.
+</code></pre></div></div>
+
+<h3 id="alpha-beta-pruning">Alpha-Beta Pruning</h3>
+
+<p>Alpha-Beta Pruning skips some of the recursive computations that are decidedly unfavorable. After establishing the value of one action, if there is initial evidence that the following action can bring the opponent to get to a better score than the already established action, there is no need to further investigate this action because it will decidedly be less favorable than the previously established one.</p>
+
+<h3 id="depth-limited-minimax">Depth-Limited Minimax</h3>
+
+<p>considers only a pre-defined number of moves before it stops, without ever getting to a terminal state. However, this doesn’t allow for getting a precise value for each action, since the end of the hypothetical games has not been reached.</p>
+
+<p>To deal with this problem, Depth-limited Minimax relies on an evaluation function that estimates the expected utility of the game from a given state, or, in other words, assigns values to states.</p>
+
+:ET

@@ -1,0 +1,482 @@
+I"}�<p>算法竞赛入门经典的例题和习题，变种题是自己想的和自己添加的，其他的题目则为书本上选取</p>
+
+<h1 id="第一章">第一章</h1>
+
+<h2 id="圆柱体表面积">圆柱体表面积</h2>
+
+<p>输入底面半径r和高h，输出圆柱体的表面积，保留3位小数</p>
+
+<blockquote>
+  <p>3.5  9</p>
+</blockquote>
+
+<blockquote>
+  <p>Area = 274.889</p>
+</blockquote>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">double</span> <span class="n">r</span><span class="p">,</span> <span class="kt">double</span> <span class="n">h</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">PI</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">((</span><span class="n">PI</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span> <span class="o">*</span> <span class="n">h</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">f_2</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">r</span><span class="p">,</span> <span class="n">h</span><span class="p">;</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%lf%lf"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">h</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Area = %.3lf"</span><span class="p">,</span> <span class="n">O_1_1</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">h</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="c1">// -----------------</span>
+
+<span class="kt">void</span> <span class="nf">f_simple</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// one way to get the value of pi</span>
+    <span class="k">const</span> <span class="kt">double</span> <span class="n">pi</span> <span class="o">=</span> <span class="n">acos</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">r</span><span class="p">,</span> <span class="n">h</span><span class="p">;</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%lf%lf"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">h</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Area = %.3f"</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">((</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span> <span class="o">*</span> <span class="n">h</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="三位数反转">三位数反转</h2>
+
+<p>输入一个三位数，分离出他的百位，十位，个位 并输出</p>
+
+<blockquote>
+  <p>127</p>
+</blockquote>
+
+<blockquote>
+  <p>721</p>
+</blockquote>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d%d%d"</span><span class="p">,</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">100</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="变种一-3位反转后首位为0">变种一 3位反转后首位为0</h3>
+
+<p><strong>首位为0保留</strong></p>
+
+<ol>
+  <li>上例代码。</li>
+  <li>转换为字符串。</li>
+</ol>
+
+<p>// In Programming language C, it has several methods to convert some types into string.
+// 1. using sprintf
+// 2. using the standard library (itoa)</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// in this question, we can know it only has 3 digits, using the sprintf will be the simplest.</span>
+
+<span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">fun_2</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">answer</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+    <span class="c1">// convert to string</span>
+    <span class="n">sprintf</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span><span class="s">"%d"</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span>
+    <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">answer</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">answer</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>首位为0去除</strong></p>
+
+<ol>
+  <li>转换为字符串， 然后输出时判断为0 不输出。</li>
+  <li>将值加和，成为数字。</li>
+</ol>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">f_2_1</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">answer</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+    <span class="c1">// convert to string</span>
+    <span class="n">sprintf</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span><span class="s">"%d"</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span>
+    <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">answer</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">answer</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">'0'</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">f_2_2</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span> <span class="o">/</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span> <span class="o">/</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="n">answer</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="变种二-任意位数的值都反转">变种二 任意位数的值都反转</h3>
+
+<p><strong>首位为0保留</strong></p>
+
+<ol>
+  <li>转换为字符串
+Because we don’t know how many digits we need to use, we can’t use sprintf</li>
+</ol>
+
+<p><strong>首位为0去除</strong></p>
+
+<h2 id="交换变量">交换变量</h2>
+
+<p>输入两个整数a和b，交换2者的值</p>
+
+<blockquote>
+  <p>824 16</p>
+</blockquote>
+
+<blockquote>
+  <p>16 824</p>
+</blockquote>
+
+<p>最简单的, 3个变量交换方式.</p>
+
+<h3 id="变种一-任意基本变量都交换">变种一 任意基本变量都交换</h3>
+
+<p>传递另外的参数, 使用switch 确定 基本变量的类型.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">enum</span> <span class="n">types</span> <span class="p">{</span>
+    <span class="n">Int</span><span class="p">,</span> <span class="n">Double</span><span class="p">,</span> <span class="n">Float</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">swap_int</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">swap_double</span><span class="p">(</span><span class="kt">double</span><span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="k">enum</span> <span class="n">types</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+   
+    <span class="k">switch</span> <span class="p">(</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">Int</span><span class="p">:</span>
+        <span class="n">swap_int</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">b</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">Double</span><span class="p">:</span>
+        <span class="n">swap_double</span><span class="p">((</span><span class="kt">double</span><span class="o">*</span><span class="p">)</span><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="kt">double</span><span class="o">*</span><span class="p">)</span><span class="n">b</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="鸡兔同笼">鸡兔同笼</h2>
+
+<p>已经鸡和兔的总数量为n，总腿数为m， 输入n和m，以此输出鸡和兔的数目，如果无解，则输出no answer.</p>
+
+<blockquote>
+  <p>14 32</p>
+</blockquote>
+
+<blockquote>
+  <p>12 2</p>
+</blockquote>
+
+<p>// 略</p>
+
+<h2 id="三整数排序">三整数排序</h2>
+
+<p>输入3个整数，从小到大排序后输出</p>
+
+<blockquote>
+  <p>20 7 33</p>
+</blockquote>
+
+<blockquote>
+  <p>7 20 33</p>
+</blockquote>
+
+<p><strong>特别的，本题意在给出数据量固定，且比较少的特殊情况下</strong> 可以直接暴力输出.</p>
+
+<h1 id="第二章">第二章</h1>
+
+<h2 id="形如aabb的4位完全平方数即前两位数字相等-后两位数学也相等">形如aabb的4位完全平方数(即前两位数字相等, 后两位数学也相等)</h2>
+
+<blockquote>
+  <p>1122</p>
+</blockquote>
+
+<p>枚举,然后判断</p>
+
+<p>枚举方式</p>
+
+<ul>
+  <li>枚举每个数符合aabb,然后判断是否是完全平方数</li>
+  <li>枚举每个数平方后判断是否为aabb</li>
+</ul>
+
+<h2 id="3n-１">3n +１</h2>
+
+<p>任意大于1的自然数,若n为奇数, 则将n变为3n + 1, 否则将变为n的一半,经过这样的若干次变换,一定会使n变为1. 例如3 -&gt; 10 -&gt; 5 -&gt; 16 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1</p>
+
+<p>输入n,输出变换的次数.</p>
+
+<blockquote>
+  <p>3
+7</p>
+</blockquote>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">n</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">index</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">index</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="近似计算">近似计算</h2>
+
+<p>计算pi/4 = 1 - 1/3 + 1/5 - 1/7 + …  直到最后一项小于10e-6</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">item</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">sum</span> <span class="o">-=</span> <span class="n">item</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">item</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">item</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">)</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="阶乘之和">阶乘之和</h2>
+
+<p>输入n, 计算S = 1! + 2! + 3! + …. + n! 的末6位(不含前导0). n &lt;= 1e6</p>
+
+<blockquote>
+  <p>10
+37913</p>
+</blockquote>
+
+<ul>
+  <li>只计算末尾6位 (因为只需要末尾的6位,可以只用考虑末尾6位的情况, 防止溢出的可能)</li>
+  <li>全部计算,最后取出6位数据,因为该式为阶乘,所以很大概率会溢出</li>
+</ul>
+
+<p><strong>特别的</strong> 25! 末尾有6个0, 所以后面的加和不会影响数据的结果. 
+<code class="language-plaintext highlighter-rouge">if(n &gt; 25) n = 25;</code></p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">temp</span> <span class="o">%</span> <span class="mi">1000000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">sum</span> <span class="o">=</span> <span class="p">(</span><span class="n">sum</span> <span class="o">+</span> <span class="n">temp</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000000</span><span class="p">;</span>  
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="数据统计">数据统计</h2>
+
+<p>输入一些整数, 求出它们的最小值,最大值和平均值(保留3位小数) 保证不超过1000的整数</p>
+
+<h3 id="变种-不作任何限制产生溢出的情况下">变种 不作任何限制,产生溢出的情况下</h3>
+
+<p>自己实现相关的数据结构和运算(考虑到溢出的情况)</p>
+
+<ul>
+  <li>简单: 利用字符串完成所有的操作</li>
+  <li>比较难: 位运算</li>
+</ul>
+
+<h1 id="第三章">第三章</h1>
+
+<h2 id="开灯问题">开灯问题</h2>
+<p>有n盏灯,编号1-n, 第1个人把所有的灯打开, 第二个人按下所有编号为2的倍数的开关, 第三个人按下所有编号为3的倍数的开关. 以此类推, 一共有k个人,最后哪些灯开着?</p>
+
+<blockquote>
+  <p>7 3
+1 5 6 7</p>
+</blockquote>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 灯的个数以1开头,为了不进行加减运算, 直接创建的时候,浪费了0下标的元素</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+   
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;)</span> <span class="p">{</span>
+                <span class="n">j</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">*</span> <span class="n">i</span><span class="p">;</span>
+                <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">!</span><span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                <span class="n">temp</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="蛇形填数">蛇形填数</h2>
+
+<p>在n * n 的方阵中填成蛇形, 1, 2, 3….</p>
+
+<blockquote>
+  <p>10 11 12 1
+9  16 13 2
+8  15 14 3
+7  6  5  4</p>
+</blockquote>
+
+<p>可以判断相应位置, 和周围是否已经被填入数字(先用0 填满整个数组)</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">tot</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span><span class="n">tot</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">a</span><span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">y</span><span class="p">])</span>
+        <span class="n">a</span><span class="p">[</span><span class="o">++</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">tot</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="o">--</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">tot</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">a</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">y</span><span class="p">])</span>
+        <span class="n">a</span><span class="p">[</span><span class="o">--</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">tot</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="o">++</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">tot</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>自己实现的:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="o">**</span> <span class="n">matrix</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">**</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">round</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">round</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> 
+        <span class="n">y</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">round</span><span class="p">;</span> 
+        <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="n">round</span> <span class="o">&amp;&amp;</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+            <span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="o">++</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span>  <span class="n">round</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+            <span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="o">--</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span><span class="o">++</span><span class="p">;</span>    
+        <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">round</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+            <span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="o">--</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="n">round</span> <span class="o">&amp;&amp;</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+            <span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">round</span><span class="o">++</span><span class="p">;</span> 
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">matrix</span><span class="p">[</span><span class="o">++</span><span class="n">x</span><span class="p">][</span><span class="o">--</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"%3d "</span><span class="p">,</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+        <span class="n">putchar</span><span class="p">(</span><span class="sc">'\n'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="猴子排位">猴子排位</h2>
+
+<p>题目内容：n只猴子（n&lt;100）要选大王，选举方法如下：所有猴子按1,2,3,……, n编号围坐一圈，从第1号开始按照1,2,……, m报数，凡报到m号的退出圈外，如此循环报数，直到圈内剩下一只猴子时，这只猴子就是大王。编程一个程序实现上述过程，n和m由键盘输入。</p>
+
+<blockquote>
+  <p>5 3
+3 1 5 2 4</p>
+</blockquote>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    
+    <span class="kt">int</span> <span class="n">out_number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;;</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">temp</span> <span class="o">==</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+                <span class="n">out_number</span><span class="o">++</span><span class="p">;</span>             
+            <span class="p">}</span>
+            <span class="n">temp</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+   
+        <span class="k">if</span> <span class="p">(</span><span class="n">out_number</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">i</span> <span class="o">%=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="竖式问题">竖式问题</h2>
+
+<p>输入一些数字, 利用这些数字生成 abc * bc 的竖式. 要求中间的每个步骤生成的数,都必须在输入的数字范围内. 并根据有多少解,输出相应的竖式. 若不存在,输出不存在.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">abc</span> <span class="o">*</span> <span class="p">(</span><span class="n">de</span> <span class="o">%</span> <span class="mi">10</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">abc</span> <span class="o">*</span> <span class="p">(</span><span class="n">de</span> <span class="o">/</span> <span class="mi">10</span><span class="p">),</span> <span class="n">z</span> <span class="o">=</span> <span class="n">abc</span> <span class="o">*</span> <span class="n">de</span><span class="p">;</span>
+<span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">"%d%d%d%d%d"</span><span class="p">,</span> <span class="n">abc</span><span class="p">,</span> <span class="n">de</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
+</code></pre></div></div>
+<p>以此判读buf中的数是否在输入的范围之中. 使用<code class="language-plaintext highlighter-rouge">strchr</code> 函数</p>
+
+<h2 id="tex中的引号">TeX中的引号</h2>
+
+<p>将双引号转换为其他字符</p>
+
+<p>用一个变量保存状态就可以</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">status</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">'"'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">status</span> <span class="o">?</span> <span class="s">"-"</span><span class="p">,</span> <span class="s">"+"</span><span class="p">);</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="o">!</span><span class="n">status</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+    <span class="nf">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="错位键盘">错位键盘</h2>
+
+<p>输入一个顺序错误的字符串, 每一个字符都依照键盘位置向右边一位.
+输出一个顺序正确的字符串</p>
+
+<p>建立表,查找</p>
+
+<h2 id="回文词和镜像">回文词和镜像</h2>
+
+<p>判断一个字符串是回文词和镜像串</p>
+
+<p>建立表,查找</p>
+
+<h2 id="猜数字">猜数字</h2>
+
+<h2 id="生成元">生成元</h2>
+
+<h2 id="环状序列">环状序列</h2>
+:ET

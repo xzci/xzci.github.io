@@ -1,0 +1,26 @@
+I"�<p>I have deleted all my posts and i want to rebuild a new blog, including new tools and new programming languages. 
+By the way, I got an conditional offer from UQ， Hope i can pass all the text. :smile:</p>
+
+<h1 id="titles">Titles</h1>
+
+<p>Here will be somethings i want to post.</p>
+
+<h1 id="finished">Finished</h1>
+
+<p>Here will be some titles which are finished.</p>
+
+<p>在这里我们首先说一下mac终端执行命令的时候，不会像在windows系统中安装的linux一样支持自动补全，需要自己去调试</p>
+
+<p>步骤如下：</p>
+
+<p>（1）打开终端输入nano .inputrc（这里一定要注意nano后面有一个空格）</p>
+
+<p>（2）在nano编辑器中写上如下命令</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   set completion-ignore-case on
+   set show-all-if-ambiguous on
+   TAB: menu-complete
+</code></pre></div></div>
+
+<p>（3）按下ctrl+o，回车，重启终端，自动补全按tab键就可以</p>
+:ET

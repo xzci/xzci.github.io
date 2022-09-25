@@ -1,0 +1,46 @@
+I"<h1 id="-h-52-n-queens-ii">&lt;-H 52&gt; N-Queens II</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+
+<span class="nl">private:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">columns</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">main_diag</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">anti_diag</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">ans_count</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="n">dfs</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">count</span><span class="p">,</span> <span class="kt">int</span> <span class="n">row</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">const</span> <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">count</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">row</span> <span class="o">==</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">ans_count</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="n">columns</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">main_diag</span><span class="p">[</span><span class="n">row</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span>
+                <span class="n">anti_diag</span><span class="p">[</span><span class="n">row</span> <span class="o">-</span> <span class="n">j</span> <span class="o">+</span> <span class="n">num</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">ok</span><span class="p">)</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="n">count</span><span class="p">[</span><span class="n">row</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+            <span class="n">columns</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">main_diag</span><span class="p">[</span><span class="n">row</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">anti_diag</span><span class="p">[</span><span class="n">row</span> <span class="o">-</span> <span class="n">j</span> <span class="o">+</span> <span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+
+            <span class="n">count</span><span class="p">[</span><span class="n">row</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">columns</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">main_diag</span><span class="p">[</span><span class="n">row</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">anti_diag</span><span class="p">[</span><span class="n">row</span> <span class="o">-</span> <span class="n">j</span> <span class="o">+</span> <span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">totalNQueens</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="n">columns</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="n">main_diag</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="n">anti_diag</span>  <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="n">ans_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">count</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">ans_count</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+:ET

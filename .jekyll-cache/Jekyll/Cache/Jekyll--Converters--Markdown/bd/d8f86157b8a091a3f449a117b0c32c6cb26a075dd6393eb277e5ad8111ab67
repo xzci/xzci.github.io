@@ -1,0 +1,126 @@
+I")"<h1 id="综述">综述</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Java 9 有坑 (+) 11-18
+* Java 学习
+* Java 学习
+</code></pre></div></div>
+
+<p>备注 每日一更 +代表更新完成。-为待续
+<!--more--></p>
+
+<p>java 9 对环境变量做了改动，原来的<strong>：.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</strong> 中的<strong>dt.jar</strong> 和<strong>tools.jar</strong> 被取消了。所以现在只需要一个__[ . ]__
+嗯。就是这样。</p>
+
+<ul>
+  <li>
+    <p>JAVA_HOME
+  JDK installation path, example: C:\Program Files\Java\jdk-9</p>
+  </li>
+  <li>
+    <p>CLASSPATH 
+  . (just a dot)</p>
+  </li>
+  <li>
+    <p>PATH 
+  It may already exists on your system under the name Path, so edit its value by adding at the end: %JAVA_HOME%\bin; If it not exists already, create a new one with the value %JAVA_HOME%\bin;</p>
+  </li>
+</ul>
+
+<h3 id="初始化">初始化</h3>
+
+<ul>
+  <li>java 保证了保证所有的成员变量都会被初始化</li>
+</ul>
+
+<p>相应的，如基本类型的 int， double 都有相应的固定的初始化值</p>
+
+<p>如自己创建的变量（类） 则会按照类的构造函数进行初始化。</p>
+
+<p>具体可以参加如下代码：
+研究 如果仅仅在main 中 <code class="language-plaintext highlighter-rouge">new Cupboard(); </code>时， 产生的结果，不难得到：
+初始化的顺序为 <strong>static &gt; 成员变量 &gt; 构造函数</strong>。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">javax.management.MBeanNotificationInfo</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">Bowl</span> <span class="o">{</span>
+    <span class="nc">Bowl</span><span class="o">(</span><span class="kt">int</span> <span class="n">marker</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Bowl("</span> <span class="o">+</span> <span class="n">marker</span> <span class="o">+</span> <span class="s">")"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">f1</span><span class="o">(</span><span class="kt">int</span> <span class="n">marker</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"f1("</span> <span class="o">+</span> <span class="n">marker</span> <span class="o">+</span> <span class="s">")"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Table</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="nc">Bowl</span> <span class="n">bowl1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Bowl</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+
+    <span class="nc">Table</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Table()"</span><span class="o">);</span>
+        <span class="n">bowl2</span><span class="o">.</span><span class="na">f1</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">f2</span><span class="o">(</span><span class="kt">int</span> <span class="n">marker</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"f2("</span> <span class="o">+</span> <span class="n">marker</span> <span class="o">+</span> <span class="s">")"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="nc">Bowl</span> <span class="n">bowl2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Bowl</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Cupboard</span> <span class="o">{</span>
+    <span class="nc">Bowl</span> <span class="n">bowl3</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Bowl</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+    <span class="kd">static</span> <span class="nc">Bowl</span> <span class="n">bowl4</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Bowl</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+
+    <span class="nc">Cupboard</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Cupboard()"</span><span class="o">);</span>
+        <span class="n">bowl4</span><span class="o">.</span><span class="na">f1</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">f3</span><span class="o">(</span><span class="kt">int</span> <span class="n">marker</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"f3("</span> <span class="o">+</span> <span class="n">marker</span> <span class="o">+</span> <span class="s">")"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="nc">Bowl</span> <span class="n">bowl5</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Bowl</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Creating new Cupboard in main"</span><span class="o">);</span>
+        <span class="k">new</span> <span class="nf">Cupboard</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Creating new Cupboard in main"</span><span class="o">);</span>
+        <span class="k">new</span> <span class="nf">Cupboard</span><span class="o">();</span>
+        <span class="n">table</span><span class="o">.</span><span class="na">f2</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="n">cupboard</span><span class="o">.</span><span class="na">f3</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="nc">Table</span> <span class="n">table</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Table</span><span class="o">();</span>
+    <span class="kd">static</span> <span class="nc">Cupboard</span> <span class="n">cupboard</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Cupboard</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>out put</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bowl(1)
+Bowl(2)
+Table()
+f1(1)
+// 特别的应该注意-----------
+Bowl(4)
+Bowl(5)
+Bowl(3)
+Cupboard()
+f1(2)
+// -----------------------
+Creating new Cupboard in main
+Bowl(3)
+Cupboard()
+f1(2)
+Creating new Cupboard in main
+Bowl(3)
+Cupboard()
+f1(2)
+f2(1)
+f3(1)
+</code></pre></div></div>
+
+:ET

@@ -1,0 +1,291 @@
+I"[(<h1 id="html-and-css">HTML and CSS</h1>
+
+<p>This a note of studying HTML and CSS</p>
+
+<h2 id="warming">Warming</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.example .pp = E F 是后代选择器。
+
+.example.pp2 则是在一个元素上，这个元素包括这两个类才会有效果。
+
+do not repeat id in the same page
+</code></pre></div></div>
+
+<h2 id="the-basic-of-html">The basic of HTML</h2>
+
+<ul>
+  <li>Elements surrounded in angle brackets</li>
+  <li>Usually have a start &amp; end tag</li>
+  <li>Some tags closse themselves(Remnant of XHTML)</li>
+</ul>
+
+<p><strong>index.html</strong> is your <strong>home page</strong>.</p>
+
+<p>Must use <code class="language-plaintext highlighter-rouge">&lt;!DOCTYPE html&gt; </code>and this means this page is using html 5.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- the content showed on the search engine --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">""</span> <span class="na">content=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+<span class="c">&lt;!-- Do not index page --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"robots"</span> <span class="na">content=</span><span class="s">"NOINDEX, NOFOLLOW"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>w3school can provide:</p>
+
+<ul>
+  <li>blocks level this element contain whole line and give an cross line</li>
+  <li>inline element</li>
+</ul>
+
+<p>Quick input <strong>div#idname + tab</strong> =<code class="language-plaintext highlighter-rouge"> &lt;div id="idname"&gt;&lt;/div&gt;</code></p>
+
+<p><strong>#idname + tab</strong> = <code class="language-plaintext highlighter-rouge">&lt;div id="idname"&gt;&lt;/div&gt; </code> other need to be specificy</p>
+
+<p>HTML5 Semantic Tags:</p>
+
+<p><img src="/Image/Semantic_Tags.png" alt="" /></p>
+
+<p>The difference between an ID and a class is that an ID is only used to identify one single element in our HTML. IDs are only used when one element on the page should have a particular style applied to it. However, a class can be used to identify more than one HTML element.</p>
+
+<h2 id="css-selectors">CSS selectors</h2>
+
+<ul>
+  <li>Descendant Selector (space)</li>
+  <li>Child Selector (&gt;)</li>
+  <li>Adjacent Sibling Selector (+)</li>
+  <li>General Sibling Selector (~)</li>
+</ul>
+
+<h3 id="space-symbol">Space Symbol</h3>
+
+<p>It is called the Descendant selector. It will target all &lt;p&gt; tags within container div. All &lt;p&gt; elements that are children of #container at any depth.</p>
+
+<h3 id="-symbol">‘&gt;’ Symbol</h3>
+
+<p>This is called the child selector. CSS rules will be applied to elements which are direct children of the particular element.</p>
+
+<p>It will target all the <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> tags which are immediate children of container <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code>, but <strong>the children of children will not be selected</strong></p>
+
+<h3 id="-symbol-1">‘+’ Symbol</h3>
+
+<p>This is Adjacent Sibling Selector. It selects all elements that are the adjacent siblings of a specified element.</p>
+
+<p>Sibling elements must have the same parent element, and “adjacent” means <strong>“immediately following”</strong>.</p>
+
+<h3 id="-symbol-2">‘~’ Symbol</h3>
+
+<p>It is General Sibling Selector and similar to Adjacent Sibling Selector. It selects <strong>all</strong> next elements that are siblings of a specified element.</p>
+
+<p>The following example selects all next <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> elements that are siblings of <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> elements.</p>
+
+<h2 id="shortcut">Shortcut</h2>
+
+<p><strong>command + enter</strong> add a new ling whatever your mouse are</p>
+
+<p><strong>shift + option + down</strong> copy the line</p>
+
+<p><strong>option + arrows</strong> cross the words</p>
+
+<p><strong>holding option + arrows</strong> move the line</p>
+
+<p><strong>holidng option + D</strong> select the same words(you can change them all)</p>
+
+<p>mac: <strong>command + option + U</strong> show the source code of the website.</p>
+
+<h2 id="css-units">CSS Units</h2>
+
+<p>Absolute</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cm Centimeter
+mm Millimeters
+in Inches
+px Pixels (1px = 1/96 of 1 in)
+pt Ponint (1pt = 1/72 of 1 in)
+pc Picas picas (1pc = 12 pt)
+</code></pre></div></div>
+
+<p>Relative</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%   To parent element
+em  To font-size of parent element
+rem To font size of root element
+vw  To 1% of viewport width
+vh  To 1% of viewport height
+</code></pre></div></div>
+
+<h2 id="useful-links">Useful links</h2>
+
+<p>find beauty color:
+https://www.color-hex.com/</p>
+
+<p>font icon:
+https://fontawesome.com/start</p>
+
+<p>add font:
+https://fonts.google.com/</p>
+
+<p>photo engine:
+https://unsplash.com/developers</p>
+
+<p>cdnjs is a free and open-source CDN service:
+https://cdnjs.com/</p>
+
+<p>jquery:
+https://releases.jquery.com/</p>
+
+<p>LIGHTBOX:
+https://lokeshdhakar.com/projects/lightbox2/</p>
+
+<p>generate the icon in the website title:
+http://tools.dynamicdrive.com/favicon/</p>
+
+<h2 id="display">display</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- margin
+-- border (outside)
+--- padding (inside)
+---- element
+</code></pre></div></div>
+
+<p>the one in the furthdown will overwirte the furthup in css</p>
+
+<p>make inline as block :</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">display</span><span class="o">:</span> <span class="nt">block</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>make block as inline :</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">display</span><span class="o">:</span> <span class="nt">inline</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>make block as inline and use margin and width:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">display</span><span class="o">:</span> <span class="nt">inline-block</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h2 id="position">Position</h2>
+
+<p><strong>Static</strong> Not effected by tblr(Top, bottom, left, right) properties/values</p>
+
+<p><strong>Relative</strong> tblr values cause element to be moved from its normal position</p>
+
+<p><strong>Absolute</strong> Positioned relative to its parent element that is positioned “relative”</p>
+
+<p><strong>Fixed</strong> Positioned relative to the viewport</p>
+
+<p><strong>Sticky</strong> Positioned based on scroll position</p>
+
+<h2 id="responsive-design">Responsive Design</h2>
+
+<h3 id="practices-to-use">Practices To Use</h3>
+
+<ul>
+  <li>Set the viewport / scale</li>
+  <li>Use fluid widths as oppose to fixed</li>
+  <li>Media queries - Different css styling for different screeen sizes</li>
+  <li>Rem units over px</li>
+  <li>Mobile first method</li>
+</ul>
+
+<h2 id="em--rem">Em &amp; Rem</h2>
+
+<p>Rem is only based on root</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* change the base root font size */</span>
+<span class="nt">html</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>em is based on the element which in front of it</p>
+
+<h2 id="alognment-properties">Alognment Properties</h2>
+
+<ul>
+  <li>justify-content: Align along the main axis (horizontal)</li>
+  <li>align-item: Align item along the cross axis(Vertical)</li>
+  <li>align-content: Align when extra space in cross axis</li>
+</ul>
+
+<h2 id="types-of-web-hosting">Types of Web Hosting</h2>
+
+<ul>
+  <li>Shared Hosting</li>
+  <li>VPS Hosting</li>
+  <li>Dedicated Server</li>
+  <li>Reseller Hosting</li>
+  <li>Cloud Hosting</li>
+  <li>Static Hosting</li>
+</ul>
+
+<h3 id="shared-hosting">Shared Hosting</h3>
+
+<ul>
+  <li>One account of many on a server (same environment)</li>
+  <li>Cheapest(aside from free static hosting)</li>
+  <li>Used for small websites</li>
+  <li>Most include email, FTP, PHP, databases, software</li>
+  <li>$3 ~ $15 per month</li>
+</ul>
+
+<p>Example: Inmotion Hosting, Hostgator, Bluehost</p>
+
+<h3 id="vps-hostingvirtual-private-server">VPS Hosting（Virtual Private Server)</h3>
+
+<ul>
+  <li>Your own virtualized server</li>
+  <li>Can create &amp; multiple shared accounts</li>
+  <li>More access &amp; privileges</li>
+  <li>Everything shared hosting offers</li>
+  <li>$20 ~ $100 per month</li>
+</ul>
+
+<p>Example: Inmotion Hosting, Hostgator, Bluehost</p>
+
+<h3 id="dedicated-server">Dedicated Server</h3>
+
+<ul>
+  <li>Your own actual server</li>
+  <li>You rent out a physcial machine</li>
+  <li>Full access &amp; privileges</li>
+  <li>Header to manager but very powerful</li>
+  <li>$100 ~ $400 per month</li>
+</ul>
+
+<p>Example: Inmotion Hosting, Hostgator, Bluehost</p>
+
+<h3 id="reseller-hosting">Reseller Hosting</h3>
+
+<ul>
+  <li>Can create &amp; multiple shared accounts</li>
+  <li>Can sell shared accounts to your own customers</li>
+  <li>Very similar to a VPS</li>
+  <li>Usually comes with reseller software</li>
+  <li>$15 ~ $100q per month</li>
+</ul>
+
+<p>Example: Inmotion Hosting, Hostgator</p>
+
+<h3 id="cloud-hosting">Cloud Hosting</h3>
+
+<ul>
+  <li>Used for web apps</li>
+  <li>Multiple servers work together</li>
+  <li>Very scalable and great for large apps</li>
+  <li>Not for beginners / harder to manager</li>
+  <li>pay as you go</li>
+</ul>
+
+<p>Example: Digital Ocean, Linode, Vultr</p>
+
+<h3 id="static-hosting">Static Hosting</h3>
+
+<ul>
+  <li>Does not come with bells and whistles of managed hosting</li>
+  <li>Upload static site via Git</li>
+  <li>Great for static websites</li>
+  <li>Free, but pay for extra features</li>
+</ul>
+
+<p>Example: Netlify, Github Pages</p>
+:ET
