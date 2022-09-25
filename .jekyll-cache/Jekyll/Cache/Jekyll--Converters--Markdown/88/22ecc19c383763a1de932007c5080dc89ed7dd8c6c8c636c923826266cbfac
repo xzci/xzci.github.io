@@ -1,6 +1,0 @@
-I"(<h1 id="综述">综述</h1>
-<ul> <li>文献摘录</li> <li>C其他展开</li> <li>extern 变量 &amp; 函数</li> <li>指针</li> <li>指针和数组</li> <li>const的含义</li> <li>const与指针结合</li> <li>使用Typeof提升可读性</li> <li>为什么要封装成函数</li> <li>全部功能写在main里有什么坏处</li> <li>封装函数时会出现什么困难</li> <li>宏</li> </ul>
-<p>备注 每日一更 +代表更新 -代表还在占坑中（没有内容暂待更新） 更新内容：</p>
-<ul> <li>C其他展开</li> <li> <ul> <li>数组</li> </ul> </li> </ul>
-<p><!--more--> &lt;h1 id="文献摘录"&gt;文献摘录&lt;/h1&gt; &lt;blockquote&gt; &lt;p&gt;摘自 你必须知道的495个C语言问题&lt;/p&gt; &lt;/blockquote&gt; &lt;h2 id="qa"&gt;QA&lt;/h2&gt; &lt;p&gt;Q：如何生成“半全局变量” （部分源文件中部分函数可以访问的变量） A: C语言办不到。但是实在要做的话：&lt;/p&gt; &lt;ul&gt; &lt;li&gt;为一个库或相关函数的集合中的所有函数和全局变量加一个唯一的前缀。并用<strong>文字警告</strong>，使用该集合的用户不能定义和使用文档列出的公用符合意外的任何带有前缀的其他符号。&lt;/li&gt; &lt;li&gt;使用下划线命名。&lt;/li&gt; &lt;/ul&gt; &lt;h2 id="作用域"&gt;作用域&lt;/h2&gt; &lt;p&gt;标识声明的有效区域：&lt;/p&gt; &lt;ul&gt; &lt;li&gt;函数&lt;/li&gt; &lt;li&gt;文件&lt;/li&gt; &lt;li&gt;块&lt;/li&gt; &lt;li&gt;原型&lt;/li&gt; &lt;/ul&gt; &lt;h2 id="命名空间"&gt;命名空间&lt;/h2&gt;…</p>
-:ET

@@ -1,9 +1,0 @@
-I"r<p>算法竞赛入门经典的例题和习题，变种题是自己想的和自己添加的，其他的题目则为书本上选取</p>
-<h1 id="第一章">第一章</h1>
-<h2 id="圆柱体表面积">圆柱体表面积</h2>
-<p>输入底面半径r和高h，输出圆柱体的表面积，保留3位小数</p>
-<blockquote> <p>3.5 9</p> </blockquote>
-<blockquote> <p>Area = 274.889</p> </blockquote>
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">double</span> <span class="n">r</span><span class="p">,</span> <span class="kt">double</span> <span class="n">h</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">PI</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">((</span><span class="n">PI</span> <span class="o">*</span>...
-</code></pre></div></div>
-:ET

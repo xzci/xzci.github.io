@@ -1,7 +1,0 @@
-I"P<p>整理一下《数据结构与算法分析 c语言描述 第二版》 （Data structures and algorithm analysis in c）这本书的相关知识点。</p>
-<blockquote> <p>recursion 递归</p> </blockquote>
-<h1 id="一些基本的问题">一些基本的问题</h1>
-<h2 id="单独输出整数每个位置上的数">单独输出整数每个位置上的数</h2>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span> <span class="kt">unsigned</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span> <span class="k">if</span><span class="p">(</span><span class="n">N</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="n">print</span><span class="p">(</span><span class="n">N</span> <span class="o">/</span> <span class="mi">10</span><span class="p">);</span> <span class="cm">/* 1 */</span> <span class="n">printf</span><span class="p">(</span>&lt;span...
-</code></pre></div></div>
-:ET

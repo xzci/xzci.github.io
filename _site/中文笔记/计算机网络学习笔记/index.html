@@ -1,0 +1,714 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>计算机网络学习笔记 - Site Title</title>
+<meta name="description" content="一些东西还是用中文总结一下，然后看看有没有可能再用英语写，叹气自己的英语水平。学习计算机网络的书本是:计算机网络自顶向下方法(computer networking A top-down approach)">
+
+
+  <meta name="author" content="Your Name">
+  
+  <meta property="article:author" content="Your Name">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="计算机网络学习笔记">
+<meta property="og:url" content="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+  <meta property="og:description" content="一些东西还是用中文总结一下，然后看看有没有可能再用英语写，叹气自己的英语水平。学习计算机网络的书本是:计算机网络自顶向下方法(computer networking A top-down approach)">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-11-01T00:00:00+10:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Site Title
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Your Name</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am an <strong>amazing</strong> person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="计算机网络学习笔记">
+    <meta itemprop="description" content="一些东西还是用中文总结一下，然后看看有没有可能再用英语写，叹气自己的英语水平。学习计算机网络的书本是:计算机网络自顶向下方法(computer networking A top-down approach)">
+    <meta itemprop="datePublished" content="2019-11-01T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="u-url" itemprop="url">计算机网络学习笔记
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>一些东西还是用中文总结一下，然后看看有没有可能再用英语写，叹气自己的英语水平。学习计算机网络的书本是:计算机网络自顶向下方法(computer networking A top-down approach)</p>
+
+<h1 id="概念术语说明">概念术语说明</h1>
+
+<p><strong>端系统(end system)</strong> 彼此交换报文，通过通信链路(communication link)和 分组交换机 (Packet switch)连接在一起。 端系统通过因特网服务提供商(Internet Service Provider ISP)接入互联网。端系统、分组交换机和其他因特网部件都要运行一系列协议。TCP/IP 为因特网主要的协议。与因特网相连的端系统提供了一个套接字接口(socket interface)。</p>
+
+<p><strong>分组 Packet:</strong> 当一台端系统向另外的一台端系统发送数据的时候，发送端系统讲数据分段，并为每段加上首部字节，由此形成的信息包。</p>
+
+<p>每个分组都要经过</p>
+<ul>
+  <li>分组交换机(Packet switch)</li>
+  <li>通信链路(communication link)</li>
+</ul>
+
+<p>通过分组交换机和通信链路的有</p>
+<ul>
+  <li>电路交换(circuit switching)</li>
+  <li>分组交换(packet switching)</li>
+</ul>
+
+<p><strong>分组交换机 Packet switch:</strong> 从一条入通信链路接受到达的分组，并从他的一条出通信链路转发该分组。 多数分组交换机在链路的输入端使用存储转发传输(store-and-forward transmission)</p>
+
+<blockquote>
+  <p>与电路交换的区别见下</p>
+</blockquote>
+
+<p>交换机主要有</p>
+<ul>
+  <li>有路由器(router)</li>
+  <li>链路层交换机 (link-layer switch)。</li>
+</ul>
+
+<p><strong>存储转发传输 store-and-forward transmission:</strong> 交换机能够在开始向输出链路传输该跟组的第一个比特之前，必须接收到整个分组。</p>
+
+<p><strong>路径 route/path:</strong> 一个分组所经历的一系列通信链路和分组交换机。</p>
+
+<p><strong>协议 protocol:</strong> 控制因特网中信息的发送和接收。定义了两个或者多个通信实体之间交换的报文格式和顺序，以及报文(message)发送/接收一条报文或其他时间所采取的动作。</p>
+
+<p><strong>传输控制协议 TCP (Transmission control Protocol)</strong></p>
+
+<p><strong>网际协议 IP (Internet Protocol):</strong> 路由器和端系统直接发送和接收的分组格式。</p>
+
+<p><strong>分布式应用程序 distributed application:</strong> 涉及多个相互交换数据的端系统</p>
+
+<p><strong>套接字接口 socket interface:</strong> 规定了运行在一个端系统上的程序请求因特网基础设施向运行在另一个端系统上的特定目的程序交付数据的方式。</p>
+
+<p>互联网两种描述方式</p>
+<ul>
+  <li>硬件 软件</li>
+  <li>基础设施向分布式应用程序提供的服务</li>
+</ul>
+
+<p><strong>丢包 packet loss:</strong> 分组到达分组交换机时，分组交换机的(output buffer/output queue) 已经充满，则该分组将被丢弃。</p>
+
+<p><strong>排队时延 queuing delay:</strong> 分组在交换机等待被转发的时间。</p>
+
+<p><strong>转发表 forwarding table:</strong> 每台路由器将目的地址（或目的地址的一部分）映射成为输出链路。当分组到达一台路由时，路由器检查该地址，并用这个目的地址搜索其转发表，发现适合的输出链路，并转发出。</p>
+
+<p><strong>时延 (delay):</strong> 主要有</p>
+
+<ul>
+  <li>节点处理时延 nodal processing delay</li>
+  <li>排队时延 queuing delay</li>
+  <li>传输时延 transmission delay</li>
+  <li>传播时延 propagation delay</li>
+</ul>
+
+<blockquote>
+  <p>传输时延和传播时延的区别见下</p>
+</blockquote>
+
+<p>这些何在一起就是时节点总时延 (total nodal delay)</p>
+
+<p><strong>复用 Multiplexing:</strong> 主要是在一定带宽内，通过不同的频率或者时间间隔，传输来自不同源的数据的方式。</p>
+
+<p>主要有</p>
+<ul>
+  <li>频分复用 Frequency-Division Multiplexing FDM</li>
+  <li>时分复用 Time-Division Multiplexing TDM</li>
+</ul>
+
+<h2 id="复杂概念">复杂概念</h2>
+
+<h3 id="分组交换和电路交换的对比">分组交换和电路交换的对比</h3>
+
+<p>分组交换</p>
+
+<p>缺点：</p>
+
+<ul>
+  <li>不适合实时的服务 （端到端的时延是不可预测和可变的）</li>
+</ul>
+
+<p>优点：</p>
+
+<ul>
+  <li>提供了更好的带宽共享</li>
+  <li>更简单，实现成本低</li>
+  <li>按需在链路上分配，用户按照分组之间被共享</li>
+</ul>
+
+<h3 id="传输时延和传播时延的对比">传输时延和传播时延的对比</h3>
+
+<p>以车队经过收费站并到下一个收费站做比喻：</p>
+
+<p>传输时延： 路由器推出分组需要的时延 （车队长度和收费站服务速度）</p>
+
+<p>有关：</p>
+
+<ul>
+  <li>分组长度和链路传输速率</li>
+</ul>
+
+<p>传播时延： 一台路由器到另外一台之间所需要的时延（车队在路上的行进速度）</p>
+
+<p>有关：</p>
+
+<ul>
+  <li>两台路由器之间的距离</li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#computer-networking" class="page__taxonomy-item p-category" rel="tag">Computer Networking</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0" class="page__taxonomy-item p-category" rel="tag">中文笔记</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2019-11-01T00:00:00+10:00">November 1, 2019</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2F%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E7%25BD%2591%25E7%25BB%259C%25E5%25AD%25A6%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2F%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E7%25BD%2591%25E7%25BB%259C%25E5%25AD%25A6%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2F%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E7%25BD%2591%25E7%25BB%259C%25E5%25AD%25A6%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/study-of-Regular-Expressions/" class="pagination--pager" title="study of Regular Expressions
+">Previous</a>
+    
+    
+      <a href="/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/Algorithms/" class="pagination--pager" title="数据结构和算法
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/91-Decode-Ways/" rel="permalink">Decode Ways
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-M 91&gt; Decode Ways
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/139-Word-Break/" rel="permalink">Word Break
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 139&gt; Word Break
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/115-Distinct-Subsequences/" rel="permalink">Distinct Subsequences
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 115&gt; Distinct Subsequences
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/72-Edit-Distance/" rel="permalink">Edit Distance
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 72&gt; Edit Distance
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

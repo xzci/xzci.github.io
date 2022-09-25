@@ -1,7 +1,0 @@
-I"�<h1 id="综述">综述</h1>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Java 9 有坑 (+) 11-18 * Java 学习 * Java 学习 </code></pre></div></div>
-<p>备注 每日一更 +代表更新完成。-为待续 <!--more--></p>
-<p>java 9 对环境变量做了改动，原来的<strong>：.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</strong> 中的<strong>dt.jar</strong> 和<strong>tools.jar</strong> 被取消了。所以现在只需要一个__[ . ]__ 嗯。就是这样。</p>
-<ul> <li> <p>JAVA_HOME JDK installation path, example: C:\Program Files\Java\jdk-9</p> </li> <li> <p>CLASSPATH . (just a dot)</p> </li> <li> <p>PATH It may already exists on your system under the...
-</p></li></ul>
-:ET

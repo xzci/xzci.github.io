@@ -1,0 +1,818 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>C++复习笔记 - Site Title</title>
+<meta name="description" content="2020年 02 月 26 日更新">
+
+
+  <meta name="author" content="Your Name">
+  
+  <meta property="article:author" content="Your Name">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="C++复习笔记">
+<meta property="og:url" content="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/CPlus%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+  <meta property="og:description" content="2020年 02 月 26 日更新">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-02-17T00:00:00+10:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/CPlus%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Site Title
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Your Name</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am an <strong>amazing</strong> person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="C++复习笔记">
+    <meta itemprop="description" content="2020年 02 月 26 日更新">
+    <meta itemprop="datePublished" content="2020-02-17T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/CPlus%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="u-url" itemprop="url">C++复习笔记
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>2020年 02 月 26 日更新</p>
+
+<h1 id="变量初始化">变量初始化</h1>
+
+<p>函数体之外的变量都被初始化为 0
+函数体内部的变量都不会被初始化</p>
+
+<ul>
+  <li>直接初始化  没有等号</li>
+  <li>拷贝初始化 有等号</li>
+</ul>
+
+<h2 id="引用">引用</h2>
+
+<p>引用一旦被初始化后, 就不能改为其他对象, (会进行赋值操作)</p>
+
+<h1 id="传递引用">传递引用</h1>
+
+<p>可以阻止函数传递时, 对参数的拷贝</p>
+
+<h1 id="类">类</h1>
+
+<h2 id="成员函数">成员函数</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Type</span> <span class="n">A</span><span class="o">::</span><span class="n">f</span><span class="p">()</span> <span class="k">const</span> 
+<span class="p">{}</span>
+</code></pre></div></div>
+
+<p>若将成员函数声明为const，则不允许通过其修改类的数据成员。 值得注意的是，如果类中存在指针类型的数据成员即便是const函数只能保证不修改该指针的值，并不能保证不修改指针指向的对象。</p>
+
+<p>设置友元类, 可以访问 私有变量</p>
+
+<h2 id="构造函数初始值">构造函数初始值</h2>
+
+<p>在构造函数中,<strong>无法忽略</strong> 初始化和赋值之间的差异</p>
+
+<ul>
+  <li>构造函数初始化存在顺序关系
+最好让保证于成名声明的顺序一致</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TestA</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">TestA</span><span class="p">(</span><span class="kt">int</span> <span class="n">ii</span><span class="p">);</span>
+<span class="nl">private:</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ci</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//如使用赋值的话, 会出现错误</span>
+<span class="cm">/*
+TestA::TestA(int ii) {
+    i = ii;
+    ci = ii; // const 无法被赋值
+    ri = i; // ri 没有被初始化
+}
+*/</span>
+
+<span class="c1">// 正确的是 (构造方式)</span>
+
+<span class="n">TestA</span><span class="o">::</span><span class="n">TestA</span><span class="p">(</span><span class="kt">int</span> <span class="n">ii</span><span class="p">)</span><span class="o">:</span><span class="n">i</span><span class="p">(</span><span class="n">ii</span><span class="p">),</span> <span class="n">ci</span><span class="p">(</span><span class="n">ii</span><span class="p">),</span> <span class="n">ri</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre></div></div>
+<h2 id="析构函数">析构函数</h2>
+
+<p>类中有且仅有一个析构函数</p>
+
+<h2 id="类设计">类设计</h2>
+
+<p>C++ 并不要求一定要自己定义析构函数, 拷贝构造函数, 拷贝赋值运算符, 但是这些操作应该被视为一个整体, 一般不会出现只定义某一个函数的情况</p>
+
+<p><strong>错误示范</strong></p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">A</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span> <span class="o">=</span> <span class="n">string</span><span class="p">())</span><span class="o">:</span><span class="n">ps</span><span class="p">(</span><span class="k">new</span> <span class="n">string</span><span class="p">(</span><span class="n">s</span><span class="p">)),</span> <span class="n">i</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">A</span><span class="p">()</span> <span class="p">{</span><span class="k">delete</span> <span class="n">ps</span><span class="p">;}</span>
+    <span class="c1">//</span>
+<span class="p">};</span>
+
+<span class="n">A</span> <span class="n">f</span><span class="p">(</span><span class="n">A</span> <span class="n">hp</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">A</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">hp</span><span class="p">;</span> <span class="c1">// 拷贝</span>
+    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>  <span class="c1">// ret 和 hp 都被销毁</span>
+<span class="p">}</span>
+
+<span class="c1">// 如果有如下使用</span>
+<span class="n">A</span> <span class="n">p</span><span class="p">(</span><span class="s">"hi"</span><span class="p">);</span>
+<span class="n">f</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>         <span class="c1">//p.ps指向的内容被释放</span>
+<span class="n">A</span> <span class="n">q</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>       <span class="c1">// q, p 指向无效内存</span>
+</code></pre></div></div>
+<h2 id="合成的xx函数">合成的xx函数</h2>
+
+<ul>
+  <li>具有引用成员或无默认构造的const成员的类, 编译器不会为其合成默认构造函数.</li>
+</ul>
+
+<h1 id="容器">容器</h1>
+
+<h2 id="swap">swap</h2>
+
+<p>除了string外, 指向容器的迭代器,引用, 指针 <strong>不会</strong> 失效, 仍然指向之前的值.</p>
+
+<p>只有Array 真正交换了他们的元素.</p>
+
+<h1 id="bind">bind</h1>
+
+<p>bind 函数拷贝其参数, 如果提供一个对象但不拷贝他, 需要使用标准库的ref函数</p>
+
+<h1 id="函数">函数</h1>
+
+<h2 id="尾置返回类型">尾置返回类型</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">auto</span> <span class="n">func</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span>
+</code></pre></div></div>
+<p>用以简化函数的返回值</p>
+
+<h1 id="迭代器">迭代器</h1>
+
+<h2 id="普通迭代器">普通迭代器</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="n">it</span><span class="p">;</span>
+<span class="o">++</span><span class="n">it</span><span class="p">;</span>
+<span class="n">it</span><span class="o">++</span>
+</code></pre></div></div>
+
+<p>不会对 <strong>迭代器</strong> it 做任何事情, 每个操作都会返回it</p>
+
+<h2 id="iostream-迭代器">iostream 迭代器</h2>
+
+<h3 id="istream_iterator">istream_iterator</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">istream_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">int_it</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span> <span class="c1">// 从cin 读int</span>
+<span class="n">istream_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">int_eof</span><span class="p">;</span> <span class="c1">// 尾后迭代器 (用来判断读取中止)</span>
+</code></pre></div></div>
+
+<h3 id="ostream_iterator">ostream_iterator</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">test</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s">"test"</span><span class="p">);</span>
+    <span class="c1">// 将类型T写到cout 流中, 并且中间以---隔开</span>
+    <span class="n">ostream_iterator</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">out_iter</span><span class="p">(</span><span class="n">cout</span><span class="p">,</span> <span class="s">"---"</span><span class="p">);</span>
+    <span class="n">copy</span><span class="p">(</span><span class="n">test</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">test</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">out_iter</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</code></pre></div></div>
+<h2 id="算法中使用的迭代器错误-可能不会被语法检查器检查出来">算法中使用的迭代器错误, 可能不会被语法检查器检查出来.</h2>
+
+<h1 id="编程提示">编程提示</h1>
+
+<ul>
+  <li>如果两个对象共享底层的数据, 当某个对象被销毁的时候, 不能单方面的销毁底层数据</li>
+</ul>
+
+<h1 id="指针">指针</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">string</span> <span class="o">*</span><span class="n">ps1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="p">;</span>   <span class="c1">// 默认初始化 空string</span>
+<span class="n">string</span> <span class="o">*</span><span class="n">ps2</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">string</span><span class="p">();</span> <span class="c1">// 值初始化   空string</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">pi1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">;</span>         <span class="c1">// 默认初始化  未定义</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">pi2</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">int</span><span class="p">();</span>       <span class="c1">// 值初始化  *pi2 为0</span>
+</code></pre></div></div>
+
+<h2 id="空悬指针的问题">空悬指针的问题</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="nf">p</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">42</span><span class="p">));</span>
+<span class="k">auto</span> <span class="n">q</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+<span class="k">delete</span> <span class="n">p</span><span class="p">;</span>     <span class="c1">// p, q 均无效</span>
+<span class="n">p</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="c1">// q 仍然是空悬指针</span>
+</code></pre></div></div>
+
+<h2 id="智能指针--动态指针">智能指针 + 动态指针</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span> <span class="c1">// 错误</span>
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p2</span><span class="p">(</span><span class="k">new</span> <span class="nf">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">));</span> <span class="c1">// 正确</span>
+</code></pre></div></div>
+
+<h2 id="智能指针--普通指针">智能指针 + 普通指针</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">process</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ptr</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">1024</span><span class="p">));</span>
+<span class="n">process</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="c1">// 错误, 无法将int*类型转换到shared_ptr&lt;int&gt;</span>
+<span class="n">process</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">));</span> <span class="c1">// 合法</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="o">*</span><span class="n">x</span> <span class="c1">// 未定义的, x成为空悬指针, 指向内容已经被智能指针释放</span>
+</code></pre></div></div>
+
+<h2 id="智能指针--动态数组">智能指针 + 动态数组</h2>
+
+<p>unique_ptr 管理动态数组</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">[]</span><span class="o">&gt;</span> <span class="n">up</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span>
+<span class="n">up</span><span class="p">.</span><span class="n">release</span><span class="p">();</span> <span class="c1">// 自动调用delete[], 销毁其指针</span>
+<span class="c1">// 与普通的unique_ptr 不同</span>
+</code></pre></div></div>
+
+<p>shared_ptr 不能直接管理动态数组, 如果必须要用, 要提供自己写的删除器</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">shared_prt</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sp</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="p">[](</span><span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span><span class="k">delete</span><span class="p">[]</span> <span class="n">p</span><span class="p">;</span> <span class="p">});</span>
+<span class="n">sp</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span> <span class="c1">// 调用lambda 释放数组</span>
+</code></pre></div></div>
+
+<p>shared_ptr 没有定义下标, 也不支持指针++</p>
+
+<h1 id="new">new</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 非法</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">cp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 合法但是不能被解引用</span>
+</code></pre></div></div>
+
+<h1 id="allocator">allocator</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 创建</span>
+<span class="n">allocator</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">alloc</span><span class="p">;</span>
+<span class="k">auto</span> <span class="k">const</span> <span class="n">p</span> <span class="o">=</span> <span class="n">alloc</span><span class="p">.</span><span class="n">allocate</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>  <span class="c1">// 传递 n = 3  // string *const p</span>
+<span class="c1">// 赋值</span>
+<span class="k">auto</span> <span class="n">q</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+<span class="n">alloc</span><span class="p">.</span><span class="n">construct</span><span class="p">(</span><span class="n">q</span><span class="o">++</span><span class="p">);</span>    <span class="c1">//*q 为空字符串</span>
+<span class="n">alloc</span><span class="p">.</span><span class="n">construct</span><span class="p">(</span><span class="n">q</span><span class="o">++</span><span class="p">,</span> <span class="mf">2.</span> <span class="sc">'c'</span><span class="p">);</span> <span class="c1">//*q 为cc</span>
+<span class="n">alloc</span><span class="p">.</span><span class="n">construct</span><span class="p">(</span><span class="n">q</span><span class="o">++</span><span class="p">,</span> <span class="s">"hi"</span><span class="p">);</span>   <span class="c1">//*q 为hi</span>
+<span class="c1">// 销毁</span>
+<span class="k">while</span><span class="p">(</span><span class="n">q</span> <span class="o">!=</span> <span class="n">p</span><span class="p">)</span> 
+    <span class="n">alloc</span><span class="p">.</span><span class="n">destroy</span><span class="p">(</span><span class="o">--</span><span class="n">q</span><span class="p">);</span>
+<span class="c1">// 返回系统</span>
+<span class="n">alloc</span><span class="p">.</span><span class="n">deallocate</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h1 id="explicit">explicit</h1>
+
+<p>explicit关键字只能用于修饰 <strong>只有一个参数</strong> 的类构造函数, 它的作用是表明该构造函数是 <strong>显示</strong> 的, 而非隐式的, 跟它相对应的另一个关键字是implicit, 意思是隐藏的,类构造函数默认情况下即声明为implicit(隐式).</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#c" class="page__taxonomy-item p-category" rel="tag">C++</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0" class="page__taxonomy-item p-category" rel="tag">中文笔记</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-02-17T00:00:00+10:00">February 17, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=C%2B%2B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%20http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2FCPlus%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2FCPlus%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2FCPlus%25E5%25A4%258D%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/To-Lower-Case/" class="pagination--pager" title="To Lower Case
+">Previous</a>
+    
+    
+      <a href="/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="pagination--pager" title="设计模式学习笔记
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/91-Decode-Ways/" rel="permalink">Decode Ways
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-M 91&gt; Decode Ways
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/139-Word-Break/" rel="permalink">Word Break
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 139&gt; Word Break
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/115-Distinct-Subsequences/" rel="permalink">Distinct Subsequences
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 115&gt; Distinct Subsequences
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/72-Edit-Distance/" rel="permalink">Edit Distance
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 72&gt; Edit Distance
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

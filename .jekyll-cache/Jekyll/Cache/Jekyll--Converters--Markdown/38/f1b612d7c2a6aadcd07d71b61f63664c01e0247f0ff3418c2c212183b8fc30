@@ -1,9 +1,0 @@
-I"<h1 id="综述">综述</h1>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* 原字符 * 实例 * 练习题 </code></pre></div></div>
-<p>备注 每日一更 +代表更新 -代表还在占坑中（没有内容暂待更新） 更新内容：</p>
-<ul> <li>新的元字符更新</li> </ul>
-<h1 id="编程依赖">编程依赖</h1>
-<p>使用C#作为正则表达式的学习工具，正则表达式在各种语言中都支持（自带或者相关的库） 在这里使用C#作为学习的工具。 C#中使用正则表达式可以有几种方式：</p>
-<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 本次主要采用这样的实现方式（便于书写）</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"catTheOtherText"</span><span class="p">,</span> <span class="s">"TheOtherTextcat"</span><span class="p">,</span> <span class="s">"TheOtherText"</span><span class="p">,</span> <span class="s">"TheOthercatText"</span><span class="p">,</span> <span class="s">"ThecOtheraTextt"</span> <span class="p">};</span> <span class="kt">string</span>...
-</code></pre></div></div>
-:ET

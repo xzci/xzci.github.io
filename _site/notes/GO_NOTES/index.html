@@ -1,0 +1,757 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Study of GO - Site Title</title>
+<meta name="description" content="学习 Go 的笔记">
+
+
+  <meta name="author" content="Your Name">
+  
+  <meta property="article:author" content="Your Name">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="Study of GO">
+<meta property="og:url" content="http://localhost:4000/notes/GO_NOTES/">
+
+
+  <meta property="og:description" content="学习 Go 的笔记">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-12-17T00:00:00+10:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/notes/GO_NOTES/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Site Title
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Your Name</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am an <strong>amazing</strong> person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Study of GO">
+    <meta itemprop="description" content="学习 Go 的笔记">
+    <meta itemprop="datePublished" content="2021-12-17T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/notes/GO_NOTES/" class="u-url" itemprop="url">Study of GO
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>学习 Go 的笔记</p>
+
+<h1 id="变量">变量</h1>
+
+<p>强类型和弱类型都可以支持</p>
+
+<h2 id="赋值---强类型">赋值 - 强类型</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">//var 变量名 变量类型 = 值</span>
+<span class="k">var</span> <span class="n">i</span> <span class="kt">int</span> <span class="o">=</span> <span class="m">1</span>
+</code></pre></div></div>
+
+<h2 id="赋值---弱类型">赋值 - 弱类型</h2>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">//变量名 := 值</span>
+<span class="n">i</span> <span class="o">:=</span> <span class="m">1</span>
+</code></pre></div></div>
+
+<p>根据值来判断类型，所以必须初始化</p>
+
+<h1 id="变量类型">变量类型</h1>
+
+<ul>
+  <li>bool</li>
+  <li>string</li>
+  <li>int, int8, int16, int32, int64</li>
+  <li>uint, uint8, uint16, uint32, uint64</li>
+  <li>byte = unit8</li>
+  <li>rune = int32(uncode code point)</li>
+  <li>float32, float64</li>
+  <li>complex32, complex64 (虚数)</li>
+</ul>
+
+<h1 id="格式控制">格式控制</h1>
+
+<ul>
+  <li>%T （要大写）</li>
+</ul>
+
+<h1 id="const">const</h1>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// const 变量名 = 值</span>
+<span class="k">const</span> <span class="n">i</span> <span class="o">=</span> <span class="m">1</span>
+
+<span class="c">//这里没有:</span>
+</code></pre></div></div>
+<p>指明变量类型是可选的</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="n">变量名</span> <span class="n">变量类型</span> <span class="o">=</span> <span class="n">值</span>
+</code></pre></div></div>
+
+<p>const 可以 使用（） 形式，同时声明多个变量。</p>
+
+<h1 id="for-和-while">for 和 while</h1>
+
+<ul>
+  <li>for</li>
+</ul>
+
+<p>普通 for</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="o">:=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
+  <span class="c">// 这里不需要园括号</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>while</li>
+</ul>
+
+<p>Go 里的 while 是直接使用同一个关键词 for</p>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">:=</span> <span class="m">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="m">100</span> <span class="p">{</span>
+  <span class="c">//这里不需要使用分号</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>forever loop</li>
+</ul>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="if">if</h1>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="m">0</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="n">v</span><span class="o">:=</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">lim</span> <span class="p">{</span>
+  <span class="c">//可以提前赋值</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="n">条件表达式</span> <span class="p">{</span>
+
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="switch">switch</h1>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span> <span class="n">赋值</span><span class="p">;</span> <span class="n">变量</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">label</span><span class="o">:</span>
+    <span class="k">default</span><span class="o">:</span>
+<span class="p">}</span>
+<span class="c">// label 可以做运算， 比如： </span>
+<span class="c">// case label + 0:</span>
+</code></pre></div></div>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="n">条件表达式</span><span class="err">：</span>
+  <span class="k">case</span> <span class="n">条件表达式</span><span class="err">：</span>
+<span class="p">}</span>
+
+<span class="c">// 可以等价的看做一堆if else 的集合</span>
+</code></pre></div></div>
+
+<h1 id="defer">defer</h1>
+
+<h1 id="struct">struct</h1>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="n">Vertex</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">X</span> <span class="kt">int</span>
+	<span class="n">Y</span> <span class="kt">int</span>
+	<span class="n">Z</span> <span class="kt">float32</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>和C差不多。 取消了 -&gt; 访问都是.</p>
+
+<p>以后都是用Vertex 作为变量的名称
+如果都没有初始化，那么会提供默认初始化为0。 但是有了一个初始化后，使用 变量初始化 没事。</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="n">Vertex</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="kt">int</span>
+<span class="p">}</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vertex</span><span class="p">{</span><span class="n">X</span><span class="o">:</span> <span class="m">189</span><span class="p">}</span>  <span class="c">// Y:0 is implicit, 结果是 189， 0</span>
+</code></pre></div></div>
+
+<p>如果不使用变量如：</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Vertex</span><span class="p">{</span><span class="m">1</span><span class="p">}</span>
+<span class="c">// 会报错</span>
+</code></pre></div></div>
+
+<h1 id="arrays">Arrays</h1>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">变量名</span><span class="p">[</span><span class="n">数组大小</span><span class="p">]</span> <span class="n">变量类型</span>
+
+<span class="k">var</span> <span class="n">a</span> <span class="p">[</span><span class="m">10</span><span class="p">]</span><span class="kt">int</span>
+<span class="c">// 显示声明</span>
+
+<span class="n">变量名</span><span class="o">:=</span> <span class="p">[</span><span class="n">数组大小</span><span class="p">]</span> <span class="n">变量类型</span> <span class="p">{</span><span class="n">值</span><span class="p">}</span> <span class="c">// 值为空或者少于大小都可</span>
+<span class="n">primes</span> <span class="o">:=</span> <span class="p">[</span><span class="m">6</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">13</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="slices">Slices</h1>
+
+<p>切片 同python</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#data-science" class="page__taxonomy-item p-category" rel="tag">Data Science</a><span class="sep">, </span>
+    
+      <a href="/tags/#go" class="page__taxonomy-item p-category" rel="tag">Go</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#notes" class="page__taxonomy-item p-category" rel="tag">Notes</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-12-17T00:00:00+10:00">December 17, 2021</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Study+of+GO%20http%3A%2F%2Flocalhost%3A4000%2Fnotes%2FGO_NOTES%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fnotes%2FGO_NOTES%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fnotes%2FGO_NOTES%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/notes/R_NOTES/" class="pagination--pager" title="Study of R
+">Previous</a>
+    
+    
+      <a href="/notes/Python_NOTES/" class="pagination--pager" title="Study of Python
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/91-Decode-Ways/" rel="permalink">Decode Ways
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-M 91&gt; Decode Ways
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/139-Word-Break/" rel="permalink">Word Break
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 139&gt; Word Break
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/115-Distinct-Subsequences/" rel="permalink">Distinct Subsequences
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 115&gt; Distinct Subsequences
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/72-Edit-Distance/" rel="permalink">Edit Distance
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 72&gt; Edit Distance
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

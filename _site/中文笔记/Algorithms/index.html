@@ -1,0 +1,1363 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>数据结构和算法 - Site Title</title>
+<meta name="description" content="通过反复的练习，达到自己手写的程度（白板写代码），基本上为了理解好的代码，进行的代码摘抄。">
+
+
+  <meta name="author" content="Your Name">
+  
+  <meta property="article:author" content="Your Name">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="数据结构和算法">
+<meta property="og:url" content="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/Algorithms/">
+
+
+  <meta property="og:description" content="通过反复的练习，达到自己手写的程度（白板写代码），基本上为了理解好的代码，进行的代码摘抄。">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-11-02T00:00:00+10:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/Algorithms/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Site Title
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Your Name</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am an <strong>amazing</strong> person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="数据结构和算法">
+    <meta itemprop="description" content="通过反复的练习，达到自己手写的程度（白板写代码），基本上为了理解好的代码，进行的代码摘抄。">
+    <meta itemprop="datePublished" content="2019-11-02T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/Algorithms/" class="u-url" itemprop="url">数据结构和算法
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>通过反复的练习，达到自己手写的程度（白板写代码），基本上为了理解好的代码，进行的代码摘抄。</p>
+
+<h1 id="基本数据结构">基本数据结构</h1>
+
+<p>通过反复的练习，达到自己手写的程度（白板写代码）
+每个数据结构的实现必须熟悉（最为基本的实现）虽然C++或者其他语言都有这相应的的基本实现，可以直接调用使用，（调用库函数）但是还是应该能够直接手写出代码。以其获得更为具体的优化。（能所不能）
+相应的，要理解每个数据结构的优缺点。</p>
+
+<h2 id="展开">展开</h2>
+
+<p>以后自己的代码也需要这样的设计。建立一个良好的接口，增加程序代码的复用。
+比如在上记得代码中，对链表这个数据结构进行了抽象，相同的结构如：</p>
+
+<ul>
+  <li>插入</li>
+  <li>删除</li>
+  <li>头节点</li>
+  <li>尾结点</li>
+  <li>链表长度</li>
+  <li>链表初始化</li>
+  <li>链表销毁</li>
+</ul>
+
+<p>这些地方这3种数据结构操作相似。可以进行抽象，在其他提供类的语言中，这些可以通过类进行继承，以期实现代码的复用。</p>
+
+<p>对于工作之中，使代码多结构化可以减少需求变更的情况下，尽可能的减少修改代码的行数。
+比如，链表实现的代码中，需要添加一个功能，那么可以只需要在list中实现这个功能，其他数据结构就可以通过相应的参数，return给相关的函数。
+另外比如需要修改插入函数，那么仅仅只需要在list函数中就行修改就可以保证，剩下的数据结构同时被修改。</p>
+
+<p>这里的数据结构可以替换成其他工作中需要实现的功能等。结果同样。</p>
+
+<h2 id="c语言编程细节">C语言编程细节</h2>
+
+<p>注意因为C语言没有bool类型。所以在返回值的时候，会出现 <strong>-1， 0， 1</strong>等多种情况。因为在C中True 是任意的非0数字，只有0是false, 所以在写自己的函数的时候，要注意自己的函数应该返回状态码（比如一些函数错误结束后的返回-1），还是用于if判断的（0，1）</p>
+
+<h2 id="链表系">链表系</h2>
+
+<h3 id="单链表">单链表</h3>
+
+<p>最为简单的数据结构，每个节点为一个自己定义的结构（包含数据，指针 <strong>指向下一个节点</strong>）
+因为只保存了下一个节点的地址，所以单链表是不可以倒序遍历的，也不能随机访问。必须由头节点逐个依次的访问。
+    如果每个下一个节点有重复则称之为<strong>循环链表</strong> &lt;-判断是否成环也是相应的算法题之一，并且我觉得也是一些有用的算法题，需要特别记忆的。
+特别的：</p>
+
+<ul>
+  <li>每个节点的位置是离散的（后一个节点的内存位置并不是在节点内存的下一个） 这种分散的特性，相比数组的连续内存有些时候会更加高效。</li>
+  <li>如果发生删除操作一定要先获取以后节点的地址</li>
+</ul>
+
+<p>如果插入、删除的__位置为NULL__，则默认插入、删除的位置在表头。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//节点定义</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">ListElmt_</span>
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span> <span class="c1">// can use point to get the real data</span>
+    <span class="k">struct</span> <span class="n">ListElmt_</span> <span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">ListElmt</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">List_</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+    <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">match</span><span class="p">)(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key2</span><span class="p">);</span>
+    <span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">destroy</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+    <span class="n">ListElmt</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+    <span class="n">ListElmt</span> <span class="o">*</span><span class="n">tail</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">List</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>然后定义相关的函数： 增删查改</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//接口函数</span>
+<span class="kt">void</span> <span class="nf">list_init</span><span class="p">(</span><span class="n">List</span> <span class="o">*</span><span class="n">list</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">destroy</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">));</span>
+<span class="kt">void</span> <span class="nf">list_destroy</span><span class="p">(</span><span class="n">List</span> <span class="o">*</span><span class="n">list</span><span class="p">);</span>
+
+<span class="c1">// should use bool but C do not give bool before C99</span>
+<span class="kt">int</span> <span class="nf">list_ins_next</span><span class="p">(</span><span class="n">List</span> <span class="o">*</span><span class="n">list</span><span class="p">,</span> <span class="n">ListElmt</span> <span class="o">*</span><span class="n">element</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">data</span><span class="p">);</span>
+<span class="cm">/* when you want to remove a element, you should give the value to the programer
+/ because they want to use this data, you can not just delete the element and do nothing
+/ also the element can be return as return value, but in this way, you can not judge
+/ if it has been remove already */</span>
+<span class="kt">int</span> <span class="nf">list_rem_next</span><span class="p">(</span><span class="n">List</span> <span class="o">*</span><span class="n">list</span><span class="p">,</span> <span class="n">ListElmt</span> <span class="o">*</span><span class="n">element</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n">data</span><span class="p">);</span>
+
+<span class="c1">// in other language you should use inline function instead of using macro</span>
+<span class="cp">#define list_size(list) ((list)-&gt;size)
+#define list_head(list) ((list)-&gt;head)
+#define list_tail(list) ((list)-&gt;tail)
+#define list_is_head(list, element) ((element) == (list)-&gt;head ? 1 : 0)
+#define list_is_tail(element) ((element)-&gt;next == NULL ? 1 : 0)
+#define list_data(element) ((element)-&gt;data)
+#define list_next(element) ((element)-&gt;next)
+</span></code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//函数实现</span>
+<span class="kt">void</span> <span class="nf">list_init</span><span class="p">(</span><span class="n">List</span> <span class="o">*</span><span class="n">list</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">destroy</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">list</span><span class="o">-&gt;</span><span class="n">destroy</span> <span class="o">=</span> <span class="n">destroy</span><span class="p">;</span>
+    <span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">list</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">list_destroy</span><span class="p">(</span><span class="n">List</span> <span class="o">*</span><span class="n">list</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">list_size</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">list_rem_next</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">destory</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+        <span class="p">{</span>
+
+            <span class="n">list</span><span class="o">-&gt;</span><span class="n">destory</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">List</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">list_ins_next</span><span class="p">(</span><span class="n">List</span> <span class="o">*</span><span class="n">list</span><span class="p">,</span> <span class="n">ListElmt</span> <span class="o">*</span><span class="n">element</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ListElmt</span> <span class="o">*</span> <span class="n">new_element</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">new_element</span> <span class="o">=</span> <span class="p">(</span><span class="n">ListElmt</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">ListElmt</span><span class="p">)))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">new_element</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">;</span>
+    <span class="c1">// if element is null insert the data in the head of list</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">element</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">list_size</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">list</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="n">new_element</span><span class="p">;</span>
+        <span class="n">new_element</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+        <span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">new_element</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">element</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+            <span class="n">list</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="n">new_element</span><span class="p">;</span>
+        <span class="c1">// here you can use new_element-&gt;next = NULL</span>
+        <span class="n">new_element</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">element</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">element</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">new_element</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">list_rem_next</span><span class="p">(</span><span class="n">List</span> <span class="o">*</span><span class="n">list</span><span class="p">,</span> <span class="n">ListElmt</span> <span class="o">*</span><span class="n">element</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ListElmt</span> <span class="o">*</span><span class="n">old_element</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">list_size</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="c1">// if element is null remove the data in the head of list</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">element</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="o">*</span><span class="n">data</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+        <span class="n">old_element</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+        <span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">list_size</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">list</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">element</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="o">*</span><span class="n">data</span> <span class="o">=</span> <span class="n">element</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+        <span class="n">old_element</span> <span class="o">=</span> <span class="n">element</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="c1">// you can use element-&gt;next = old_element-&gt;next;</span>
+        <span class="n">element</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">element</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">element</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+            <span class="n">list</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">old_element</span><span class="p">);</span>
+    <span class="n">list</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">--</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>当然， 我们应该还要编写相应的find函数，destroy函数，来使得这个链表程序更加的完整。</p>
+
+<p>也可以类比其他书籍查看不同，比如</p>
+<blockquote>
+  <p>数据结构与算法分析 C语言描述</p>
+</blockquote>
+
+<p>就可以明白在不同的编程思路下，虽然是同一数据结构，但是代码可能会完全不同。具体喜欢哪种风格，那还是需要自己见仁见智了。</p>
+
+<h3 id="栈">栈</h3>
+
+<p>栈的实现方式很简单，可以通过很多的方式来实现，栈只要保证操作只在头部就可以称之为栈。这里栈的实现是利用先前做出的假设，<strong>如果插入位置为空的话将操作位置设定为表的头部</strong></p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//节点定义</span>
+<span class="k">typedef</span> <span class="n">List</span> <span class="n">Stack</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//接口函数</span>
+<span class="cp">#define stack_init list_init
+#define stack_destroy list_destroy
+</span>
+<span class="cp">#define stack_peek(stack) ((stack)-&gt;head == NULL ? NULL : (stack)-&gt;head-&gt;data)
+#define stack_size list_size
+</span>
+<span class="kt">int</span> <span class="nf">stack_push</span><span class="p">(</span><span class="n">Stack</span> <span class="o">*</span><span class="n">stack</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">stack_pop</span><span class="p">(</span><span class="n">Stack</span> <span class="o">*</span><span class="n">stack</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n">data</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//函数实现</span>
+<span class="kt">int</span> <span class="nf">stack_push</span><span class="p">(</span><span class="n">Stack</span> <span class="o">*</span><span class="n">stack</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">list_ins_next</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">stack_pop</span><span class="p">(</span><span class="n">Stack</span> <span class="o">*</span><span class="n">stack</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">list_rem_next</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="队列">队列</h3>
+
+<p>队列也可以看作特殊的链表，操作分别在头尾两端。在头部进行删除，在尾部进行插入。
+同栈一样，没有操作内部节点的接口。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//节点定义</span>
+<span class="k">typedef</span> <span class="n">List</span> <span class="n">Queue</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//接口函数</span>
+<span class="cp">#define queue_init list_init
+#define queue_destroy list_destroy
+</span>
+<span class="cp">#define queue_peek(queue) ((queue)-&gt;head == NULL ? NULL : (queue)-&gt;head-&gt;data)
+#define queue_size list_size
+</span>
+<span class="kt">int</span> <span class="nf">queue_enqueue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">queue</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">queue_dequeue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">queue</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n">data</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//函数实现</span>
+<span class="kt">int</span> <span class="nf">queue_enqueue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">queue</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">list_ins_next</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">list_tail</span><span class="p">(</span><span class="n">queue</span><span class="p">),</span> <span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">queue_dequeue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">queue</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">list_rem_next</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>栈和队列可以使用不同的实现方式，比如链表，或者是可以增长的数组。简单的思路如下：
+如果对于数据的插入，删除的个数确定，可以简单的使用数组进行实现，（惰性删除即可，或直接在建立的初期为以后的插入位置进行预留等其他的实现方式），或者更进一步，使用其他语言提供的库函数进行封装。
+另外，数据量确定和可读性起见，可以直接在结构体中包含所需要的数据。这时，可以建立单独的带有类型的链表，如int类型的链表，char类型的链表等。</p>
+
+<p>上述实现是通过链表系作为接口，修改而成的。如果单纯只使用其中一种数据结构，可以针对这种结构单独写出。</p>
+
+<h3 id="集合">集合</h3>
+
+<p>集合是一种很特殊的数据结构，（set），它所拥有的性质<strong>元素唯一性</strong>，可以为编程提供很大的便利。比如去重可以直接将数据存入到set就可以了。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//节点定义</span>
+<span class="k">typedef</span> <span class="n">List</span> <span class="n">Set</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//接口函数</span>
+<span class="kt">void</span> <span class="nf">set_init</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">match</span><span class="p">)(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key2</span><span class="p">),</span> <span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">destroy</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">));</span>
+<span class="kt">int</span> <span class="nf">set_insert</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">set_remove</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n">data</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">set_union</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">setu</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set2</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">set_intersction</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">seti</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set2</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">set_difference</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">setd</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set2</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">set_is_member</span><span class="p">(</span><span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">set_is_subset</span><span class="p">(</span><span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set2</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">set_is_equal</span><span class="p">(</span><span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set2</span><span class="p">);</span>
+
+<span class="cp">#define set_size(set) ((set)-&gt;size)
+#define set_destroy list_destroy
+</span></code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//函数实现</span>
+<span class="kt">void</span> <span class="nf">set_init</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">match</span><span class="p">)(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key2</span><span class="p">),</span> <span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">destroy</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">list_init</span><span class="p">(</span><span class="n">set</span><span class="p">,</span> <span class="n">destroy</span><span class="p">);</span>
+    <span class="n">set</span><span class="o">-&gt;</span><span class="n">match</span> <span class="o">=</span> <span class="n">match</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">set_insert</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">set_is_member</span><span class="p">(</span><span class="n">set</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">list_ins_next</span><span class="p">(</span><span class="n">set</span><span class="p">,</span> <span class="n">list_tail</span><span class="p">(</span><span class="n">set</span><span class="p">),</span> <span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">set_remove</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ListElmt</span> <span class="o">*</span><span class="n">member</span><span class="p">;</span>
+    <span class="n">ListElmt</span> <span class="o">*</span><span class="n">prev</span><span class="p">;</span>
+
+    <span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">member</span> <span class="o">=</span> <span class="n">list_head</span><span class="p">(</span><span class="n">set</span><span class="p">);</span> <span class="n">member</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">member</span> <span class="o">=</span> <span class="n">list_next</span><span class="p">(</span><span class="n">member</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">set</span><span class="o">-&gt;</span><span class="n">match</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">list_data</span><span class="p">(</span><span class="n">member</span><span class="p">)))</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="n">member</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">member</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">list_rem_next</span><span class="p">(</span><span class="n">set</span><span class="p">,</span> <span class="n">prev</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">set_union</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">setu</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ListElmt</span> <span class="o">*</span><span class="n">member</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>
+
+    <span class="n">set_init</span><span class="p">(</span><span class="n">setu</span><span class="p">,</span> <span class="n">set1</span><span class="o">-&gt;</span><span class="n">match</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">member</span> <span class="o">=</span> <span class="n">list_head</span><span class="p">(</span><span class="n">set1</span><span class="p">);</span> <span class="n">member</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">member</span> <span class="o">=</span> <span class="n">list_next</span><span class="p">(</span><span class="n">member</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">list_data</span><span class="p">(</span><span class="n">member</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">list_ins_next</span><span class="p">(</span><span class="n">setu</span><span class="p">,</span> <span class="n">list_tail</span><span class="p">(</span><span class="n">setu</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">set_destroy</span><span class="p">(</span><span class="n">setu</span><span class="p">);</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">member</span> <span class="o">=</span> <span class="n">list_head</span><span class="p">(</span><span class="n">set2</span><span class="p">);</span> <span class="n">member</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">member</span> <span class="o">=</span> <span class="n">list_next</span><span class="p">(</span><span class="n">member</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">set_is_member</span><span class="p">(</span><span class="n">set1</span><span class="p">,</span> <span class="n">list_data</span><span class="p">(</span><span class="n">member</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">list_data</span><span class="p">(</span><span class="n">member</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">list_ins_next</span><span class="p">(</span><span class="n">setu</span><span class="p">,</span> <span class="n">list_tail</span><span class="p">(</span><span class="n">setu</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">set_destroy</span><span class="p">(</span><span class="n">setu</span><span class="p">);</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">set_intersection</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">seti</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ListElmt</span> <span class="o">*</span> <span class="n">member</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>
+
+    <span class="n">set_init</span><span class="p">(</span><span class="n">seti</span><span class="p">,</span> <span class="n">set1</span><span class="o">-&gt;</span><span class="n">match</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">member</span> <span class="o">=</span> <span class="n">list_head</span><span class="p">(</span><span class="n">set1</span><span class="p">);</span> <span class="n">member</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">member</span> <span class="o">=</span> <span class="n">list_next</span><span class="p">(</span><span class="n">member</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">set_is_member</span><span class="p">(</span><span class="n">set2</span><span class="p">,</span> <span class="n">list_data</span><span class="p">(</span><span class="n">member</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">list_data</span><span class="p">(</span><span class="n">member</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">list_ins_next</span><span class="p">(</span><span class="n">seti</span><span class="p">,</span> <span class="n">list_tail</span><span class="p">(</span><span class="n">seti</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">set_destroy</span><span class="p">(</span><span class="n">seti</span><span class="p">);</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">set_difference</span><span class="p">(</span><span class="n">Set</span> <span class="o">*</span><span class="n">setd</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ListElmt</span> <span class="o">*</span><span class="n">member</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>
+
+    <span class="n">set_init</span><span class="p">(</span><span class="n">setd</span><span class="p">,</span> <span class="n">set1</span><span class="o">-&gt;</span><span class="n">match</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">member</span> <span class="o">=</span> <span class="n">list_head</span><span class="p">(</span><span class="n">set1</span><span class="p">);</span> <span class="n">member</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">member</span> <span class="o">=</span> <span class="n">list_next</span><span class="p">(</span><span class="n">member</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">set_is_member</span><span class="p">(</span><span class="n">set2</span><span class="p">,</span> <span class="n">list_data</span><span class="p">(</span><span class="n">member</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">list_data</span><span class="p">(</span><span class="n">member</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">list_ins_next</span><span class="p">(</span><span class="n">setd</span><span class="p">,</span> <span class="n">list_tail</span><span class="p">(</span><span class="n">setd</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">set_destroy</span><span class="p">(</span><span class="n">setd</span><span class="p">);</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">set_is_member</span><span class="p">(</span><span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ListElmt</span> <span class="o">*</span><span class="n">member</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">member</span> <span class="o">=</span> <span class="n">list_head</span><span class="p">(</span><span class="n">set</span><span class="p">);</span> <span class="n">member</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">member</span> <span class="o">=</span> <span class="n">list_next</span><span class="p">(</span><span class="n">member</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">set</span><span class="o">-&gt;</span><span class="n">match</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">list_data</span><span class="p">(</span><span class="n">member</span><span class="p">)))</span>
+            <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">set_is_subset</span><span class="p">(</span><span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ListElmt</span> <span class="o">*</span><span class="n">member</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">set_size</span><span class="p">(</span><span class="n">set1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">set_size</span><span class="p">(</span><span class="n">set2</span><span class="p">))</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">member</span> <span class="o">=</span> <span class="n">list_head</span><span class="p">(</span><span class="n">set1</span><span class="p">);</span> <span class="n">member</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">list_next</span><span class="p">(</span><span class="n">member</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">set_is_member</span><span class="p">(</span><span class="n">set2</span><span class="p">,</span> <span class="n">list_data</span><span class="p">(</span><span class="n">member</span><span class="p">)))</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">set_is_equal</span><span class="p">(</span><span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Set</span> <span class="o">*</span><span class="n">set2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">set_size</span><span class="p">(</span><span class="n">set1</span><span class="p">)</span> <span class="o">!=</span> <span class="n">set_size</span><span class="p">(</span><span class="n">set2</span><span class="p">))</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">set_is_subset</span><span class="p">(</span><span class="n">set1</span><span class="p">,</span> <span class="n">set2</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="哈希表">哈希表</h3>
+
+<p>哈希表其实作为以后会更加频繁出现的数据结构一定要学习的非常深入。
+区块链等新的技术基本上也利用了如此的原理来实现。
+哈希表，通过唯一的哈希值保证每个元素都可以在O(1)的时间内被访问。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//节点定义</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">CHTbl_</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">buckets</span><span class="p">;</span>
+    <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">h</span><span class="p">)(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key</span><span class="p">);</span>
+    <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">match</span><span class="p">)(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key2</span><span class="p">);</span>
+    <span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">destroy</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+    <span class="n">List</span> <span class="o">*</span><span class="n">table</span><span class="p">;</span>
+<span class="p">}</span><span class="n">CHTbl</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//接口函数</span>
+<span class="kt">int</span> <span class="nf">chtbl_init</span><span class="p">(</span><span class="n">CHTbl</span> <span class="o">*</span><span class="n">htbl</span><span class="p">,</span> <span class="kt">int</span> <span class="n">buckets</span><span class="p">,</span> <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">h</span><span class="p">)(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key</span><span class="p">),</span>
+    <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">match</span><span class="p">)(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key2</span><span class="p">),</span> <span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">destroy</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">));</span>
+<span class="kt">void</span> <span class="nf">chtbl_destroy</span><span class="p">(</span><span class="n">CHTbl</span> <span class="o">*</span><span class="n">htbl</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">chtbl_insert</span><span class="p">(</span><span class="n">CHTbl</span> <span class="o">*</span> <span class="n">htbl</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">chtbl_remove</span><span class="p">(</span><span class="n">CHTbl</span><span class="o">*</span><span class="n">htbl</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">chtbl_lookup</span><span class="p">(</span><span class="k">const</span> <span class="n">CHTbl</span> <span class="o">*</span><span class="n">htbl</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n">data</span><span class="p">);</span>
+
+<span class="cp">#define chtbl_size(htbl) ((htbl)-&gt;size)
+</span></code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//函数实现</span>
+<span class="kt">int</span> <span class="nf">chtbl_init</span><span class="p">(</span><span class="n">CHTbl</span> <span class="o">*</span><span class="n">htbl</span><span class="p">,</span> <span class="kt">int</span> <span class="n">buckets</span><span class="p">,</span> <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">h</span><span class="p">)(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key</span><span class="p">),</span>
+    <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">match</span><span class="p">)(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key2</span><span class="p">),</span> <span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">destroy</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">htbl</span><span class="o">-&gt;</span><span class="n">table</span> <span class="o">=</span> <span class="p">(</span><span class="n">List</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">buckets</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">List</span><span class="p">)))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+    <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">buckets</span> <span class="o">=</span> <span class="n">buckets</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">buckets</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">list_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htbl</span><span class="o">-&gt;</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">destroy</span><span class="p">);</span>
+    <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">h</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+    <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">match</span> <span class="o">=</span> <span class="n">match</span><span class="p">;</span>
+    <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">destroy</span> <span class="o">=</span> <span class="n">destroy</span><span class="p">;</span>
+
+    <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">chtbl_destroy</span><span class="p">(</span><span class="n">CHTbl</span> <span class="o">*</span><span class="n">htbl</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">buckets</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">list_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htbl</span><span class="o">-&gt;</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+    <span class="n">free</span><span class="p">(</span><span class="n">htbl</span><span class="o">-&gt;</span><span class="n">table</span><span class="p">);</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">htbl</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">CHTbl</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">chtbl_insert</span><span class="p">(</span><span class="n">CHTbl</span> <span class="o">*</span><span class="n">htbl</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">temp</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">bucket</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">retval</span><span class="p">;</span>
+
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">chtbl_lookup</span><span class="p">(</span><span class="n">htbl</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">temp</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="n">bucket</span> <span class="o">=</span> <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">h</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">%</span> <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">buckets</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">((</span><span class="n">retval</span> <span class="o">=</span> <span class="n">list_ins_next</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htbl</span><span class="o">-&gt;</span><span class="n">table</span><span class="p">[</span><span class="n">bucket</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">retval</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">chtbl_remove</span><span class="p">(</span><span class="n">CHTbl</span> <span class="o">*</span><span class="n">htbl</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ListElmt</span> <span class="o">*</span><span class="n">element</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">prev</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">bucket</span><span class="p">;</span>
+
+    <span class="n">bucket</span> <span class="o">=</span> <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">h</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">)</span> <span class="o">%</span> <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">buckets</span><span class="p">;</span>
+
+    <span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">element</span> <span class="o">=</span> <span class="n">list_head</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htbl</span><span class="o">-&gt;</span><span class="n">table</span><span class="p">[</span><span class="n">bucket</span><span class="p">]);</span> <span class="n">element</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="n">list_next</span><span class="p">(</span><span class="n">element</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">htbl</span><span class="o">-&gt;</span><span class="n">match</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">list_data</span><span class="p">(</span><span class="n">element</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">list_rem_next</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htbl</span><span class="o">-&gt;</span><span class="n">table</span><span class="p">[</span><span class="n">bucket</span><span class="p">],</span> <span class="n">prev</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">--</span><span class="p">;</span>
+                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="n">element</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">chtbl_lookup</span><span class="p">(</span><span class="k">const</span> <span class="n">CHTbl</span> <span class="o">*</span><span class="n">htbl</span><span class="p">,</span> <span class="kt">void</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ListElmt</span> <span class="o">*</span><span class="n">element</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">bucket</span><span class="p">;</span>
+
+    <span class="n">bucket</span> <span class="o">=</span> <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">h</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">)</span> <span class="o">%</span> <span class="n">htbl</span><span class="o">-&gt;</span><span class="n">buckets</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">element</span> <span class="o">=</span> <span class="n">list_head</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htbl</span><span class="o">-&gt;</span><span class="n">table</span><span class="p">[</span><span class="n">bucket</span><span class="p">]);</span> <span class="n">element</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">element</span> <span class="o">=</span> <span class="n">list_next</span><span class="p">(</span><span class="n">element</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">htbl</span><span class="o">-&gt;</span><span class="n">match</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">list_data</span><span class="p">(</span><span class="n">element</span><span class="p">)))</span>
+        <span class="p">{</span>
+            <span class="o">*</span><span class="n">data</span> <span class="o">=</span> <span class="n">list_data</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="树系">树系</h2>
+
+<p>树是一定要熟练掌握的数据结构，包括相应的算法，比如，反转二叉树，最短路径等，一定要在理解的前提下，可以手写代码。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//节点定义</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">BiTreeNode_</span>
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">BiTreeNode_</span> <span class="o">*</span><span class="n">left</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">BiTreeNoed_</span> <span class="o">*</span><span class="n">right</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">BiTreeNode</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">BiTree_</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+    <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">compare</span><span class="p">)</span> <span class="p">(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">key2</span><span class="p">);</span>
+    <span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">destroy</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+
+    <span class="n">BiTreeNode</span> <span class="o">*</span><span class="n">root</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">BiTree</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//接口函数</span>
+<span class="kt">void</span> <span class="nf">bitree_init</span><span class="p">(</span><span class="n">BiTree</span> <span class="o">*</span><span class="n">tree</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">destroy</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">));</span>
+<span class="kt">void</span> <span class="nf">bitree_destroy</span><span class="p">(</span><span class="n">BiTree</span> <span class="o">*</span><span class="n">tree</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">bitree_ins_left</span><span class="p">(</span><span class="n">BiTree</span> <span class="o">*</span><span class="n">tree</span><span class="p">,</span> <span class="n">BiTreeNode</span> <span class="o">*</span><span class="n">node</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">bitree_ins_right</span><span class="p">(</span><span class="n">BiTree</span> <span class="o">*</span><span class="n">tree</span><span class="p">,</span> <span class="n">BiTreeNode</span> <span class="o">*</span><span class="n">node</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">bitree_rem_left</span><span class="p">(</span><span class="n">BiTree</span> <span class="o">*</span><span class="n">tree</span><span class="p">,</span> <span class="n">BiTreeNode</span> <span class="o">*</span><span class="n">node</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">bitree_rem_right</span><span class="p">(</span><span class="n">BiTree</span> <span class="o">*</span><span class="n">tree</span><span class="p">,</span> <span class="n">BiTreeNode</span> <span class="o">*</span><span class="n">node</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">bitree_merge</span><span class="p">(</span><span class="n">BiTree</span> <span class="o">*</span><span class="n">merge</span><span class="p">,</span> <span class="n">BiTree</span> <span class="o">*</span><span class="n">left</span><span class="p">,</span> <span class="n">BiTree</span> <span class="o">*</span><span class="n">right</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+
+<span class="cp">#define bitree_size(tree) ((tree)-&gt;size)
+#define bitree_root(tree) ((tree)-&gt;root)
+#define bitree_is_eob(node) ((node)==NULL)
+#define bitree_is_left(node) ((node)-&gt;left==NULL &amp;&amp; (node)-&gt;right==NULL)
+#define bitree_data(node) ((node)-&gt;data)
+#define bitree_left(node) ((node)-&gt;left)
+#define bitree_right(node) ((node)-&gt;right)
+</span></code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//函数实现</span>
+
+</code></pre></div></div>
+
+<h1 id="基本算法-c">基本算法 （C）</h1>
+
+<h2 id="最大子序列和">最大子序列和</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">max_sub_sequence</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">a</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">this_sum</span><span class="p">,</span> <span class="n">max_sum</span><span class="p">;</span>
+    <span class="n">this_sum</span> <span class="o">=</span> <span class="n">max_sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this_sum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">this_sum</span> <span class="o">&gt;</span> <span class="n">max_sum</span><span class="p">)</span>
+            <span class="n">max_sum</span> <span class="o">=</span> <span class="n">this_sum</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">this_sum</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">this_sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">max_sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="对分查找">对分查找</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define NOTFOUND -1
+</span><span class="kt">int</span> <span class="nf">binary_search</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">a</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">low</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">high</span><span class="p">;</span>
+    <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">high</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">)</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">)</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="k">return</span> <span class="n">mid</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="c1">//return NOTFOUND;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="欧几里得算法计算最大公约数">欧几里得算法（计算最大公约数）</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">rem</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">rem</span> <span class="o">=</span> <span class="n">m</span> <span class="o">%</span> <span class="n">n</span><span class="p">;</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">rem</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">m</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="求幂运算-幂大于0">求幂运算 (幂大于0)</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">is_even</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">long</span> <span class="kt">int</span> <span class="nf">my_pow</span><span class="p">(</span><span class="kt">long</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">is_even</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">my_pow</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="n">my_pow</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="基本算法-java">基本算法 （JAVA）</h1>
+
+<p>使用java 语言进行实现</p>
+
+<h2 id="二分查找">二分查找</h2>
+
+<h3 id="递归实现">递归实现</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">rank</span><span class="o">(</span><span class="kt">int</span> <span class="n">key</span><span class="o">,</span> <span class="kt">int</span> <span class="o">[]</span><span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">lo</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hi</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">lo</span> <span class="o">&gt;</span> <span class="n">hi</span><span class="o">)</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="o">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">[</span><span class="n">mid</span><span class="o">])</span>
+            <span class="k">return</span> <span class="nf">rank</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">a</span><span class="o">,</span> <span class="n">lo</span><span class="o">,</span><span class="n">mid</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">key</span> <span class="o">&gt;</span> <span class="n">a</span><span class="o">[</span><span class="n">mid</span><span class="o">])</span>
+            <span class="k">return</span> <span class="nf">rank</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">a</span><span class="o">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span> <span class="n">hi</span><span class="o">);</span>
+        <span class="k">else</span>
+            <span class="k">return</span> <span class="n">mid</span><span class="o">;</span>
+
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">rank</span><span class="o">(</span><span class="kt">int</span> <span class="n">key</span><span class="o">,</span> <span class="kt">int</span> <span class="o">[]</span><span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nf">rank</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">a</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+    <span class="o">}</span>
+
+</code></pre></div></div>
+
+<h3 id="循环实现">循环实现</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">rank</span><span class="o">(</span><span class="kt">int</span> <span class="n">key</span><span class="o">,</span> <span class="kt">int</span> <span class="o">[]</span><span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">lo</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">lo</span> <span class="o">&lt;=</span> <span class="n">hi</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="o">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">[</span><span class="n">mid</span><span class="o">])</span>
+                <span class="n">hi</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">key</span> <span class="o">&gt;</span> <span class="n">a</span><span class="o">[</span><span class="n">mid</span><span class="o">])</span>
+                <span class="n">lo</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="k">else</span>
+                <span class="k">return</span> <span class="n">mid</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MySort</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">less</span><span class="o">(</span><span class="nc">Comparable</span> <span class="n">v</span><span class="o">,</span> <span class="nc">Comparable</span> <span class="n">w</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">w</span><span class="o">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">exch</span><span class="o">(</span><span class="nc">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Comparable</span> <span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+        <span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">t</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="nc">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 实现</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="选择排序">选择排序</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="nc">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="no">N</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="no">N</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="no">N</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">less</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">],</span> <span class="n">a</span><span class="o">[</span><span class="n">min</span><span class="o">]))</span>
+                    <span class="n">min</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">exch</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">min</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="插入排序">插入排序</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="nc">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="no">N</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="no">N</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">less</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">],</span> <span class="n">a</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span> <span class="n">j</span><span class="o">--)</span> <span class="o">{</span>
+            <span class="n">exch</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">j</span><span class="o">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="希尔排序">希尔排序</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="nc">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="no">N</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="k">while</span><span class="o">(</span><span class="n">h</span> <span class="o">&lt;</span> <span class="no">N</span><span class="o">/</span><span class="mi">3</span><span class="o">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">h</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="k">while</span><span class="o">(</span><span class="n">h</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">h</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="no">N</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> 
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">h</span> <span class="o">&amp;&amp;</span> <span class="n">less</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">],</span> <span class="n">a</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">h</span><span class="o">]);</span> <span class="n">j</span> <span class="o">-=</span> <span class="n">h</span><span class="o">)</span> 
+                <span class="n">exch</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">j</span><span class="o">,</span> <span class="n">j</span> <span class="o">-</span> <span class="n">h</span><span class="o">);</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">h</span> <span class="o">/</span> <span class="mi">3</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#algorithms" class="page__taxonomy-item p-category" rel="tag">Algorithms</a><span class="sep">, </span>
+    
+      <a href="/tags/#c" class="page__taxonomy-item p-category" rel="tag">C</a><span class="sep">, </span>
+    
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">Java</a><span class="sep">, </span>
+    
+      <a href="/tags/#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="page__taxonomy-item p-category" rel="tag">数据结构</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0" class="page__taxonomy-item p-category" rel="tag">中文笔记</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2019-11-02T00:00:00+10:00">November 2, 2019</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%20http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2FAlgorithms%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2FAlgorithms%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2FAlgorithms%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="pagination--pager" title="计算机网络学习笔记
+">Previous</a>
+    
+    
+      <a href="/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/leetcode/" class="pagination--pager" title="Leetcode
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/91-Decode-Ways/" rel="permalink">Decode Ways
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-M 91&gt; Decode Ways
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/139-Word-Break/" rel="permalink">Word Break
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 139&gt; Word Break
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/115-Distinct-Subsequences/" rel="permalink">Distinct Subsequences
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 115&gt; Distinct Subsequences
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/72-Edit-Distance/" rel="permalink">Edit Distance
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 72&gt; Edit Distance
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

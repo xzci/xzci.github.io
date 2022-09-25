@@ -1,0 +1,824 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>study of Regular Expressions - Site Title</title>
+<meta name="description" content="综述 * 原字符  * 实例 * 练习题">
+
+
+  <meta name="author" content="Your Name">
+  
+  <meta property="article:author" content="Your Name">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="study of Regular Expressions">
+<meta property="og:url" content="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/study-of-Regular-Expressions/">
+
+
+  <meta property="og:description" content="综述 * 原字符  * 实例 * 练习题">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-11-01T00:00:00+10:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/study-of-Regular-Expressions/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Site Title
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Your Name</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am an <strong>amazing</strong> person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="study of Regular Expressions">
+    <meta itemprop="description" content="综述* 原字符 * 实例* 练习题">
+    <meta itemprop="datePublished" content="2019-11-01T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/study-of-Regular-Expressions/" class="u-url" itemprop="url">study of Regular Expressions
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h1 id="综述">综述</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* 原字符 
+* 实例
+* 练习题
+</code></pre></div></div>
+
+<p>备注 每日一更 +代表更新 -代表还在占坑中（没有内容暂待更新）
+更新内容：</p>
+<ul>
+  <li>新的元字符更新</li>
+</ul>
+
+<h1 id="编程依赖">编程依赖</h1>
+<p>使用C#作为正则表达式的学习工具，正则表达式在各种语言中都支持（自带或者相关的库）
+在这里使用C#作为学习的工具。
+C#中使用正则表达式可以有几种方式：</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 本次主要采用这样的实现方式（便于书写）</span>
+<span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"catTheOtherText"</span><span class="p">,</span> <span class="s">"TheOtherTextcat"</span><span class="p">,</span>
+               <span class="s">"TheOtherText"</span><span class="p">,</span> <span class="s">"TheOthercatText"</span><span class="p">,</span> <span class="s">"ThecOtheraTextt"</span> <span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"^cat"</span><span class="p">;</span>
+<span class="k">foreach</span><span class="p">(</span> <span class="kt">var</span> <span class="n">str</span> <span class="k">in</span> <span class="n">s</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Match</span> <span class="n">match</span> <span class="p">=</span> <span class="n">Regex</span><span class="p">.</span><span class="nf">Match</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">@strRegular</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">str</span> <span class="p">+</span> <span class="s">"    The Regular is  "</span> <span class="p">+</span> <span class="n">strRegular</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+<p>这种方式比较便于理解，但是其实缺少了很多相关的设置条件，相关的设置条件，每个语言有所不同，如果有需要，需要查阅相关的手册，进行确认。如果有需要（比如设置忽略大小写，在shell里是在正则表达式之前添加参数 <code class="language-plaintext highlighter-rouge">-i</code>），则用如下的这种方式进行书写：</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"catTheOtherText"</span><span class="p">,</span> <span class="s">"TheOtherTextcat"</span><span class="p">,</span>
+               <span class="s">"TheOtherText"</span><span class="p">,</span> <span class="s">"TheOthercatText"</span><span class="p">,</span> <span class="s">"ThecOtheraTextt"</span> <span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"^cat"</span><span class="p">;</span>
+<span class="c1">// 这里的RegexOptions 提供了更多正则表达式的相关选项。</span>
+<span class="c1">// 这里的IgnoreCase 是忽略大小写的含义</span>
+<span class="n">Regex</span> <span class="n">reg</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Regex</span><span class="p">(</span><span class="n">@strRegular</span><span class="p">,</span> <span class="n">RegexOptions</span><span class="p">.</span><span class="n">IgnoreCase</span><span class="p">);</span>
+<span class="k">foreach</span><span class="p">(</span> <span class="kt">var</span> <span class="n">str</span> <span class="k">in</span> <span class="n">s</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Match</span> <span class="n">match</span> <span class="p">=</span> <span class="n">reg</span><span class="p">.</span><span class="nf">Match</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">str</span> <span class="p">+</span> <span class="s">"    The Regular is  "</span> <span class="p">+</span> <span class="n">strRegular</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="元字符">元字符</h1>
+<h2>^</h2>
+<p>行的起始 如：<code class="language-plaintext highlighter-rouge">^cat</code> 取得行首是cat的行</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"catTheOtherText"</span><span class="p">,</span> <span class="s">"TheOtherTextcat"</span><span class="p">,</span>
+               <span class="s">"TheOtherText"</span><span class="p">,</span> <span class="s">"TheOthercatText"</span><span class="p">,</span> <span class="s">"ThecOtheraTextt"</span> <span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"^cat"</span><span class="p">;</span>
+<span class="c1">// "catTheOtherText"</span>
+</code></pre></div></div>
+<h2 id="-1">$</h2>
+<p>行的结束 如： <code class="language-plaintext highlighter-rouge">cat$</code> 取得行尾是cat的行</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"catTheOtherText"</span><span class="p">,</span> <span class="s">"TheOtherTextcat"</span><span class="p">,</span>
+                           <span class="s">"TheOtherText"</span><span class="p">,</span> <span class="s">"TheOthercatText"</span><span class="p">,</span> <span class="s">"ThecOtheraTextt"</span> <span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"cat$"</span><span class="p">;</span>
+<span class="c1">// output</span>
+<span class="c1">// "TheOtherTextcat"</span>
+</code></pre></div></div>
+
+<h2 id="-2">[]</h2>
+<p>匹配多个字符 如<code class="language-plaintext highlighter-rouge">[ab]</code> 匹配a或者b</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"aTheOtherText"</span><span class="p">,</span> <span class="s">"bTheOtherText"</span><span class="p">,</span>
+               <span class="s">"abTheOtherText"</span><span class="p">,</span> <span class="s">"TheOtheraText"</span><span class="p">,</span> <span class="s">"b"</span> <span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"[ab]"</span><span class="p">;</span>
+<span class="c1">// output</span>
+<span class="c1">// aTheOtherText    The Regular is  [ab]</span>
+<span class="c1">// bTheOtherText    The Regular is  [ab]</span>
+<span class="c1">// abTheOtherText    The Regular is  [ab]</span>
+<span class="c1">// TheOtheraText    The Regular is  [ab]</span>
+<span class="c1">// b    The Regular is  [ab]</span>
+</code></pre></div></div>
+
+<h3 id="-">[-]</h3>
+<p><code class="language-plaintext highlighter-rouge">[]</code>中的连字符，可以连接有顺序的序列 如：<code class="language-plaintext highlighter-rouge">[1-3]</code> 取1到3中任意__一个__数 
+特别的<code class="language-plaintext highlighter-rouge">[0123456789abcdefgABCDEFG]</code>可以写作：<code class="language-plaintext highlighter-rouge">[0-9a-gA-G]</code> 或<code class="language-plaintext highlighter-rouge">[A-G0-9a-g]</code> (顺序无关)</p>
+
+<h3 id="展开">展开</h3>
+<p><em>（以后讲到）</em> 只有<code class="language-plaintext highlighter-rouge">-</code>在<code class="language-plaintext highlighter-rouge">[]</code>中是作为有意义的字符，其他字符保留原来含义。</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"2TheOtherText"</span><span class="p">,</span> <span class="s">"1TheOtherText"</span><span class="p">,</span>
+               <span class="s">"90TheOtherText"</span><span class="p">,</span> <span class="s">"TheOtheraText"</span><span class="p">,</span> <span class="s">"9"</span><span class="p">,</span> <span class="s">"TheOther?Text"</span> <span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"[0-9?]"</span><span class="p">;</span>
+<span class="c1">// 2TheOtherText    The Regular is  [0-9?]</span>
+<span class="c1">// 1TheOtherText    The Regular is  [0-9?]</span>
+<span class="c1">// 90TheOtherText    The Regular is  [0-9?]</span>
+<span class="c1">// 9    The Regular is  [0-9?]</span>
+<span class="c1">// TheOther?Text    The Regular is  [0-9?]</span>
+</code></pre></div></div>
+
+<h3 id="-3">[^]</h3>
+<p>表示除此以外 如：<code class="language-plaintext highlighter-rouge">[^a]</code> 取得除了有a的行
+也可以使用<code class="language-plaintext highlighter-rouge">[^0-9]</code> 取得除了只包含0-9的其他行</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"123456"</span><span class="p">,</span> <span class="s">"Text"</span><span class="p">,</span>
+               <span class="s">"?Text"</span><span class="p">,</span> <span class="s">"123456Text"</span><span class="p">,</span> <span class="s">"9"</span> <span class="p">,</span> <span class="s">"?"</span><span class="p">,</span> 
+               <span class="s">"Text123456"</span><span class="p">,</span> <span class="s">"T123e45x6t"</span> <span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"[^0-9?]"</span><span class="p">;</span>
+<span class="c1">// Text    The Regular is  [^0-9?]</span>
+<span class="c1">// ?Text    The Regular is  [^0-9?]</span>
+<span class="c1">// 123456Text    The Regular is  [^0-9?]</span>
+<span class="c1">// Text123456    The Regular is  [^0-9?]</span>
+<span class="c1">// T123e45x6t    The Regular is  [^0-9?]</span>
+</code></pre></div></div>
+
+<h2 id="-4">|</h2>
+<p>或 如 <code class="language-plaintext highlighter-rouge">ab|ba</code> 匹配ab和ba
+如同编程中的<code class="language-plaintext highlighter-rouge">|</code>（或）</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"abc"</span><span class="p">,</span> <span class="s">"cba"</span><span class="p">,</span>
+               <span class="s">"bca"</span><span class="p">,</span> <span class="s">"ab"</span><span class="p">,</span> <span class="s">"a"</span><span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"ab|ba"</span><span class="p">;</span>
+<span class="c1">// abc    The Regular is  ab|ba</span>
+<span class="c1">// cba    The Regular is  ab|ba</span>
+<span class="c1">// ab    The Regular is  ab|ba</span>
+</code></pre></div></div>
+
+<h3 id="-5">()</h3>
+<p>使用<code class="language-plaintext highlighter-rouge">()</code>包含<code class="language-plaintext highlighter-rouge">|</code>，限制<code class="language-plaintext highlighter-rouge">|</code>的作用范围 则只针对括号中的内容进行或匹配 如<code class="language-plaintext highlighter-rouge">a(ab|ba)</code> 匹配aab 或者aba</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"abc"</span><span class="p">,</span> <span class="s">"cba"</span><span class="p">,</span>
+                <span class="s">"bca"</span><span class="p">,</span> <span class="s">"ab"</span><span class="p">,</span> <span class="s">"a"</span><span class="p">,</span> <span class="s">"aab"</span><span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"c(ab|ba)"</span><span class="p">;</span>
+<span class="c1">// cba    The Regular is  c(ab|ba)</span>
+</code></pre></div></div>
+<p>值得注意的是，以下3者等价：</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span> <span class="n">strRegular1</span> <span class="p">=</span> <span class="s">"(Geoff|Jeff)(rey|ery)"</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">strRegular2</span> <span class="p">=</span> <span class="s">"(Geo|Je)ff(rey|ery)"</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">strRegular3</span> <span class="p">=</span> <span class="s">"(Geo|Je)ff(re|er)y"</span>
+</code></pre></div></div>
+<p>下面这种方式与上面3者也等价（较为蠢）</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span> <span class="n">strOtherWayRegular</span> <span class="p">=</span> <span class="s">"Jeffrey|Geoffery|Jeffery|Geoffrey"</span><span class="p">;</span> 
+</code></pre></div></div>
+<h2 id="单词分界符">单词分界符</h2>
+<p>C#的实现不同，本例参照所选用语言的正则表达式手册。
+标准中提供<code class="language-plaintext highlighter-rouge">\&lt;</code>和<code class="language-plaintext highlighter-rouge">\&gt;</code> 来匹配单词的首位，和末尾。
+C#中则只提供<code class="language-plaintext highlighter-rouge">\b</code> 匹配单词分割，不特别区分首尾（看放置于哪个部分）。</p>
+
+<h2 id="模糊匹配">模糊匹配</h2>
+
+<h3 id="-6">?</h3>
+<p><strong>一定会被匹配到。</strong>
+必须前面有一个字符, 前面字符出现__0次或1次__ 如 <code class="language-plaintext highlighter-rouge">abca?</code> 匹配abc或者abca
+一个有歧义，其实可以将多个用括号包裹起来，这样的话也算一个 如 <code class="language-plaintext highlighter-rouge">ab(abc)?</code> 匹配ababc或ab</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"abca"</span><span class="p">,</span> <span class="s">"abcaaa"</span><span class="p">,</span>
+                <span class="s">"abc"</span><span class="p">,</span> <span class="s">"abcd"</span><span class="p">,</span> <span class="s">"babcd"</span><span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"abca?"</span><span class="p">;</span>
+<span class="c1">// abca    The Regular is  abca?</span>
+<span class="c1">// abcaaa    The Regular is  abca?</span>
+<span class="c1">// abc    The Regular is  abca?</span>
+<span class="c1">// abcd    The Regular is  abca?</span>
+<span class="c1">// babcd    The Regular is  abca?</span>
+</code></pre></div></div>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"ababc"</span><span class="p">,</span> <span class="s">"abca"</span><span class="p">,</span>
+                <span class="s">"babcdeg"</span><span class="p">,</span> <span class="s">"cbagcd"</span> <span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"ab(abc)?"</span><span class="p">;</span>
+<span class="c1">// ababc    The Regular is  ab(abc)?</span>
+<span class="c1">// abca    The Regular is  ab(abc)?</span>
+<span class="c1">// babcdeg    The Regular is  ab(abc)?</span>
+</code></pre></div></div>
+
+<h3 id="-7">+</h3>
+<p>必须前面有一个字符, 前面字符出现__1次或多次__ 如 <code class="language-plaintext highlighter-rouge">abca?</code> 匹配abca或者abcaa</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"abca"</span><span class="p">,</span> <span class="s">"abcaaa"</span><span class="p">,</span>
+                <span class="s">"abc"</span><span class="p">,</span> <span class="s">"abcd"</span><span class="p">,</span> <span class="s">"babcd"</span><span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"abca+"</span><span class="p">;</span>
+<span class="c1">// abca    The Regular is  abca+</span>
+<span class="c1">// abcaaa    The Regular is  abca+</span>
+</code></pre></div></div>
+
+<h3 id="-8">*</h3>
+<p><strong>一定会被匹配到。</strong>
+必须前面有一个字符, 前面字符出现__0次或多次__ 如 <code class="language-plaintext highlighter-rouge">ba?</code> 匹配b或者ba或者baa</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"abca"</span><span class="p">,</span> <span class="s">"abcaaa"</span><span class="p">,</span>
+                <span class="s">"abc"</span><span class="p">,</span> <span class="s">"abcd"</span><span class="p">,</span> <span class="s">"babcd"</span><span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"abca*"</span><span class="p">;</span>
+<span class="c1">// abca    The Regular is  abca*</span>
+<span class="c1">// abcaaa    The Regular is  abca*</span>
+<span class="c1">// abc    The Regular is  abca*</span>
+<span class="c1">// abcd    The Regular is  abca*</span>
+<span class="c1">// babcd    The Regular is  abca*</span>
+</code></pre></div></div>
+
+<h3 id="展开--">展开 ? *</h3>
+<p>看了上面的例子是不是对这2个有点困惑。看起来结果是一样的。其实主要在于，只有存在于明确首尾的情况时，才能使之不同。比如：
+<code class="language-plaintext highlighter-rouge">^aa?b</code>和<code class="language-plaintext highlighter-rouge">^aa*b</code></p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"ab"</span><span class="p">,</span> <span class="s">"aaaab"</span><span class="p">,</span>
+                <span class="s">"aab"</span><span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"^aa?b"</span><span class="p">;</span>
+<span class="c1">// ab    The Regular is  ^aa?b</span>
+<span class="c1">// aab    The Regular is  ^aa?b</span>
+</code></pre></div></div>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span><span class="p">[]</span> <span class="n">s</span> <span class="p">=</span> <span class="p">{</span> <span class="s">"ab"</span><span class="p">,</span> <span class="s">"aaaab"</span><span class="p">,</span>
+                <span class="s">"aab"</span><span class="p">};</span>
+<span class="kt">string</span> <span class="n">strRegular</span> <span class="p">=</span> <span class="s">"^aa*b"</span><span class="p">;</span>
+<span class="c1">// ab    The Regular is  ^aa*b</span>
+<span class="c1">// aaaab    The Regular is  ^aa*b</span>
+<span class="c1">// aab    The Regular is  ^aa*b</span>
+</code></pre></div></div>
+
+<h1 id="练习">练习</h1>
+<h2 id="-9">[][^]</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'q1xText', 'Textq1',
+'q2cText', 'Textq2c' 1. `q[0-9][^x]` 会匹配哪一个呢？
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">q[0-9][^x]$</code>会匹配哪一个呢？</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">^q[0-9][^x]</code>会匹配哪一个呢？</p>
+  </li>
+</ol>
+
+<h1 id="答案">答案</h1>
+<ol>
+  <li>
+    <p>q2cText    The Regular is  q[0-9][^x]
+Textq2c    The Regular is  q[0-9][^x]</p>
+  </li>
+  <li>
+    <p>Textq2c    The Regular is  q[0-9][^x]$</p>
+  </li>
+  <li>
+    <p>q2cText    The Regular is  ^q[0-9][^x]</p>
+  </li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#regular-expressions" class="page__taxonomy-item p-category" rel="tag">Regular Expressions</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0" class="page__taxonomy-item p-category" rel="tag">中文笔记</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2019-11-01T00:00:00+10:00">November 1, 2019</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=study+of+Regular+Expressions%20http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2Fstudy-of-Regular-Expressions%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2Fstudy-of-Regular-Expressions%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25E4%25B8%25AD%25E6%2596%2587%25E7%25AC%2594%25E8%25AE%25B0%2Fstudy-of-Regular-Expressions%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/study-of-Python/" class="pagination--pager" title="study of Python
+">Previous</a>
+    
+    
+      <a href="/%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="pagination--pager" title="计算机网络学习笔记
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/91-Decode-Ways/" rel="permalink">Decode Ways
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-M 91&gt; Decode Ways
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/139-Word-Break/" rel="permalink">Word Break
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 139&gt; Word Break
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/115-Distinct-Subsequences/" rel="permalink">Distinct Subsequences
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 115&gt; Distinct Subsequences
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/72-Edit-Distance/" rel="permalink">Edit Distance
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">&lt;-H 72&gt; Edit Distance
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

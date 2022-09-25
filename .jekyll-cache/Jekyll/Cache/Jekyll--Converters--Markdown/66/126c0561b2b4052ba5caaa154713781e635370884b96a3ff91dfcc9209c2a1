@@ -1,10 +1,0 @@
-I"<h1 id="-e-2235-add-two-integers">&lt;-E 2235&gt; Add Two Integers</h1>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="nl">public:</span>
-    <span class="kt">int</span> <span class="n">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">num1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">num2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div></div>
-:ET
