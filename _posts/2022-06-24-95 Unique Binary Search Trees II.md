@@ -2,9 +2,9 @@
 title: Unique Binary Search Trees II
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 95> Unique Binary Search Trees II

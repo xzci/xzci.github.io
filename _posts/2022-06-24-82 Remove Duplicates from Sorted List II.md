@@ -2,9 +2,9 @@
 title: Remove Duplicates from Sorted List II
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 82> Remove Duplicates from Sorted List II

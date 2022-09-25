@@ -2,9 +2,9 @@
 title: Evaluate Reverse Polish Notation
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 150> Evaluate Reverse Polish Notation

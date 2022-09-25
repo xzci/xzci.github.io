@@ -2,9 +2,9 @@
 title: Flatten Binary Tree to Linked List
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 114> Flatten Binary Tree to Linked List

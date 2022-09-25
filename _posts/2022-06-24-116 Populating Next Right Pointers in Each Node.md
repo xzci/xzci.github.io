@@ -2,9 +2,9 @@
 title: Populating Next Right Pointers in Each Node
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 116> Populating Next Right Pointers in Each Node

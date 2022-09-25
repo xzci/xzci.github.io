@@ -2,9 +2,9 @@
 title: Recover Binary Search Tree
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 99> Recover Binary Search Tree

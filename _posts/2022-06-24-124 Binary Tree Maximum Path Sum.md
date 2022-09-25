@@ -2,9 +2,9 @@
 title: Binary Tree Maximum Path Sum
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-H 124> Binary Tree Maximum Path Sum

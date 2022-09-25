@@ -2,9 +2,9 @@
 title: Binary Tree Level Order Traversal
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 102> Binary Tree Level Order Traversal

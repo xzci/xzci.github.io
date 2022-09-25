@@ -2,9 +2,9 @@
 title: Maximal Rectangle
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-H 85> Maximal Rectangle

@@ -2,9 +2,9 @@
 title: Construct Binary Tree from Preorder and Postorder Traversal
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 889> Construct Binary Tree from Preorder and Postorder Traversal

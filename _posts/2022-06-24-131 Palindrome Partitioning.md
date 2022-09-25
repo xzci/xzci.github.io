@@ -2,9 +2,9 @@
 title: Palindrome Partitioning
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 131> Palindrome Partitioning

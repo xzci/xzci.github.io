@@ -2,9 +2,9 @@
 title: Validate Binary Search Tree
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 98> Validate Binary Search Tree

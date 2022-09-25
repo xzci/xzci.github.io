@@ -2,9 +2,9 @@
 title: Single Number II
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 137> Single Number II

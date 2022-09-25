@@ -2,9 +2,9 @@
 title: Convert Sorted List to Binary Search Tree
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 109> Convert Sorted List to Binary Search Tree

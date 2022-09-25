@@ -2,9 +2,9 @@
 title: Word Ladder II
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-H 126> Word Ladder II

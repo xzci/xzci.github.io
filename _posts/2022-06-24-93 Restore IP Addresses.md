@@ -2,9 +2,9 @@
 title: Restore IP Addresses
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 93> Restore IP Addresses

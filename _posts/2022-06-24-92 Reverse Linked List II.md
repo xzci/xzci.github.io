@@ -2,9 +2,9 @@
 title: Reverse Linked List II
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 92> Reverse Linked List II

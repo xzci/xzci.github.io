@@ -2,9 +2,9 @@
 title: Best Time to Buy and Sell Stock III
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-H 123> Best Time to Buy and Sell Stock III

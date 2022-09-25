@@ -2,9 +2,9 @@
 title: Edit Distance
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-H 72> Edit Distance

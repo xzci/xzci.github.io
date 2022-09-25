@@ -2,9 +2,9 @@
 title: Linked List Cycle II
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 142> Linked List Cycle II

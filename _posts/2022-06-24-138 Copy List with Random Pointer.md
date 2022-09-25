@@ -2,9 +2,9 @@
 title: Copy List with Random Pointer
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 138> Copy List with Random Pointer

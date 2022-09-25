@@ -2,9 +2,9 @@
 title: Scramble String
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-H 87> Scramble String

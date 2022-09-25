@@ -2,9 +2,9 @@
 title: Partition List
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 86> Partition List

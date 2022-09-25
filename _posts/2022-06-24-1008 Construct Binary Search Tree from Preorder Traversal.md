@@ -2,9 +2,9 @@
 title: Construct Binary Search Tree from Preorder Traversal
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 1008> Construct Binary Search Tree from Preorder Traversal

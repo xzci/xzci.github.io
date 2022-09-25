@@ -2,9 +2,9 @@
 title: Largest Rectangle in Histogram
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-H 84> Largest Rectangle in Histogram

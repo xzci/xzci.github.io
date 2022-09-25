@@ -2,9 +2,9 @@
 title: Surrounded Regions
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 130> Surrounded Regions

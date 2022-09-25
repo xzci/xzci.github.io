@@ -2,9 +2,9 @@
 title: Sum Root to Leaf Numbers
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 129> Sum Root to Leaf Numbers

@@ -2,9 +2,9 @@
 title: Construct Binary Tree from Preorder and Inorder Traversal
 categories:
 tags:
-  - C++
-  - Leetcode
-  - Algorithms
+- C++
+- Leetcode
+- Algorithms
 ---
 
 # <-M 105> Construct Binary Tree from Preorder and Inorder Traversal
