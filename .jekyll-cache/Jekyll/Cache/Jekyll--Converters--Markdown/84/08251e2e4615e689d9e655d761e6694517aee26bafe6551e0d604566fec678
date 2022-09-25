@@ -1,0 +1,95 @@
+I"6<h1 id="-h-126-word-ladder-ii">&lt;-H 126&gt; Word Ladder II</h1>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">g_words</span><span class="p">(</span><span class="n">string</span> <span class="n">a</span><span class="p">,</span> <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">){</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">string</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">char</span> <span class="n">j</span> <span class="o">=</span> <span class="sc">'a'</span><span class="p">;</span><span class="n">j</span> <span class="o">&lt;=</span> <span class="sc">'z'</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">temp</span> <span class="o">==</span> <span class="n">a</span><span class="p">)</span>
+                    <span class="k">continue</span><span class="p">;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+                    <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">backtrack</span><span class="p">(</span><span class="n">string</span> <span class="n">start</span><span class="p">,</span><span class="n">string</span> <span class="n">vertex</span><span class="p">,</span>
+                   <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">adj_list</span><span class="p">,</span>
+                   <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">path</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">ans</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">vertex</span> <span class="o">==</span> <span class="n">start</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">path</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">vertex</span><span class="p">);</span>
+            <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">path</span><span class="p">;</span>
+            <span class="n">reverse</span><span class="p">(</span><span class="n">temp</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">temp</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+            <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+            <span class="n">path</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">path</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">vertex</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">i</span><span class="o">:</span><span class="n">adj_list</span><span class="p">[</span><span class="n">vertex</span><span class="p">])</span>
+            <span class="n">backtrack</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">adj_list</span><span class="p">,</span><span class="n">path</span><span class="p">,</span><span class="n">ans</span><span class="p">);</span>
+
+        <span class="n">path</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">findLadders</span><span class="p">(</span><span class="n">string</span> <span class="n">beginWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">endWord</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">wordList</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">string</span> <span class="n">start</span> <span class="o">=</span> <span class="n">beginWord</span><span class="p">;</span>
+        <span class="n">string</span> <span class="n">end</span> <span class="o">=</span> <span class="n">endWord</span><span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">dict</span> <span class="o">=</span> <span class="n">wordList</span><span class="p">;</span>
+        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">m</span><span class="p">;</span>
+        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">level</span><span class="p">;</span>
+
+        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">adj_list</span><span class="p">;</span>
+
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">dict</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">m</span><span class="p">[</span><span class="n">dict</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+
+
+        <span class="n">queue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">start</span><span class="p">);</span>
+        <span class="n">m</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+        <span class="n">level</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+
+
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+
+            <span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">s</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">string</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+                <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+                <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">child</span> <span class="o">:</span> <span class="n">g_words</span><span class="p">(</span><span class="n">curr</span> <span class="p">,</span><span class="n">m</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">child</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">child</span><span class="p">);</span>
+                        <span class="n">m</span><span class="p">[</span><span class="n">child</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+                        <span class="n">level</span><span class="p">[</span><span class="n">child</span><span class="p">]</span> <span class="o">=</span> <span class="n">level</span><span class="p">[</span><span class="n">curr</span><span class="p">]</span> <span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+                        <span class="n">adj_list</span><span class="p">[</span><span class="n">child</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">curr</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span><span class="p">{</span>
+                        <span class="k">if</span><span class="p">(</span><span class="n">level</span><span class="p">[</span><span class="n">child</span><span class="p">]</span> <span class="o">==</span> <span class="n">level</span><span class="p">[</span><span class="n">curr</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                            <span class="n">adj_list</span><span class="p">[</span><span class="n">child</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">curr</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+    <span class="n">backtrack</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">adj_list</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span><span class="n">ans</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+:ET
